@@ -14,8 +14,9 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-        Vector3 move = new Vector3(moveInput.x, 0f, moveInput.y);
-        rb.MovePosition(rb.position + move * speed * Time.fixedDeltaTime);
+        Vector3 targetVelocity = new Vector3(moveInput.x * speed, rb.linearVelocity.y, moveInput.y * speed);
+
+        rb.linearVelocity = targetVelocity;
     }
 
     public void OnMove(InputValue value)
