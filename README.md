@@ -40,8 +40,10 @@ Projeye katılmadan önce aşağıdaki araçların kurulu olması gerekmektedir:
 
 ---
 
-## 🖼️ Kurulum Adımları (Ekran Görüntüleri)
+## 🖼️ Kurulum Adımları 
 
+ ### Projeyi Bilgisayara Kurma
+ - https://youtu.be/yq0KH_Ez7Qw
 
 ---
 
