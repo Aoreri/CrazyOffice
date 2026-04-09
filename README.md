@@ -1,8 +1,6 @@
-# 🎮 Sistem Analiz Projesi README
+# 🎮 Sistem Analiz Projesi 
 
 ## 📌 Proje Hakkında
-
----
 
 ## ⚙️ Gereksinimler
 
@@ -44,17 +42,6 @@ Projeye katılmadan önce aşağıdaki araçların kurulu olması gerekmektedir:
 
 ## 🖼️ Kurulum Adımları (Ekran Görüntüleri)
 
-> Bu kısımda ekran görüntüleri eklenecek.
-
-### 📌 GitHub Desktop ile Klonlama
-
-![GitHub Clone](images/github-clone.png)
-
----
-
-### 📌 Unity Hub ile Proje Açma
-
-![Unity Hub](images/unity-open.png)
 
 ---
 
