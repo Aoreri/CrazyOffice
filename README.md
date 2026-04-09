@@ -45,6 +45,8 @@ Projeye katılmadan önce aşağıdaki araçların kurulu olması gerekmektedir:
  ### Projeyi Bilgisayara Kurma
  - https://youtu.be/yq0KH_Ez7Qw
 
+ ### Projeyi Unity Üzerinde Açma
+ - https://youtu.be/TUdP2z7gglQ
 ---
 
 ## 🔒 Çalışma Kuralları
