@@ -3,24 +3,29 @@ using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public float speed = 5f;
-    private Vector2 moveInput;
-    private Rigidbody rb;
+  public float speed = 10f;
 
-    void Start()
-    {
-        rb = GetComponent<Rigidbody>();
-    }
+  private Vector2 moveInput;
+  private Rigidbody rb;
 
-    void FixedUpdate()
-    {
-        Vector3 targetVelocity = new Vector3(moveInput.x * speed, rb.linearVelocity.y, moveInput.y * speed);
+  void Awake()
+  {
+    rb = GetComponent<Rigidbody>();
+  }
 
-        rb.linearVelocity = targetVelocity;
-    }
+  void FixedUpdate()
+  {
+    Vector3 velocity = new Vector3(
+        moveInput.x * speed,
+        rb.linearVelocity.y,
+        moveInput.y * speed
+    );
 
-    public void OnMove(InputValue value)
-    {
-        moveInput = value.Get<Vector2>();
-    }
+    rb.linearVelocity = velocity;
+  }
+
+  public void OnMove(InputValue value)
+  {
+    moveInput = value.Get<Vector2>();
+  }
 }
