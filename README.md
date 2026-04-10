@@ -47,6 +47,10 @@ Projeye katılmadan önce aşağıdaki araçların kurulu olması gerekmektedir:
 
  ### Projeyi Unity Üzerinde Açma
  - https://youtu.be/TUdP2z7gglQ
+
+ ### Proje Üzerinde Geliştirme Yapma
+ - https://youtu.be/CQioefGOk-s
+   
 ---
 
 ## 🔒 Çalışma Kuralları
