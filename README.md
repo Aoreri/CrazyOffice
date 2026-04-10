@@ -79,3 +79,8 @@ Projeye katılmadan önce aşağıdaki araçların kurulu olması gerekmektedir:
 - `.gitignore` dosyasını değiştirmeyin
 
 ---
+
+## Discord
+ - https://discord.gg/5DuVMWxu4M
+   
+---
