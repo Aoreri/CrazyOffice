@@ -96,7 +96,7 @@ public class RoomManager : MonoBehaviour
         {
             elapsed += Time.deltaTime;
             float t = elapsed / lerpDuration;
-            t = t * t * (3f - 2f * t);
+            t = Mathf.Sqrt(1f - Mathf.Pow(t - 1f, 2f));
 
             mainCamera.transform.position = Vector3.Lerp(startPosition, targetPosition, t);
             yield return null;

@@ -8,6 +8,7 @@ public class ButtonScript : MonoBehaviour
     GameObject player;
     public ParticleSystem particleSystemObj;
     public GameObject buttonObject;
+    public GameObject mazeCanvas;
 
     void Start()
     {
@@ -21,7 +22,15 @@ public class ButtonScript : MonoBehaviour
         {
             buttonObject.GetComponent<Renderer>().material.color = Color.red;
 
-            if(Input.GetKeyUp(KeyCode.E))
+            if (Input.GetKeyUp(KeyCode.E))
+            {
+                if(!mazeCanvas.activeSelf)
+                {
+                    mazeCanvas.SetActive(true);
+                }
+            }
+
+            if (Input.GetKeyUp(KeyCode.R))
                 particleSystemObj.Play();
         } else
         {
