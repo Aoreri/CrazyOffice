@@ -13,8 +13,8 @@ public class UMLManager : MonoBehaviour
     private float rightX = 150f;
 
     // Separate vertical spacing for each column
-    private float actorY = 300f;
-    private float useCaseY = 300f;
+    private float actorY = 350f;
+    private float useCaseY = 350f;
     private float stakeholderY = 300f;
 
     public void DrawActor(string actorName)
@@ -30,12 +30,12 @@ public class UMLManager : MonoBehaviour
         if (actorName.ToLower().Contains("müþteri"))
         {
             rt.anchoredPosition = new Vector2(leftX, actorY);
-            actorY -= 150f; // Space for the next actor
+            actorY -= 200f; // Space for the next actor
         }
         else
         {
             rt.anchoredPosition = new Vector2(rightX, stakeholderY);
-            stakeholderY -= 150f;
+            stakeholderY -= 200f;
         }
     }
 
