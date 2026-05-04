@@ -4,19 +4,46 @@ using UnityEngine.InputSystem;
 public class PlayerMovement : MonoBehaviour
 {
     public float speed = 5f;
+    public float rotationSpeed = 0.5f; // higher = snappier
+
     private Vector2 moveInput;
     private Rigidbody rb;
+    private Animator animator;
+
+    private Vector3 lastDirection = Vector3.forward; // keeps facing when idle
+
+    int walkingHash;
 
     void Start()
     {
+        animator = GetComponentInChildren<Animator>();
         rb = GetComponent<Rigidbody>();
+        walkingHash = Animator.StringToHash("isWalking");
     }
 
-    void FixedUpdate()
+    void Update()
     {
-        Vector3 targetVelocity = new Vector3(moveInput.x * speed, rb.linearVelocity.y, moveInput.y * speed);
-
+        // Movement
+        Vector3 move = new Vector3(moveInput.x, 0, moveInput.y);
+        Vector3 targetVelocity = move * speed;
+  
         rb.linearVelocity = targetVelocity;
+
+        // Animation
+        animator.SetBool(walkingHash, moveInput.magnitude > 0);
+
+        // Rotation (smooth)
+        if (moveInput != Vector2.zero)
+        {
+            lastDirection = move.normalized;
+        }
+
+        Quaternion targetRotation = Quaternion.LookRotation(lastDirection);
+        transform.rotation = Quaternion.Slerp(
+            transform.rotation,
+            targetRotation,
+            rotationSpeed * Time.deltaTime
+        );
     }
 
     public void OnMove(InputValue value)
