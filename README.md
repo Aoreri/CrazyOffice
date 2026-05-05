@@ -6,7 +6,7 @@
 
 Projeye katılmadan önce aşağıdaki araçların kurulu olması gerekmektedir:
 
-- **Unity Versiyonu:** `6000.4.1f1`
+- **Unity Versiyonu:** `6000.4.5f1`
 - GitHub Desktop
 
 ---
