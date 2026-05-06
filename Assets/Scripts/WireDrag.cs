@@ -1,59 +1,163 @@
+// WireDrag.cs
 using UnityEngine;
 using UnityEngine.EventSystems;
+using System.Collections.Generic;
+using UnityEngine.UI;
 
 public class WireDrag : MonoBehaviour, IPointerDownHandler, IDragHandler, IPointerUpHandler
 {
-    public string wireColor = "Red";
+    public Color wireColor;
 
-    public RectTransform wireRect;
+    public GameObject wireRectPrefab;
+    public GameObject wireStartPartPrefab;
+    public GameObject wireEndPartPrefab;
+
+    private RectTransform wireRect;
+    private RectTransform wireStartPartInstance;
+    private RectTransform wireEndPartInstance;
 
     private bool isConnected = false;
+    private WireTarget hoveredTarget = null;
+    private WireTarget connectedTarget = null;
+
+    // Tracks which WireDrag is connected to which WireTarget
+    private static Dictionary<WireTarget, WireDrag> connections = new Dictionary<WireTarget, WireDrag>();
 
     void Start()
     {
-        // Start the wire with zero length
-        if (wireRect != null)
+        if (wireRectPrefab != null)
         {
+            GameObject w = Instantiate(wireRectPrefab, transform.parent as RectTransform);
+            w.GetComponent<Image>().color = gameObject.GetComponent<Image>().color;
+            wireRect = w.GetComponent<RectTransform>();
             wireRect.sizeDelta = new Vector2(0, wireRect.sizeDelta.y);
+        }
+
+        if (wireStartPartPrefab != null)
+        {
+            GameObject s = Instantiate(wireStartPartPrefab, transform.parent as RectTransform);
+            s.GetComponent<Image>().color = gameObject.GetComponent<Image>().color;
+            wireStartPartInstance = s.GetComponent<RectTransform>();
+            wireStartPartInstance.gameObject.SetActive(false);
+        }
+
+        if (wireEndPartPrefab != null)
+        {
+            GameObject e = Instantiate(wireEndPartPrefab, transform.parent as RectTransform);
+            e.GetComponent<Image>().color = gameObject.GetComponent<Image>().color;
+            wireEndPartInstance = e.GetComponent<RectTransform>();
+            wireEndPartInstance.gameObject.SetActive(false);
         }
     }
 
     public void OnPointerDown(PointerEventData eventData)
     {
-        if (isConnected) return;
+        if (isConnected)
+        {
+            Disconnect();
+            return;
+        }
+
         StretchWireToMouse(eventData);
     }
 
     public void OnDrag(PointerEventData eventData)
     {
         if (isConnected) return;
-        StretchWireToMouse(eventData);
+
+        WireTarget target = GetUITargetUnderPointer(eventData);
+
+        if (target != null && target.targetColor == wireColor && !IsTargetOccupied(target))
+        {
+            hoveredTarget = target;
+            StretchWireToTarget(target.transform.position);
+            PlaceEndPart(target.transform.position);
+        }
+        else
+        {
+            hoveredTarget = null;
+
+            if (wireEndPartInstance != null)
+                wireEndPartInstance.gameObject.SetActive(false);
+
+            StretchWireToMouse(eventData);
+        }
     }
 
     public void OnPointerUp(PointerEventData eventData)
     {
         if (isConnected) return;
 
-        Vector3 worldPoint = Camera.main.ScreenToWorldPoint(eventData.position);
-        Vector2 dropPos2D = new Vector2(worldPoint.x, worldPoint.y);
-
-        Collider2D hit = Physics2D.OverlapPoint(dropPos2D);
-
-        if (hit != null)
+        if (hoveredTarget != null && !IsTargetOccupied(hoveredTarget))
         {
-            Debug.Log("hit");
-            WireTarget target = hit.GetComponent<WireTarget>();
-
-            if (target != null && target.targetColor == this.wireColor)
-            {
-                // Success! Snap perfectly to the target hub's exact position
-                StretchWireToTarget(target.transform.position);
-                isConnected = true;
-                return;
-            }
+            Connect(hoveredTarget);
+            return;
         }
 
-        wireRect.sizeDelta = new Vector2(0, wireRect.sizeDelta.y);
+        WireTarget target = GetUITargetUnderPointer(eventData);
+
+        if (target != null && target.targetColor == wireColor && !IsTargetOccupied(target))
+        {
+            Connect(target);
+            return;
+        }
+
+        ResetWire();
+    }
+
+    private bool IsTargetOccupied(WireTarget target)
+    {
+        return connections.ContainsKey(target) && connections[target] != this;
+    }
+
+    private void Connect(WireTarget target)
+    {
+        StretchWireToTarget(target.transform.position);
+        PlaceEndPart(target.transform.position);
+        isConnected = true;
+        hoveredTarget = null;
+        connectedTarget = target;
+        connections[target] = this;
+    }
+
+    private void Disconnect()
+    {
+        if (connectedTarget != null)
+        {
+            connections.Remove(connectedTarget);
+            connectedTarget = null;
+        }
+
+        isConnected = false;
+        hoveredTarget = null;
+        ResetWire();
+    }
+
+    private void ResetWire()
+    {
+        if (wireRect != null)
+            wireRect.sizeDelta = new Vector2(0, wireRect.sizeDelta.y);
+
+        if (wireStartPartInstance != null)
+            wireStartPartInstance.gameObject.SetActive(false);
+
+        if (wireEndPartInstance != null)
+            wireEndPartInstance.gameObject.SetActive(false);
+    }
+
+    private WireTarget GetUITargetUnderPointer(PointerEventData eventData)
+    {
+        List<RaycastResult> results = new List<RaycastResult>();
+        EventSystem.current.RaycastAll(eventData, results);
+
+        foreach (var result in results)
+        {
+            WireTarget target = result.gameObject.GetComponent<WireTarget>();
+            if (target != null)
+                return target;
+        }
+
+        return null;
     }
 
     private void StretchWireToMouse(PointerEventData eventData)
@@ -76,12 +180,42 @@ public class WireDrag : MonoBehaviour, IPointerDownHandler, IDragHandler, IPoint
         wireRect.position = transform.position;
 
         Vector3 dir = targetWorldPosition - transform.position;
-
         float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
-        wireRect.rotation = Quaternion.Euler(0, 0, angle);
+        Quaternion rotation = Quaternion.Euler(0, 0, angle);
+        wireRect.rotation = rotation;
 
         float distance = dir.magnitude;
-        float canvasScale = wireRect.lossyScale.x; 
+        float canvasScale = wireRect.lossyScale.x;
         wireRect.sizeDelta = new Vector2(distance / canvasScale, wireRect.sizeDelta.y);
+
+        if (wireStartPartInstance != null)
+        {
+            wireStartPartInstance.gameObject.SetActive(true);
+            wireStartPartInstance.position = transform.position;
+            wireStartPartInstance.rotation = rotation;
+        }
+    }
+
+    private void PlaceEndPart(Vector3 targetWorldPosition)
+    {
+        if (wireEndPartInstance == null) return;
+
+        Vector3 dir = targetWorldPosition - transform.position;
+        float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+        Quaternion rotation = Quaternion.Euler(0, 0, angle + 180f);
+
+        wireEndPartInstance.gameObject.SetActive(true);
+        wireEndPartInstance.position = targetWorldPosition;
+        wireEndPartInstance.rotation = rotation;
+    }
+
+    void OnDestroy()
+    {
+        if (connectedTarget != null)
+            connections.Remove(connectedTarget);
+
+        if (wireRect != null) Destroy(wireRect.gameObject);
+        if (wireStartPartInstance != null) Destroy(wireStartPartInstance.gameObject);
+        if (wireEndPartInstance != null) Destroy(wireEndPartInstance.gameObject);
     }
 }
