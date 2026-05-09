@@ -25,6 +25,9 @@ public class MazePuzzle : MonoBehaviour
     private List<Vector2Int> visitedPath = new List<Vector2Int>();
     private Camera canvasCamera;
 
+    private Vector2Int? lastDetectedGrid = null;
+
+
     void Start()
     {
         mazeGenerator = new MazeGenerator();
@@ -93,12 +96,10 @@ public class MazePuzzle : MonoBehaviour
 
     void Update()
     {
-        if(GridObjects == null)
+        if (GridObjects == null)
         {
             GenerateMaze();
         }
-
-        //if (!Input.GetMouseButton(0)) return;
 
         Vector2 localPoint;
         RectTransform parentRect = transform as RectTransform;
@@ -111,16 +112,55 @@ public class MazePuzzle : MonoBehaviour
 
         int gridX = Mathf.FloorToInt((localPoint.x + tileWidth / 2f) / tileWidth + centerX);
         int gridY = Mathf.FloorToInt((localPoint.y + tileHeight / 2f) / tileHeight + centerY);
-        Vector2Int grid = new Vector2Int(gridX, gridY);
 
         if (gridX < 0 || gridX >= mazeGenerator.Cols || gridY < 0 || gridY >= mazeGenerator.Rows)
+        {
+            lastDetectedGrid = null;
+            return;
+        }
+
+        Vector2Int currentGrid = new Vector2Int(gridX, gridY);
+
+        if (lastDetectedGrid.HasValue && lastDetectedGrid.Value != currentGrid)
+        {
+            foreach (Vector2Int cell in GetCellsBetween(lastDetectedGrid.Value, currentGrid))
+                ProcessCell(cell);
+        }
+        else
+        {
+            ProcessCell(currentGrid);
+        }
+
+        lastDetectedGrid = currentGrid;
+    }
+
+    private IEnumerable<Vector2Int> GetCellsBetween(Vector2Int from, Vector2Int to)
+    {
+     
+        int x0 = from.x, y0 = from.y;
+        int x1 = to.x, y1 = to.y;
+
+        int dx = Mathf.Abs(x1 - x0), sx = x0 < x1 ? 1 : -1;
+        int dy = Mathf.Abs(y1 - y0), sy = y0 < y1 ? 1 : -1;
+        int err = dx - dy;
+
+        while (true)
+        {
+            yield return new Vector2Int(x0, y0);
+            if (x0 == x1 && y0 == y1) break;
+            int e2 = 2 * err;
+            if (e2 > -dy) { err -= dy; x0 += sx; }
+            if (e2 < dx) { err += dx; y0 += sy; }
+        }
+    }
+
+    private void ProcessCell(Vector2Int grid)
+    {
+        if (grid.x < 0 || grid.x >= mazeGenerator.Cols || grid.y < 0 || grid.y >= mazeGenerator.Rows)
             return;
 
-        if (mazeGenerator.Grid[gridY, gridX] != 0)
-            return;
-
-        if (visitedPath.Count > 0 && visitedPath[visitedPath.Count - 1] == grid)
-            return;
+        if (mazeGenerator.Grid[grid.y, grid.x] != 0) return;
+        if (visitedPath.Count > 0 && visitedPath[visitedPath.Count - 1] == grid) return;
 
         if (visitedPath.Count == 0)
         {
@@ -131,7 +171,6 @@ public class MazePuzzle : MonoBehaviour
         }
 
         Vector2Int lastCell = visitedPath[visitedPath.Count - 1];
-
         if (!AreTouching(grid, lastCell)) return;
 
         int existingIndex = visitedPath.IndexOf(grid);

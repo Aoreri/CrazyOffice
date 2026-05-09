@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 4545179756234028570}
   - component: {fileID: 3931073772463897294}
   - component: {fileID: 1397946488538883196}
-  - component: {fileID: 7016593280828531270}
   - component: {fileID: 8280987145309916490}
   - component: {fileID: 4545398255564166487}
   m_Layer: 0
@@ -117,19 +116,6 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &7016593280828531270
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7332230626958624687}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec6ced382b64d9545a2464220c1d077c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
-  speed: 10
 --- !u!114 &8280987145309916490
 MonoBehaviour:
   m_ObjectHideFlags: 0
