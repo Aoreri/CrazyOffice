@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Collections.Generic;
 
-public class MazePuzzle : MonoBehaviour
+public class MazePuzzle : Puzzle
 {
     [SerializeField] private GameObject puzzleObject;
 
@@ -26,7 +26,6 @@ public class MazePuzzle : MonoBehaviour
     private Camera canvasCamera;
 
     private Vector2Int? lastDetectedGrid = null;
-
 
     void Start()
     {
@@ -214,7 +213,7 @@ public class MazePuzzle : MonoBehaviour
         TileImages = null;
         visitedPath = new List<Vector2Int>();
 
-        transform.gameObject.SetActive(false);
+        EndPuzzle();
     }
 
     private void SetTileColor(Vector2Int cell, Color color)
@@ -228,5 +227,16 @@ public class MazePuzzle : MonoBehaviour
         int dx = Mathf.Abs(a.x - b.x);
         int dy = Mathf.Abs(a.y - b.y);
         return (dx + dy) == 1;
+    }
+
+ 
+    protected override void OnEndPuzzle()
+    {
+       
+    }
+
+    protected override void OnStartPuzzle()
+    {
+       
     }
 }

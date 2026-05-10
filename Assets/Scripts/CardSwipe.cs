@@ -3,7 +3,7 @@ using TMPro;
 using UnityEngine;
 
 
-public class CardSwipe : MonoBehaviour
+public class CardSwipe : Puzzle
 {
     
     public CardSwipeHandler cardSwipe;
@@ -25,10 +25,9 @@ public class CardSwipe : MonoBehaviour
     private Coroutine replaceCoroutine;
     private Coroutine lightCoroutine;
 
-    void Start()
+  void Start()
     {
         cardSwipe.OnSwipeRight += HandleRightSwipe;
-  
     }
 
     void HandleRightSwipe(float swipeTime)
@@ -110,8 +109,7 @@ public class CardSwipe : MonoBehaviour
 
         if (passed)
         {
-            greenLightOn.SetActive(false);
-            greenLightOff.SetActive(true);
+            EndPuzzle();
         }
         else
         {
@@ -120,4 +118,14 @@ public class CardSwipe : MonoBehaviour
         }
     }
 
+    protected override void OnStartPuzzle()
+    {
+        
+
+    }
+
+    protected override void OnEndPuzzle()
+    {
+        
+    }
 }

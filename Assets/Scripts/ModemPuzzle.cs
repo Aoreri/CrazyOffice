@@ -2,7 +2,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ModemPuzzle : MonoBehaviour
+public class ModemPuzzle : Puzzle
 {
     public Image lights;
 
@@ -16,7 +16,7 @@ public class ModemPuzzle : MonoBehaviour
 
     public float acceptableRange = 0.1f;
 
-    private float designatedValue1, designatedValue2;
+    public float designatedValue1, designatedValue2;
 
     void Start()
     {
@@ -32,19 +32,19 @@ public class ModemPuzzle : MonoBehaviour
 
     void Update()
     {
-        //float diff1 = Mathf.Abs(anten1.antennaDelta - designatedValue1);
-        //float diff2 = Mathf.Abs(anten2.antennaDelta - designatedValue2);
-
-
-        //float signal1 = Mathf.InverseLerp(acceptableRange, 0, diff1);
-        //float signal2 = Mathf.InverseLerp(acceptableRange, 0, diff2);
-
-        //float solveDelta = (signal1 + signal2) / 2f;
-
         float diff1 = Mathf.Abs(anten1.antennaDelta - designatedValue1);
         float diff2 = Mathf.Abs(anten2.antennaDelta - designatedValue2);
 
-        float solveDelta = Mathf.Clamp01(1f - (diff1 + diff2) / 2f);
+
+        float signal1 = Mathf.InverseLerp(acceptableRange, 0, diff1);
+        float signal2 = Mathf.InverseLerp(acceptableRange, 0, diff2);
+
+        float solveDelta = (signal1 + signal2) / 2f;
+
+        //float diff1 = Mathf.Abs(anten1.antennaDelta - designatedValue1);
+        //float diff2 = Mathf.Abs(anten2.antennaDelta - designatedValue2);
+
+        //float solveDelta = Mathf.Clamp01(1f - (diff1 + diff2) / 2f);
 
         lights.fillAmount = solveDelta;
 
@@ -80,6 +80,19 @@ public class ModemPuzzle : MonoBehaviour
         targetImage.color = finalColor;
 
         yield return new WaitForSeconds(2);
-        gameObject.SetActive(false);
+        EndPuzzle();
+       
+    }
+
+  
+
+    protected override void OnEndPuzzle()
+    {
+        
+    }
+
+    protected override void OnStartPuzzle()
+    {
+  
     }
 }

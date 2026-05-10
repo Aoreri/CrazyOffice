@@ -24,6 +24,8 @@ public class Jackpot : MonoBehaviour
 
     void Start()
     {
+       
+
         // Spawn visible items
         for (int i = 0; i < slots.Length; i++)
         {
@@ -131,4 +133,6 @@ public class Jackpot : MonoBehaviour
 
         spinButton.interactable = true;
     }
+
+
 }
