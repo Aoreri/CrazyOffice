@@ -510,7 +510,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 700d644b09ddf3143a5bdb30c3fe4b9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Jackpot
-  puzzleName: 
   spinButton: {fileID: 9067066608167596167}
   slots:
   - {fileID: 9108607253936303406}
@@ -1036,7 +1035,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 700d644b09ddf3143a5bdb30c3fe4b9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Jackpot
-  puzzleName: 
   spinButton: {fileID: 6441748185594076404}
   slots:
   - {fileID: 3114117698089449401}
@@ -1477,7 +1475,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 700d644b09ddf3143a5bdb30c3fe4b9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Jackpot
-  puzzleName: 
   spinButton: {fileID: 8700956286241695155}
   slots:
   - {fileID: 5620344246493901556}
@@ -1571,8 +1568,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
-  m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0.8666667}
+  m_Material: {fileID: 2100000, guid: f6d46f1e916b3486c90a448a441fac6a, type: 2}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
