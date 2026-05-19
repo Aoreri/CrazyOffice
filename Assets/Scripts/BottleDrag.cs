@@ -26,6 +26,10 @@ public class BottleDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
     public float rotateAngle = -65f;
     public float fillSpeed = 0.25f;
 
+    [Header("Penalty Settings")]
+    [Tooltip("Seconds the user can hold a full tank before triggering a penalty and auto-pulling")]
+    public float overfillPenaltyTime = 1.5f;
+
     [Header("Animation Settings")]
     public float rotationDuration = 0.15f;
 
@@ -36,6 +40,7 @@ public class BottleDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
     private TankFill[] allTanks;
 
     private TankFill hoveredWrongTank;
+    private float overfillTimer = 0f;
 
     void Awake()
     {
@@ -54,7 +59,34 @@ public class BottleDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
     {
         if (pouring && targetTank != null)
         {
-            targetTank.AddFill(fillSpeed * Time.deltaTime);
+            // We subtract a tiny amount (0.001f) to prevent floating-point inaccuracies from failing the check
+            if (targetTank.fillAmount >= targetTank.maxFill - 0.001f)
+            {
+                // Tank is full, start the penalty timer
+                overfillTimer += Time.deltaTime;
+
+                if (overfillTimer >= overfillPenaltyTime)
+                {
+                    Debug.Log($"PENALTY: Bottle kept pouring after '{targetTank.gameObject.name}' was full!");
+
+                    // TODO: apply actual penalty here (e.g., reduce score, play error sound)
+
+                    // Auto-pull (stop pouring and tilt the bottle back)
+                    StopPouring();
+                    overfillTimer = 0f;
+                }
+            }
+            else
+            {
+                // Tank is not full, continue filling and ensure timer stays at 0
+                targetTank.AddFill(fillSpeed * Time.deltaTime);
+                overfillTimer = 0f;
+            }
+        }
+        else
+        {
+            // Reset the timer if we are not actively pouring
+            overfillTimer = 0f;
         }
     }
 
@@ -69,7 +101,7 @@ public class BottleDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
     {
         bottle.anchoredPosition += eventData.delta / canvas.scaleFactor;
         TrySnapToCorrectTank();
-        TrackWrongTankHover(); 
+        TrackWrongTankHover();
     }
 
     public void OnEndDrag(PointerEventData eventData)
@@ -116,7 +148,7 @@ public class BottleDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
 
     void TrackWrongTankHover()
     {
-        if (pouring) return; 
+        if (pouring) return;
 
         hoveredWrongTank = null;
 

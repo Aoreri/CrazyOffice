@@ -1849,6 +1849,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6beb58436ea32a145815ec5467e093c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  puzzleName: Printer
+  prefab: {fileID: 6658539372031160096}
 --- !u!1 &6807921182150914436
 GameObject:
   m_ObjectHideFlags: 0
