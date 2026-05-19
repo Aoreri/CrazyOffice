@@ -1,11 +1,10 @@
 using UnityEngine;
-using UnityEngine.EventSystems; 
+using UnityEngine.EventSystems;
 
 public class FolderDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
     [Header("Drop Settings")]
     public Transform dropZoneCenter;
-
     public float dropRadius = 50f;
 
     private Vector3 _startPosition;
@@ -14,15 +13,12 @@ public class FolderDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
     public void OnBeginDrag(PointerEventData eventData)
     {
         if (_isSolved) return;
-
-    
         _startPosition = transform.position;
     }
 
     public void OnDrag(PointerEventData eventData)
     {
         if (_isSolved) return;
-
         transform.position = Input.mousePosition;
     }
 
@@ -30,19 +26,25 @@ public class FolderDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
     {
         if (_isSolved) return;
 
-      
         float distance = Vector2.Distance(transform.position, dropZoneCenter.position);
 
         if (distance <= dropRadius)
         {
+            // Snap to center and mark as solved so it can't be dragged again
             transform.position = dropZoneCenter.position;
             _isSolved = true;
-            Debug.Log("Puzzle Solved! Folder dropped in the correct zone.");
-            Destroy(transform.parent.parent.parent.parent.gameObject); //TEMPORARY I WILL REMOVE IT
+            Debug.Log("Folder dropped in the correct zone. Starting upload...");
+            transform.GetComponent<RectTransform>().localScale = Vector3.zero;
+            // Trigger the upload sequence instead of instantly ending the puzzle
+            PresentationUpload uploadScript = gameObject.GetComponentInParent<PresentationUpload>();
+            if (uploadScript != null)
+            {
+                uploadScript.StartUploadSequence();
+            }
         }
         else
         {
-           
+            // Snap back if they missed
             transform.position = _startPosition;
             Debug.Log("Missed the zone. Snapping back.");
         }
