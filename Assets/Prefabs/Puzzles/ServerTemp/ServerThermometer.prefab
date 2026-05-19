@@ -290,6 +290,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 332eb01adbdd476429673ce81b0f0b32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  puzzleName: Temp
+  prefab: {fileID: 3811917267858188226}
   currentTemp: 1
   increaseSpeed: 0.5
   decreaseSpeed: 0.22

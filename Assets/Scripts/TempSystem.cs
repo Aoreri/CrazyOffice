@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class TempSystem : MonoBehaviour
+public class TempSystem : Puzzle
 {
     [Range(0f, 1f)]
     public float currentTemp = 1f;
@@ -101,7 +101,7 @@ public class TempSystem : MonoBehaviour
 
         if(currentTemp == 0)
         {
-            Destroy(transform.gameObject);
+            EndPuzzle();
         }
 
     }
@@ -180,5 +180,15 @@ public class TempSystem : MonoBehaviour
 
         if (fadingOutImage != null)
             fadingOutImage.fillAmount = fill;
+    }
+
+    protected override void OnStartPuzzle()
+    {
+     
+    }
+
+    protected override void OnEndPuzzle()
+    {
+       
     }
 }
