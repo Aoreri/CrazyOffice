@@ -47,7 +47,7 @@ public class CableMatch : Puzzle
         {
             isFinished = true;
             Debug.Log("All cables matched successfully!");
-            Destroy(gameObject);
+            EndPuzzle();
         }
     }
 
