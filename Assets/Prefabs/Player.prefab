@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 1397946488538883196}
   - component: {fileID: 8280987145309916490}
   - component: {fileID: 4545398255564166487}
-  - component: {fileID: 4063295825274929284}
   - component: {fileID: 2027533536060640550}
   m_Layer: 0
   m_Name: Player
@@ -33,8 +32,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.014698248, y: 0.58, z: 0.07542348}
-  m_LocalScale: {x: 0.85858, y: 0.85858, z: 0.85858}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1.04, y: 1.04, z: 1.04}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 3217643028654748863}
   m_Father: {fileID: 0}
@@ -173,23 +172,9 @@ Rigidbody:
   m_ImplicitTensor: 1
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 116
   m_CollisionDetection: 0
---- !u!114 &4063295825274929284
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7332230626958624687}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 22e6cec5ce083c64c9891b2d7acbf35e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::RoomManager
-  lerpDuration: 0.57
-  roomsObject: {fileID: 0}
 --- !u!114 &2027533536060640550
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -203,7 +188,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   speed: 4
-  rotationSpeed: 25
+  rotationSpeed: 20
 --- !u!1001 &3111393829946069844
 PrefabInstance:
   m_ObjectHideFlags: 0

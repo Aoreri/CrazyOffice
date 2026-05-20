@@ -4,13 +4,34 @@ public class CameraFollow : MonoBehaviour
 {
     public Transform target;
     public Vector3 offset = new Vector3(0, 10, -6);
-    public float smoothTime = 0.15f; 
+    public float smoothTime = 0.15f;
+
+    [Tooltip("Check this if your player moves using a Rigidbody or FixedUpdate")]
+    public bool useFixedUpdate = false;
 
     private Vector3 velocity = Vector3.zero;
     public Quaternion fixedRotation = Quaternion.Euler(40f, 0f, 0f);
 
+    // Runs every frame (good for standard movement)
+    void LateUpdate()
+    {
+        if (!useFixedUpdate)
+        {
+            FollowTarget();
+        }
+    }
 
-    void LateUpdate() 
+    // Runs in sync with the physics engine
+    void FixedUpdate()
+    {
+        if (useFixedUpdate)
+        {
+            FollowTarget();
+        }
+    }
+
+    // The core movement logic moved into its own function
+    private void FollowTarget()
     {
         if (target == null) return;
 
