@@ -1,92 +1,111 @@
 using UnityEngine;
 using TMPro;
-using System.Collections.Generic; 
+using System.Collections.Generic;
 
 public class UMLManager : MonoBehaviour
 {
+    [Header("UML Board Settings")]
     public RectTransform umlBoard;
+
+    [Header("Prefabs")]
     public GameObject actorPrefab;
     public GameObject useCasePrefab;
     public GameObject linePrefab;
 
-    
-    private GameObject lastCreatedActor;
-    private GameObject lastCreatedUseCase;
+    [Header("Layout Settings")]
+    public float horizontalOffset = 270f;
+    public float verticalSpacing = 160f;
+    public float topStartOffset = 150f;
 
-    private float leftX = -250f;      
-    private float centerX = 0f;
-    private float rightX = 250f;       
+    private Dictionary<string, GameObject> createdObjects = new Dictionary<string, GameObject>();
 
-    // (Y-Spacing)
-    private float actorY = 180f;       
-    private float useCaseY = 200f;     
-    private float stakeholderY = 180f; 
+    private int leftActorCount = 0;
+    private int rightActorCount = 0;
+    private int useCaseCount = 0;
 
-
+    // --- TAM ÝSTEDÝÐÝN ZÝNCÝR MANTIÐI ---
+    private RectTransform pendingActor;       // Sadece kendisinden sonraki ÝLK Use Case'e baðlanmak için bekleyen aktör
+    private RectTransform lastUseCaseInChain; // Use Case'leri yukarýdan aþaðýya birbirine baðlayan dikey zincir
 
     public void DrawActor(string actorName)
     {
+        // Ayný obje tekrar seçilirse (yanlýþ sýra) cezalandýr ve sýfýrla
+        if (createdObjects.ContainsKey(actorName))
+        {
+            ResetFlow();
+            return;
+        }
+
         GameObject newActor = Instantiate(actorPrefab, umlBoard);
+        newActor.name = "Actor_" + actorName;
+        createdObjects.Add(actorName, newActor);
         newActor.GetComponentInChildren<TextMeshProUGUI>().text = actorName;
 
-        RectTransform rt = newActor.GetComponent<RectTransform>();
+        bool isLeft = actorName.ToLower().Contains("müþteri") || actorName.ToLower().Contains("customer");
+        float posX = isLeft ? -horizontalOffset : horizontalOffset;
+        float startY = (umlBoard.rect.height / 2f) - topStartOffset;
+        float posY = startY - ((isLeft ? leftActorCount++ : rightActorCount++) * verticalSpacing);
 
-        if (actorName.ToLower().Contains("customer"))
-        {
-            rt.anchoredPosition = new Vector2(leftX, actorY);
-            actorY -= 320f;
+        RectTransform actorRect = newActor.GetComponent<RectTransform>();
+        actorRect.anchoredPosition = new Vector2(posX, posY);
 
-            
-            lastCreatedActor = newActor;
-        }
-        else
-        {
-            rt.anchoredPosition = new Vector2(rightX, stakeholderY);
-            stakeholderY -= 320f;
-
-            //  if u want connect stakeholders caner
-            // but usually connected customer and usecases
-            lastCreatedActor = newActor;
-        }
+        // Aktör sahneye çýktý, kendine ait bir Use Case gelmesini bekliyor
+        pendingActor = actorRect;
     }
 
     public void DrawUseCase(string useCaseName)
     {
-        //create use case objection
+        // Ayný obje tekrar seçilirse sýfýrla
+        if (createdObjects.ContainsKey(useCaseName))
+        {
+            ResetFlow();
+            return;
+        }
+
         GameObject newUseCase = Instantiate(useCasePrefab, umlBoard);
+        newUseCase.name = "UseCase_" + useCaseName;
+        createdObjects.Add(useCaseName, newUseCase);
         newUseCase.GetComponentInChildren<TextMeshProUGUI>().text = useCaseName;
 
-        // scale position
-        RectTransform useCaseRT = newUseCase.GetComponent<RectTransform>();
-        useCaseRT.anchoredPosition = new Vector2(centerX, useCaseY);
+        float startY = (umlBoard.rect.height / 2f) - topStartOffset;
+        float posY = startY - (useCaseCount * verticalSpacing);
 
-        
-        useCaseY -= 200f;
+        RectTransform useCaseRect = newUseCase.GetComponent<RectTransform>();
+        useCaseRect.anchoredPosition = new Vector2(0f, posY);
 
-        
-
-        // if there are an actor you connect first use case
-        if (lastCreatedActor != null)
+        // 1. KURAL (KIRMIZI ÇÝZGÝLER): Use Case'ler HER ZAMAN bir öncekine baðlanýr
+        if (lastUseCaseInChain != null)
         {
-            CreateLine(lastCreatedActor.GetComponent<RectTransform>(), useCaseRT);
+            CreateLine(lastUseCaseInChain, useCaseRect);
         }
 
-        // if there are written use case then you connect old use case to new use case
-        if (lastCreatedUseCase != null)
+        // 2. KURAL (AKTÖR ÇÝZGÝSÝ): Bekleyen bir Aktör varsa, bu Use Case'e baðlanýr ve görevi biter
+        if (pendingActor != null)
         {
-            CreateLine(lastCreatedUseCase.GetComponent<RectTransform>(), useCaseRT);
+            CreateLine(pendingActor, useCaseRect);
+            pendingActor = null; // Aktör baðlandý! Artýk bir sonraki Use Case'e sataþmayacak.
         }
 
-        // save use case for new connection
-        lastCreatedUseCase = newUseCase;
+        // Zinciri aþaðýya doðru uzatmak için bu Use Case'i hafýzaya alýyoruz
+        lastUseCaseInChain = useCaseRect;
+        useCaseCount++;
     }
 
-    // Helper function to prevent code repetition.
-    private void CreateLine(RectTransform start, RectTransform end)
+    public void CreateLine(RectTransform start, RectTransform end)
     {
         if (linePrefab == null) return;
         GameObject newLine = Instantiate(linePrefab, umlBoard);
-        //newLine.transform.SetAsFirstSibling();
-        newLine.GetComponent<UMLConnectionLine>().Setup(start, end);
+        newLine.name = "Line_" + start.name + "_to_" + end.name;
+        newLine.transform.SetAsFirstSibling();
+
+        var connection = newLine.GetComponent<UMLConnectionLine>();
+        if (connection != null) connection.Setup(start, end);
+    }
+
+    private void ResetFlow()
+    {
+        Debug.Log("Hatalý Seçim: Akýþ Baþa Döndü!");
+        pendingActor = null;
+        lastUseCaseInChain = null;
     }
 }

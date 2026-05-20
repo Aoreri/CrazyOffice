@@ -24,17 +24,10 @@ public class ButtonScript : MonoBehaviour
 
             if (Input.GetKeyUp(KeyCode.E))
             {
-                PuzzleManager.StartPuzzle("Maze");
-            }
-
-            if (Input.GetKeyUp(KeyCode.T))
-            {
-                PuzzleManager.StartPuzzle("Modem");
-            }
-
-            if (Input.GetKeyUp(KeyCode.Y))
-            {
-                PuzzleManager.StartPuzzle("Card");
+                if(!mazeCanvas.activeSelf)
+                {
+                    mazeCanvas.SetActive(true);
+                }
             }
 
             if (Input.GetKeyUp(KeyCode.R))

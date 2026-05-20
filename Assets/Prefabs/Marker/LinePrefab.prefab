@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 5949823514892561244}
   - component: {fileID: 5279998833950203211}
   - component: {fileID: 4819726862541400576}
-  - component: {fileID: 69781579089441784}
+  - component: {fileID: -9162745460122009477}
   m_Layer: 5
-  m_Name: UMLConnectionLine
+  m_Name: LinePrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -66,7 +66,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 72067babb12365b40910213ebd33a813, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 772bfbb7e51e47e42a9934fdfa132c49, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -76,7 +76,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &69781579089441784
+--- !u!114 &-9162745460122009477
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -85,6 +85,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 8009647358335063497}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8322c6068fd8ee649827ad486dbf2e5c, type: 3}
+  m_Script: {fileID: 11500000, guid: 59280eb45df6b48cd8854b268e4d8b27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UMLConnectionLine

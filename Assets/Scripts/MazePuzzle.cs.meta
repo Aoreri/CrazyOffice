@@ -1,2 +1,17 @@
 fileFormatVersion: 2
 guid: 4019a8bad1805404488ef3be9605de3e
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - puzzleObject: {instanceID: 0}
+  - entrySocketTexture: {fileID: 2800000, guid: ceb37be75ce2a23448762d5710b1f00a, type: 3}
+  - exitSocketTexture: {fileID: 2800000, guid: 850d1e113958bfd4b82c679198e157c0, type: 3}
+  - cableTexture: {fileID: 2800000, guid: cdf483cd5deaf3c46b56a690632e493d, type: 3}
+  - emptyChannelTexture: {instanceID: 0}
+  - wallTexture: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
