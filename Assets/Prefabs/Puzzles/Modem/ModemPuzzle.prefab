@@ -101,7 +101,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 522446503642966391}
-  m_LocalRotation: {x: 0, y: 0, z: 0.14420412, w: 0.98954797}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.056165427, y: 0.056165427, z: 0.056165427}
   m_ConstrainProportionsScale: 1
@@ -262,6 +262,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ModemPuzzle
   puzzleName: Modem
   prefab: {fileID: 3988279829048541946}
+  useOpeningAnimation: 1
+  backgroundFadeDuration: 0.5
+  slideInDuration: 0.5
+  useClosingAnimation: 1
+  backgroundFadeOutDuration: 0.4
+  slideOutDuration: 0.4
+  disableLogicDuringAnimation: 1
   lights: {fileID: 2844225906953934276}
   anten1: {fileID: 1225985701911132091}
   anten2: {fileID: 7940676201953477052}
@@ -296,7 +303,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4346125499984038721}
-  m_LocalRotation: {x: 0, y: 0, z: 0.03561305, w: 0.9993657}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.056165427, y: 0.056165427, z: 0.056165427}
   m_ConstrainProportionsScale: 1
@@ -507,7 +514,7 @@ MonoBehaviour:
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 0
-  m_FillAmount: 1
+  m_FillAmount: 0
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0

@@ -677,7 +677,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2216971428832216497
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1131,6 +1131,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   puzzleName: USB
   prefab: {fileID: 8521279405042930734}
+  useOpeningAnimation: 1
+  backgroundFadeDuration: 0.5
+  slideInDuration: 0.5
+  disableLogicDuringAnimation: 1
   usbObject: {fileID: 4541922781577909704}
   usbEnd: {fileID: 797191041377400285}
   moveTime: 0.35

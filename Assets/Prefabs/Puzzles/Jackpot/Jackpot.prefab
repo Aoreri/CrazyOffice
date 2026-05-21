@@ -448,16 +448,16 @@ RectTransform:
   m_GameObject: {fileID: 4208570352830815856}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.1225, y: 1, z: 1}
+  m_LocalScale: {x: 1.4497725, y: 1.6086946, z: 1.1503}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2657754658583053610}
   - {fileID: 7423716455006749979}
   m_Father: {fileID: 6042048247537207396}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -350, y: 57}
   m_SizeDelta: {x: 200, y: 310}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3958186991492603307
@@ -644,14 +644,14 @@ RectTransform:
   m_GameObject: {fileID: 5073245138441420838}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 3.85478}
-  m_LocalScale: {x: 1.8753211, y: 1.8753211, z: 1.8753211}
+  m_LocalScale: {x: 2.1239886, y: 2.1239886, z: 2.1239886}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8230702860380330405}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 124.49, y: 0}
+  m_AnchoredPosition: {x: 182.3, y: 83.05}
   m_SizeDelta: {x: 82, y: 73}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!222 &3013183131366967675
@@ -825,7 +825,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6042048247537207396}
-  - component: {fileID: 2613166188505995626}
   m_Layer: 5
   m_Name: Jackpot
   m_TagString: Untagged
@@ -842,7 +841,7 @@ RectTransform:
   m_GameObject: {fileID: 5522469875753645123}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.3726648, y: 1.7158312, z: 1.7158312}
+  m_LocalScale: {x: 1.0423332, y: 1.0423332, z: 1.0423332}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2803425444585448553}
@@ -850,37 +849,11 @@ RectTransform:
   - {fileID: 7599069060249603434}
   m_Father: {fileID: 8230702860380330405}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 7.1115}
+  m_SizeDelta: {x: 1142, y: 568}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &2613166188505995626
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5522469875753645123}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30649d3a9faa99c48a7b1166b86bf2a0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.HorizontalLayoutGroup
-  m_Padding:
-    m_Left: 0
-    m_Right: 0
-    m_Top: 0
-    m_Bottom: 59
-  m_ChildAlignment: 4
-  m_Spacing: 66.8
-  m_ChildForceExpandWidth: 0
-  m_ChildForceExpandHeight: 0
-  m_ChildControlWidth: 0
-  m_ChildControlHeight: 0
-  m_ChildScaleWidth: 0
-  m_ChildScaleHeight: 0
-  m_ReverseArrangement: 0
 --- !u!1 &5961643588925922623
 GameObject:
   m_ObjectHideFlags: 0
@@ -1063,16 +1036,16 @@ RectTransform:
   m_GameObject: {fileID: 6392938771131456123}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.1225, y: 1, z: 1}
+  m_LocalScale: {x: 1.4497725, y: 1.6086946, z: 1.1503}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6602791942382446390}
   - {fileID: 7559073342992598717}
   m_Father: {fileID: 6042048247537207396}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 57}
   m_SizeDelta: {x: 200, y: 310}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6149835991958772882
@@ -1504,16 +1477,16 @@ RectTransform:
   m_GameObject: {fileID: 7890049109449127448}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.1225, y: 1, z: 1}
+  m_LocalScale: {x: 1.4497725, y: 1.6086946, z: 1.1503}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5619246731220367223}
   - {fileID: 5877467210983835613}
   m_Father: {fileID: 6042048247537207396}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 350, y: 57}
   m_SizeDelta: {x: 200, y: 310}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7102994346998540037
@@ -1694,12 +1667,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   puzzleName: Jackpot
   prefab: {fileID: 8493218642568344402}
+  useOpeningAnimation: 1
+  backgroundFadeDuration: 0.5
+  slideInDuration: 0.5
+  useClosingAnimation: 1
+  backgroundFadeOutDuration: 0.4
+  slideOutDuration: 0.4
+  disableLogicDuringAnimation: 1
   columns:
   - {fileID: 8491183539780351268}
   - {fileID: 6341370954262621462}
   - {fileID: 6443743661815172639}
   winRowIndex: 1
-  targetSymbolPrefab: {fileID: 0}
+  targetSymbolPrefab: {fileID: 127996954623156441, guid: 1c69d9f29176e8d40985fc4d49739892, type: 3}
   referance: {fileID: 2027294495736565904}
 --- !u!1 &8689227000616636413
 GameObject:

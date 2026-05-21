@@ -1,20 +1,24 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class PrinterScript : Puzzle
 {
+    [Header("Animation Settings")]
+    [SerializeField] private float fillAnimationDuration = 0.25f; // How long the initial fill takes
 
     private TankFill[] allTanks;
     private bool isFinished = false;
+    private bool isSpawning = false; // Blocks completion checks during the start animation
 
     protected override void OnEndPuzzle()
     {
-   
+
     }
 
     protected override void OnStartPuzzle()
     {
-       
+
     }
 
     void Start()
@@ -24,10 +28,7 @@ public class PrinterScript : Puzzle
         if (allTanks == null || allTanks.Length == 0) return;
 
         // 2. Decide randomly if 1 or 2 tanks will be empty
-        // Random.Range(1, 3) returns either 1 or 2 (the max value is exclusive for integers)
         int numEmpty = Random.Range(1, 3);
-
-        // Safety check: ensure we don't try to empty more tanks than actually exist
         numEmpty = Mathf.Min(numEmpty, allTanks.Length);
 
         // 3. Create a list of available tank indices to pick from
@@ -43,35 +44,76 @@ public class PrinterScript : Puzzle
         {
             int randomIndex = Random.Range(0, availableIndices.Count);
             emptyIndices.Add(availableIndices[randomIndex]);
-
-            // Remove the chosen index so we don't pick the same tank twice
             availableIndices.RemoveAt(randomIndex);
         }
 
-        // 5. Apply the fill amounts to the tanks
+        // 5. Start the animated fill process
+        StartCoroutine(AnimateInitialFill(emptyIndices));
+    }
+
+    private IEnumerator AnimateInitialFill(List<int> emptyIndices)
+    {
+        isSpawning = true;
+        float elapsedTime = 0f;
+
+        // Array to hold the target fill goals for each tank
+        float[] targetFills = new float[allTanks.Length];
+
+        // First, set EVERY tank to minimum (empty) visually
         for (int i = 0; i < allTanks.Length; i++)
         {
             TankFill tank = allTanks[i];
 
-            if (emptyIndices.Contains(i))
-            {
-                // Make the chosen tanks empty (using minFill as your "zero" limit)
-                tank.fillAmount = tank.minFill;
-            }
-            else
-            {
-                // Make all the other tanks completely full
-                tank.fillAmount = tank.maxFill;
-            }
+            // Determine if this tank is supposed to be full or empty at the end
+            targetFills[i] = emptyIndices.Contains(i) ? tank.minFill : tank.maxFill;
 
-            // Force visual update without changing your original TankFill script
+            // Force visual to empty to start the animation
+            tank.fillAmount = tank.minFill;
             tank.AddFill(0f);
         }
+
+        // Animate the fill over time
+        while (elapsedTime < fillAnimationDuration)
+        {
+            elapsedTime += Time.deltaTime;
+
+            // Calculate interpolation factor (0 to 1)
+            float t = elapsedTime / fillAnimationDuration;
+
+            // Add SmoothStep so the fill starts and ends nicely instead of linearly snapping
+            t = Mathf.SmoothStep(0f, 1f, t);
+
+            for (int i = 0; i < allTanks.Length; i++)
+            {
+                // We only need to animate tanks that are actually supposed to fill up
+                if (!emptyIndices.Contains(i))
+                {
+                    TankFill tank = allTanks[i];
+                    tank.fillAmount = Mathf.Lerp(tank.minFill, targetFills[i], t);
+                    tank.AddFill(0f); // Force visual update
+                }
+            }
+
+            // Wait until next frame
+            yield return null;
+        }
+
+        // Ensure all tanks are exactly at their final target values just in case
+        for (int i = 0; i < allTanks.Length; i++)
+        {
+            TankFill tank = allTanks[i];
+            tank.fillAmount = targetFills[i];
+            tank.AddFill(0f);
+        }
+
+        // Allow the puzzle to be played and checked
+        isSpawning = false;
     }
 
     void Update()
     {
-        if (isFinished || allTanks == null || allTanks.Length == 0) return;
+        // Do not check for win condition if we are still playing the opening animation
+        if (isFinished || isSpawning || allTanks == null || allTanks.Length == 0) return;
 
         bool allTanksFull = true;
 
@@ -89,7 +131,6 @@ public class PrinterScript : Puzzle
         if (allTanksFull)
         {
             isFinished = true;
-
             EndPuzzle();
         }
     }

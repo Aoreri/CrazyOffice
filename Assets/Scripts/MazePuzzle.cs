@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using System.Collections;
 using System.Collections.Generic;
 
 [System.Serializable]
@@ -10,23 +11,28 @@ public class PathTextureSet
     public Sprite vertical;
 
     [Header("90-Degree Corners")]
-    public Sprite cornerTopRight;    // Connects Up and Right
-    public Sprite cornerTopLeft;     // Connects Up and Left
-    public Sprite cornerBottomRight; // Connects Down and Right
-    public Sprite cornerBottomLeft;  // Connects Down and Left
+    public Sprite cornerTopRight;
+    public Sprite cornerTopLeft;
+    public Sprite cornerBottomRight;
+    public Sprite cornerBottomLeft;
 
     [Header("Line Ends (Tip of the path)")]
-    public Sprite endUp;             // Points Up
-    public Sprite endDown;           // Points Down
-    public Sprite endLeft;           // Points Left
-    public Sprite endRight;          // Points Right
+    public Sprite endUp;
+    public Sprite endDown;
+    public Sprite endLeft;
+    public Sprite endRight;
 
-    public Sprite dot;               // Fallback for a single isolated tile
+    public Sprite dot;
 }
 
 public class MazePuzzle : Puzzle
 {
     [SerializeField] private GameObject puzzleObject;
+
+    [Header("Animation")]
+    [SerializeField] private float fadeDuration = 0.5f;
+    private bool isSpawning = false;
+    private Coroutine fadeCoroutine;
 
     [Header("Colors")]
     [SerializeField] private Color wallColor = Color.black;
@@ -48,13 +54,16 @@ public class MazePuzzle : Puzzle
     private float tileHeight;
 
     private GameObject[,] GridObjects;
-    private Image[,] TileImages; // Changed from RawImage to Image
+    private Image[,] TileImages;
     private MazeGenerator mazeGenerator;
 
     private List<Vector2Int> visitedPath = new List<Vector2Int>();
     private Camera canvasCamera;
 
     private Vector2Int? lastDetectedGrid = null;
+
+    // Container to hold tiles so we don't fade the background
+    private RectTransform tileContainer;
 
     public int autoCompleteCount = 3;
 
@@ -69,8 +78,32 @@ public class MazePuzzle : Puzzle
         canvasCamera = canvas.renderMode == RenderMode.ScreenSpaceOverlay ? null : Camera.main;
     }
 
+    private void CreateTileContainer()
+    {
+        if (tileContainer == null)
+        {
+            GameObject containerObj = new GameObject("TileContainer");
+            tileContainer = containerObj.AddComponent<RectTransform>();
+            tileContainer.SetParent(transform, false);
+
+            // Stretch the container to match the parent perfectly so math doesn't break
+            tileContainer.anchorMin = Vector2.zero;
+            tileContainer.anchorMax = Vector2.one;
+            tileContainer.offsetMin = Vector2.zero;
+            tileContainer.offsetMax = Vector2.zero;
+
+            // Push to the bottom of the hierarchy so it renders ON TOP of the background
+            tileContainer.SetAsLastSibling();
+        }
+    }
+
     public void GenerateMaze()
     {
+        if (fadeCoroutine != null)
+        {
+            StopCoroutine(fadeCoroutine);
+        }
+
         if (GridObjects != null)
         {
             for (int y = 0; y < GridObjects.GetLength(0); y++)
@@ -79,29 +112,33 @@ public class MazePuzzle : Puzzle
                         Destroy(GridObjects[y, x]);
         }
 
+        CreateTileContainer();
+
         mazeGenerator.Generate(21, 21);
 
         centerX = mazeGenerator.Cols / 2;
         centerY = mazeGenerator.Rows / 2;
 
         GridObjects = new GameObject[mazeGenerator.Rows, mazeGenerator.Cols];
-        TileImages = new Image[mazeGenerator.Rows, mazeGenerator.Cols]; // Initializing Image array
+        TileImages = new Image[mazeGenerator.Rows, mazeGenerator.Cols];
 
         for (int y = 0; y < mazeGenerator.Rows; y++)
         {
             for (int x = 0; x < mazeGenerator.Cols; x++)
             {
                 GameObject tile = Instantiate(puzzleObject);
-                tile.transform.SetParent(transform, false);
+                // Set parent to our new isolated container instead of the root
+                tile.transform.SetParent(tileContainer, false);
                 tile.transform.name = "[" + y + ", " + x + "]";
+
                 float posX = (x - centerX) * tileWidth;
                 float posY = (y - centerY) * tileHeight;
                 tile.transform.localPosition = new Vector3(posX, posY, 0f);
                 GridObjects[y, x] = tile;
 
-                TileImages[y, x] = tile.GetComponent<Image>(); // Changed to Image
+                TileImages[y, x] = tile.GetComponent<Image>();
                 TileImages[y, x].color = mazeGenerator.Grid[y, x] == 0 ? pathColor : wallColor;
-                TileImages[y, x].sprite = null; // Using sprite instead of texture
+                TileImages[y, x].sprite = null;
             }
         }
 
@@ -109,6 +146,31 @@ public class MazePuzzle : Puzzle
         SetTileVisual(mazeGenerator.Exit, exitColor, exitSprite);
 
         ResetPath();
+
+        fadeCoroutine = StartCoroutine(FadeInMaze());
+    }
+
+    private IEnumerator FadeInMaze()
+    {
+        isSpawning = true;
+
+        // Grab or add the CanvasGroup on the TILE CONTAINER, not the background
+        CanvasGroup canvasGroup = tileContainer.GetComponent<CanvasGroup>();
+        if (canvasGroup == null)
+            canvasGroup = tileContainer.gameObject.AddComponent<CanvasGroup>();
+
+        canvasGroup.alpha = 0f;
+        float elapsed = 0f;
+
+        while (elapsed < fadeDuration)
+        {
+            elapsed += Time.deltaTime;
+            canvasGroup.alpha = Mathf.Lerp(0f, 1f, elapsed / fadeDuration);
+            yield return null;
+        }
+
+        canvasGroup.alpha = 1f;
+        isSpawning = false;
     }
 
     public void ResetPath()
@@ -132,6 +194,8 @@ public class MazePuzzle : Puzzle
         {
             GenerateMaze();
         }
+
+        if (isSpawning) return;
 
         Vector2 localPoint;
         RectTransform parentRect = transform as RectTransform;
@@ -294,24 +358,20 @@ public class MazePuzzle : Puzzle
         return null;
     }
 
-    // New method that calculates the correct shape for every piece of the path
     private void RefreshPathVisuals()
     {
         for (int i = 0; i < visitedPath.Count; i++)
         {
             Vector2Int current = visitedPath[i];
 
-            // Keep Entry and Exit distinct
             if (current == mazeGenerator.Entry || current == mazeGenerator.Exit)
                 continue;
 
-            // Figure out the surrounding connections
             Vector2Int? prev = (i > 0) ? visitedPath[i - 1] : (Vector2Int?)null;
             Vector2Int? next = (i < visitedPath.Count - 1) ? visitedPath[i + 1] : (Vector2Int?)null;
 
             bool up = false, down = false, left = false, right = false;
 
-            // Local helper to map neighbor coordinates to directions
             void CheckDirection(Vector2Int neighbor)
             {
                 if (neighbor.y > current.y) up = true;
@@ -323,19 +383,14 @@ public class MazePuzzle : Puzzle
             if (prev.HasValue) CheckDirection(prev.Value);
             if (next.HasValue) CheckDirection(next.Value);
 
-            Sprite segmentSprite = pathSprites.dot; // Fallback to Sprite
+            Sprite segmentSprite = pathSprites.dot;
 
-            // Straights
             if (up && down) segmentSprite = pathSprites.vertical;
             else if (left && right) segmentSprite = pathSprites.horizontal;
-
-            // 90-Degree Corners
             else if (up && right) segmentSprite = pathSprites.cornerTopRight;
             else if (up && left) segmentSprite = pathSprites.cornerTopLeft;
             else if (down && right) segmentSprite = pathSprites.cornerBottomRight;
             else if (down && left) segmentSprite = pathSprites.cornerBottomLeft;
-
-            // Ends (Tip of the line)
             else if (up) segmentSprite = pathSprites.endUp;
             else if (down) segmentSprite = pathSprites.endDown;
             else if (left) segmentSprite = pathSprites.endLeft;
@@ -368,7 +423,7 @@ public class MazePuzzle : Puzzle
         if (TileImages[cell.y, cell.x] != null)
         {
             TileImages[cell.y, cell.x].color = color;
-            TileImages[cell.y, cell.x].sprite = sprite; // Assigns the Sprite instead of Texture
+            TileImages[cell.y, cell.x].sprite = sprite;
         }
     }
 

@@ -16,6 +16,8 @@ public class WireDrag : MonoBehaviour, IPointerDownHandler, IDragHandler, IPoint
     private RectTransform wireEndPartInstance;
 
     public bool isConnected = false;
+    private bool isDragging = false;
+    private Vector3 currentStretchTarget;
     private WireTarget hoveredTarget = null;
 
     // CHANGED: Made public so CableMatch can verify if it's connected to the right color
@@ -50,6 +52,27 @@ public class WireDrag : MonoBehaviour, IPointerDownHandler, IDragHandler, IPoint
         }
     }
 
+    void LateUpdate()
+    {
+        // FIX: Dynamically update wire stretch every frame!
+        // This ensures the wire perfectly follows the hub if the UI is animating.
+        if (isConnected && connectedTarget != null)
+        {
+            StretchWireToTarget(connectedTarget.transform.position);
+            PlaceEndPart(connectedTarget.transform.position);
+        }
+        else if (isDragging)
+        {
+            // If dragging, we still need to recalculate the stretch from the moving hub
+            StretchWireToTarget(currentStretchTarget);
+
+            if (hoveredTarget != null)
+            {
+                PlaceEndPart(hoveredTarget.transform.position);
+            }
+        }
+    }
+
     public void OnPointerDown(PointerEventData eventData)
     {
         if (isConnected)
@@ -58,6 +81,7 @@ public class WireDrag : MonoBehaviour, IPointerDownHandler, IDragHandler, IPoint
             return;
         }
 
+        isDragging = true;
         StretchWireToMouse(eventData);
     }
 
@@ -71,6 +95,7 @@ public class WireDrag : MonoBehaviour, IPointerDownHandler, IDragHandler, IPoint
         if (target != null && !IsTargetOccupied(target))
         {
             hoveredTarget = target;
+            currentStretchTarget = target.transform.position;
             StretchWireToTarget(target.transform.position);
             PlaceEndPart(target.transform.position);
         }
@@ -88,6 +113,8 @@ public class WireDrag : MonoBehaviour, IPointerDownHandler, IDragHandler, IPoint
     public void OnPointerUp(PointerEventData eventData)
     {
         if (isConnected) return;
+
+        isDragging = false;
 
         if (hoveredTarget != null && !IsTargetOccupied(hoveredTarget))
         {
@@ -131,6 +158,7 @@ public class WireDrag : MonoBehaviour, IPointerDownHandler, IDragHandler, IPoint
         }
 
         isConnected = false;
+        isDragging = false;
         hoveredTarget = null;
         ResetWire();
     }
@@ -172,6 +200,7 @@ public class WireDrag : MonoBehaviour, IPointerDownHandler, IDragHandler, IPoint
             out mouseWorldPos
         );
 
+        currentStretchTarget = mouseWorldPos;
         StretchWireToTarget(mouseWorldPos);
     }
 

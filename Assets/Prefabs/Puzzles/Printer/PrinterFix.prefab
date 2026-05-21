@@ -89,7 +89,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BottleDrag
   bottle: {fileID: 6037034969737454728}
-  canvas: {fileID: 0}
   targetTank: {fileID: 4840137098076442176}
   bottleImage: {fileID: 4343624394234458107}
   normalSprite: {fileID: 21300000, guid: ee22f13a33d0e384c92ec9b6452d2b64, type: 3}
@@ -188,7 +187,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BottleDrag
   bottle: {fileID: 1960929330483795716}
-  canvas: {fileID: 0}
   targetTank: {fileID: 7224105551901539897}
   bottleImage: {fileID: 7143468542881071133}
   normalSprite: {fileID: 21300000, guid: 296d8c5946fd3d844ab7c3e2efde981a, type: 3}
@@ -1670,7 +1668,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BottleDrag
   bottle: {fileID: 6308309506113446574}
-  canvas: {fileID: 0}
   targetTank: {fileID: 3027481204086357758}
   bottleImage: {fileID: 7193174190421348054}
   normalSprite: {fileID: 21300000, guid: 316186b178f419d42a05b0e78ac8ae52, type: 3}
@@ -1854,6 +1851,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   puzzleName: Printer
   prefab: {fileID: 6658539372031160096}
+  useOpeningAnimation: 1
+  backgroundFadeDuration: 0.5
+  slideInDuration: 0.5
+  useClosingAnimation: 1
+  backgroundFadeOutDuration: 0.4
+  slideOutDuration: 0.4
+  disableLogicDuringAnimation: 1
+  fillAnimationDuration: 0.25
 --- !u!1 &6807921182150914436
 GameObject:
   m_ObjectHideFlags: 0
@@ -1943,7 +1948,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BottleDrag
   bottle: {fileID: 4020670572643123006}
-  canvas: {fileID: 0}
   targetTank: {fileID: 650466155188817667}
   bottleImage: {fileID: 9061235315109188228}
   normalSprite: {fileID: 21300000, guid: eb9bdefc8345cac499a2d2a19296b1b6, type: 3}

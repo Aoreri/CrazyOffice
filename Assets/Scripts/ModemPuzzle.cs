@@ -23,8 +23,8 @@ public class ModemPuzzle : Puzzle
         anten1.antennaDelta = UnityEngine.Random.value;
         anten2.antennaDelta = UnityEngine.Random.value;
 
-        anten1.Setup();
-        anten2.Setup();
+        //anten1.Setup();
+        //anten2.Setup();
 
         designatedValue1 = UnityEngine.Random.value;
         designatedValue2 = UnityEngine.Random.value;
