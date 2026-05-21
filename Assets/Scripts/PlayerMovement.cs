@@ -3,10 +3,12 @@ using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
+    public bool disableMovement = false;
+
     public float speed = 5f;
     public float rotationSpeed = 0.5f; // higher = snappier
 
-    private Vector2 moveInput;
+    public Vector2 moveInput;
     private Rigidbody rb;
     private Animator animator;
 
@@ -21,7 +23,7 @@ public class PlayerMovement : MonoBehaviour
         walkingHash = Animator.StringToHash("isWalking");
     }
 
-    void Update()
+    void FixedUpdate()
     {
         // Movement
         Vector3 move = new Vector3(moveInput.x, 0, moveInput.y);
@@ -48,6 +50,9 @@ public class PlayerMovement : MonoBehaviour
 
     public void OnMove(InputValue value)
     {
+        if (disableMovement)
+            return;
+
         moveInput = value.Get<Vector2>();
     }
 }

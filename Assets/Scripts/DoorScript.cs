@@ -74,11 +74,19 @@ public class DoorScript : MonoBehaviour
 
     public void ToggleDoor()
     {
-        if (!openable)
-            return;
+        ToggleDoor(false);
+    }
 
-        if (isOpen && !closeable)
-            return;
+    public void ToggleDoor(bool force)
+    {
+        if (!force)
+        {
+            if (!openable)
+                return;
+
+            if (isOpen && !closeable)
+                return;
+        }
 
         isOpen = !isOpen;
 
