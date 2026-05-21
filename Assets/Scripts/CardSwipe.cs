@@ -3,7 +3,7 @@ using TMPro;
 using UnityEngine;
 
 
-public class CardSwipe : MonoBehaviour
+public class CardSwipe : Puzzle
 {
     
     public CardSwipeHandler cardSwipe;
@@ -61,10 +61,9 @@ public class CardSwipe : MonoBehaviour
 
         SwitchLight(true);
         ReplaceText("LETS GO");
-            return;
-        
 
-        // TODO: load next card
+        EndPuzzle();
+        return;
     }
 
     void SwitchLight(bool passed)
@@ -120,4 +119,13 @@ public class CardSwipe : MonoBehaviour
         }
     }
 
+    protected override void OnStartPuzzle()
+    {
+
+    }
+
+    protected override void OnEndPuzzle()
+    {
+        
+    }
 }

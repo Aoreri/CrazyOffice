@@ -18,7 +18,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &9189573338929747619
 RectTransform:
   m_ObjectHideFlags: 0
@@ -99,7 +99,7 @@ MonoBehaviour:
   exitColor: {r: 1, g: 0, b: 0, a: 1}
   visitedColor: {r: 0.8679245, g: 0.5512295, b: 0.08597365, a: 1}
   entrySprite: {fileID: 21300000, guid: 688499f53afc07441901185ea28245f7, type: 3}
-  exitSprite: {fileID: 21300000, guid: 688499f53afc07441901185ea28245f7, type: 3}
+  exitSprite: {fileID: 21300000, guid: b65592c83af9c2946a8ac2cd00405b18, type: 3}
   pathSprites:
     horizontal: {fileID: 21300000, guid: dcbbb84db5fb2164ea50012eea6fccf3, type: 3}
     vertical: {fileID: 21300000, guid: 20f9b41565253ab409a466c80a30dec4, type: 3}
@@ -141,7 +141,7 @@ RectTransform:
   m_GameObject: {fileID: 2345612284676248598}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.6530457, y: 1.6530457, z: 1.6530457}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6485995719532495764}
@@ -149,7 +149,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 12.780029, y: 0}
+  m_AnchoredPosition: {x: -605.88, y: 0}
   m_SizeDelta: {x: 83.63, y: 30}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!222 &5237033229155490782
@@ -354,7 +354,7 @@ RectTransform:
   m_GameObject: {fileID: 7602375738369189643}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.37, y: 0.37, z: 0.37}
+  m_LocalScale: {x: 0.5035035, y: 0.5035035, z: 0.5035035}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 9189573338929747619}

@@ -7,7 +7,6 @@ public class BottleDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
 {
     [Header("Bottle Configuration")]
     public RectTransform bottle;
-    public Canvas canvas;
 
     [Tooltip("Assign the matching color Tank object here in the Inspector")]
     public TankFill targetTank;
@@ -42,9 +41,15 @@ public class BottleDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
     private TankFill hoveredWrongTank;
     private float overfillTimer = 0f;
 
+    // Tracks the parent canvas dynamically
+    private Canvas parentCanvas;
+
     void Awake()
     {
         startRot = bottle.rotation;
+
+        // Automatically locate the canvas this UI element belongs to
+        parentCanvas = GetComponentInParent<Canvas>();
 
         canvasGroup = GetComponent<CanvasGroup>();
         if (canvasGroup == null)
@@ -99,7 +104,10 @@ public class BottleDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
 
     public void OnDrag(PointerEventData eventData)
     {
-        bottle.anchoredPosition += eventData.delta / canvas.scaleFactor;
+        // Safely apply the canvas scale factor, defaulting to 1f if a canvas somehow isn't found
+        float scaleFactor = parentCanvas != null ? parentCanvas.scaleFactor : 1f;
+        bottle.anchoredPosition += eventData.delta / scaleFactor;
+
         TrySnapToCorrectTank();
         TrackWrongTankHover();
     }
