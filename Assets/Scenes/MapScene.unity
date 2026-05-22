@@ -4267,6 +4267,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: b3d6ce96b694e1b43a5036c616512a6c, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: b3d6ce96b694e1b43a5036c616512a6c, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: adca5197b6c7c4d42ab58e52e6f4b167, type: 2}
     - target: {fileID: 919132149155446097, guid: b3d6ce96b694e1b43a5036c616512a6c, type: 3}
       propertyPath: m_Name
       value: Meshy_AI_Still_Life_with_Tea_C_0520185247_texture
@@ -29921,6 +29929,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: d36d399bc0b05eb488c7df992541a730, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: d36d399bc0b05eb488c7df992541a730, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: bd39e0b4c2b88bf4e9e0a2d73d29d9bc, type: 2}
     - target: {fileID: 919132149155446097, guid: d36d399bc0b05eb488c7df992541a730, type: 3}
       propertyPath: m_Name
       value: Meshy_AI_Verdant_Pot_0513010638_texture (2)
@@ -34432,6 +34448,7 @@ SkinnedMeshRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: -5635484798206224817, guid: f845f33f27e32f34f95b39a367a277ee, type: 3}
+  - {fileID: 2100000, guid: 0d7bb20d40ff2de4fae918cae872c342, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -36606,7 +36623,7 @@ SkinnedMeshRenderer:
   m_SmallMeshCulling: 1
   m_ForceMeshLod: -1
   m_MeshLodSelectionBias: 0
-  m_RenderingLayerMask: 1
+  m_RenderingLayerMask: 257
   m_RendererPriority: 0
   m_Materials:
   - {fileID: -5635484798206224817, guid: b8cb4b694f5349c47a5459d11b03bb66, type: 3}

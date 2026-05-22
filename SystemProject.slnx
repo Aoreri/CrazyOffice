@@ -1,6 +1,8 @@
 ﻿<Solution>
+  <Project Path="LineworkLite.csproj" />
   <Project Path="Assembly-CSharp.csproj" />
   <Project Path="Unified.Universal.Blur.csproj" />
+  <Project Path="LineworkLite.Editor.csproj" />
   <Project Path="MeshyAssembly.csproj" />
   <Project Path="Unified.Universal.Blur.Editor.csproj" />
 </Solution>
