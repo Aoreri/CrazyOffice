@@ -27,7 +27,20 @@ public class UMLManager : MonoBehaviour
     private RectTransform pendingActor;       // Sadece kendisinden sonraki ÝLK Use Case'e baðlanmak için bekleyen aktör
     private RectTransform lastUseCaseInChain; // Use Case'leri yukarýdan aþaðýya birbirine baðlayan dikey zincir
 
-    public void DrawActor(string actorName)
+    // RequirementHighlighter'ýn (actor_left için) çaðýracaðý yeni metod
+    public void DrawPrimaryActor(string actorName)
+    {
+        DrawActorCore(actorName, true); // true = Sola çiz
+    }
+
+    // RequirementHighlighter'ýn (actor_right için) çaðýracaðý yeni metod
+    public void DrawSecondaryActor(string actorName)
+    {
+        DrawActorCore(actorName, false); // false = Saða çiz
+    }
+
+    // Artýk kelime aramýyoruz, doðrudan dýþarýdan gelen komuta (isLeft) göre çiziyoruz
+    private void DrawActorCore(string actorName, bool isLeft)
     {
         // Ayný obje tekrar seçilirse (yanlýþ sýra) cezalandýr ve sýfýrla
         if (createdObjects.ContainsKey(actorName))
@@ -41,7 +54,7 @@ public class UMLManager : MonoBehaviour
         createdObjects.Add(actorName, newActor);
         newActor.GetComponentInChildren<TextMeshProUGUI>().text = actorName;
 
-        bool isLeft = actorName.ToLower().Contains("müþteri") || actorName.ToLower().Contains("customer");
+        // isLeft deðiþkenine göre saða veya sola yerleþtirme
         float posX = isLeft ? -horizontalOffset : horizontalOffset;
         float startY = (umlBoard.rect.height / 2f) - topStartOffset;
         float posY = startY - ((isLeft ? leftActorCount++ : rightActorCount++) * verticalSpacing);
