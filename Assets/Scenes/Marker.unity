@@ -168,7 +168,7 @@ MonoBehaviour:
   useCasePrefab: {fileID: 2042159266084396324, guid: ea5f7e9cc0600774ca2fd6813c5abf0b, type: 3}
   linePrefab: {fileID: 8009647358335063497, guid: c0eca66ddc46bb041b44e1847afb1a50, type: 3}
   horizontalOffset: 270
-  verticalSpacing: 160
+  verticalSpacing: 200
   topStartOffset: 150
 --- !u!1 &255074016
 GameObject:
@@ -1611,6 +1611,91 @@ MonoBehaviour:
   documentText: {fileID: 2145245312}
   highlightContainer: {fileID: 556398008}
   highlightPrefab: {fileID: 4613768592917034429, guid: 1c6f446f244ea96499e9e1b9d17f54c7, type: 3}
+  randomTexts:
+  - 'Smart Warehouse Management System
+
+    
+
+    TASK: Mark the actors with <color=#0055AA>BLUE</color>
+    and the actions (Use Case) with <color=#CC7700>YELLOW</color> pen sequentially.
+
+    
+
+    Application
+    Expectations:
+
+    
+
+    <link="actor_left">Warehouse operators</link> can
+    quickly <link="usecase">scan barcode labels of incoming packages</link>.
+
+    
+
+    <link="actor_right">Inventory
+    controllers</link> should be able to <link="usecase">track item locations within
+    the facility</link>.
+
+    
+
+    <link="actor_right">Logistics managers</link>
+    can automatically <link="usecase">generate shipping manifests for outgoing cargo</link>.'
+  - 'Cloud Storage System
+
+    
+
+    TASK: Mark the actors with <color=#0055AA>BLUE</color>
+    and the actions (Use Case) with <color=#CC7700>YELLOW</color> pen sequentially.
+
+    
+
+    Application
+    Expectations:
+
+    
+
+    <link="actor_left">Standard users</link> can seamlessly
+    <link="usecase">upload heavy files to the cloud folders</link>.
+
+    
+
+    <link="actor_right">Storage
+    administrators</link> can easily <link="usecase">allocate disk space according
+    to team requirements</link>.
+
+    
+
+    <link="actor_right">Security officers</link>
+    can thoroughly <link="usecase">audit access logs to prevent data breaches</link>.'
+  - 'Food Delivery App
+
+    
+
+    TASK: Mark the actors with <color=#0055AA>BLUE</color>
+    and the actions (Use Case) with <color=#CC7700>YELLOW</color> pen sequentially.
+
+    
+
+    Application
+    Expectations:
+
+    
+
+    <link="actor_left">Customers</link> can easily <link="usecase">place
+    orders through the system</link>.
+
+    
+
+    <link="actor_right">Restaurant
+    managers</link> should be able to <link="usecase">update the menu based on stock
+    levels</link>.
+
+    
+
+    <link="actor_right">Couriers</link> can <link="usecase">change
+    the delivery status from their own screens</link>.'
+  highlightHeightMultiplier: 1.97
+  highlightWidthPaddingMultiplier: 1.63
+  highlightVerticalOffset: 0
   underlineColor: {r: 0, g: 0, b: 0, a: 1}
   underlineThickness: 3
   underlineOffset: 2
