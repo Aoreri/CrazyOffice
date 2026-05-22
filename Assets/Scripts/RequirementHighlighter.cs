@@ -15,7 +15,7 @@ public class RequirementHighlighter : MonoBehaviour, IPointerClickHandler, IPoin
     [TextArea(5, 10)]
     public string[] randomTexts;
 
-    // --- YENİ EKLENEN INSPECTOR AYARLARI ---
+    
     [Header("Highlight (Marker) Settings")]
 
     [Tooltip("Fosforlu kalemin Yüksekliğini (kalınlığını) belirler. Normali 1.3'tür.")]
@@ -29,7 +29,7 @@ public class RequirementHighlighter : MonoBehaviour, IPointerClickHandler, IPoin
     [Tooltip("Vurgu çizgisini Y ekseninde yukarı veya aşağı kaydırmanıza yarar. Eksiler aşağı, artılar yukarı kaydırır.")]
     [Range(-2f, 2f)]
     public float highlightVerticalOffset = 0f;
-    // ----------------------------------------
+    
 
     [Header("Underline Settings")]
     public Color underlineColor = Color.black;
