@@ -11,10 +11,30 @@ public class RequirementHighlighter : MonoBehaviour, IPointerClickHandler, IPoin
     public RectTransform highlightContainer;
     public GameObject highlightPrefab;
 
+    [Header("Random Text Settings")]
+    [TextArea(5, 10)]
+    public string[] randomTexts;
+
+    
+    [Header("Highlight (Marker) Settings")]
+
+    [Tooltip("Fosforlu kalemin Yüksekliğini (kalınlığını) belirler. Normali 1.3'tür.")]
+    [Range(0.5f, 3f)]
+    public float highlightHeightMultiplier = 1.3f;
+
+    [Tooltip("Fosforlu kalemin Genişliğini (sağdan soldan taşma payı) belirler. Normali 0.6'dır.")]
+    [Range(0f, 2f)]
+    public float highlightWidthPaddingMultiplier = 0.6f;
+
+    [Tooltip("Vurgu çizgisini Y ekseninde yukarı veya aşağı kaydırmanıza yarar. Eksiler aşağı, artılar yukarı kaydırır.")]
+    [Range(-2f, 2f)]
+    public float highlightVerticalOffset = 0f;
+    
+
     [Header("Underline Settings")]
     public Color underlineColor = Color.black;
     public float underlineThickness = 3f;
-    public float underlineOffset = 2f; // How far below the text the line sits
+    public float underlineOffset = 2f;
 
     public enum PenType { None, ActorPen, UseCasePen }
     public PenType currentPen = PenType.ActorPen;
@@ -22,7 +42,6 @@ public class RequirementHighlighter : MonoBehaviour, IPointerClickHandler, IPoin
     private Dictionary<int, GameObject> activeHighlights = new Dictionary<int, GameObject>();
     private HashSet<int> correctAnswers = new HashSet<int>();
 
-    // Hover underline tracking
     private GameObject activeUnderline;
     private int hoveredLinkIndex = -1;
     private bool isPointerOverText = false;
@@ -32,20 +51,40 @@ public class RequirementHighlighter : MonoBehaviour, IPointerClickHandler, IPoin
     {
         activeUnderline = new GameObject("HoverUnderline");
         activeUnderline.transform.SetParent(highlightContainer, false);
-        // No Image here anymore — child rects handle visuals
         activeUnderline.SetActive(false);
+
+        SetRandomText();
+    }
+
+    public void SetRandomText()
+    {
+        if (randomTexts != null && randomTexts.Length > 0)
+        {
+            int randomIndex = Random.Range(0, randomTexts.Length);
+            documentText.text = randomTexts[randomIndex];
+            ClearAllHighlights();
+        }
+    }
+
+    private void ClearAllHighlights()
+    {
+        foreach (var highlight in activeHighlights.Values)
+        {
+            if (highlight != null) Destroy(highlight);
+        }
+        activeHighlights.Clear();
+        correctAnswers.Clear();
+        ClearUnderline();
     }
 
     void Update()
     {
-        // Only run intersection math if the mouse is actually inside the text block bounds
         if (!isPointerOverText) return;
 
         Camera cam = documentText.canvas.renderMode == RenderMode.ScreenSpaceOverlay
        ? null
        : documentText.canvas.worldCamera;
 
-        // Convert screen position to the text object's local space first
         Vector3 localMousePos;
         RectTransformUtility.ScreenPointToWorldPointInRectangle(
             documentText.rectTransform,
@@ -74,7 +113,7 @@ public class RequirementHighlighter : MonoBehaviour, IPointerClickHandler, IPoin
     public void OnPointerEnter(PointerEventData eventData)
     {
         isPointerOverText = true;
-        activeCamera = eventData.enterEventCamera; // Cache the camera for the Update loop
+        activeCamera = eventData.enterEventCamera;
     }
 
     public void OnPointerExit(PointerEventData eventData)
@@ -104,11 +143,17 @@ public class RequirementHighlighter : MonoBehaviour, IPointerClickHandler, IPoin
 
         string selectedText = linkInfo.GetLinkText();
 
-        if (currentPen == PenType.ActorPen && linkID == "actor")
+        if (currentPen == PenType.ActorPen && linkID == "actor_left")
         {
             ApplyHighlight(linkInfo, linkIndex, new Color(0.2f, 0.6f, 1f, 0.9f));
             correctAnswers.Add(linkIndex);
-            if (umlManager != null) umlManager.DrawActor(selectedText);
+            if (umlManager != null) umlManager.DrawPrimaryActor(selectedText);
+        }
+        else if (currentPen == PenType.ActorPen && linkID == "actor_right")
+        {
+            ApplyHighlight(linkInfo, linkIndex, new Color(0.2f, 0.6f, 1f, 0.9f));
+            correctAnswers.Add(linkIndex);
+            if (umlManager != null) umlManager.DrawSecondaryActor(selectedText);
         }
         else if (currentPen == PenType.UseCasePen && linkID == "usecase")
         {
@@ -116,15 +161,10 @@ public class RequirementHighlighter : MonoBehaviour, IPointerClickHandler, IPoin
             correctAnswers.Add(linkIndex);
             if (umlManager != null) umlManager.DrawUseCase(selectedText);
         }
-        else
-        {
-            ApplyHighlight(linkInfo, linkIndex, new Color(1f, 0.2f, 0.2f, 0.9f));
-        }
     }
 
     private void ApplyHighlight(TMP_LinkInfo linkInfo, int linkIndex, Color highlightColor)
     {
-        // Remove old highlights for this link (could be multiple rects from previous multiline)
         if (activeHighlights.ContainsKey(linkIndex))
         {
             foreach (Transform child in activeHighlights[linkIndex].transform)
@@ -133,7 +173,6 @@ public class RequirementHighlighter : MonoBehaviour, IPointerClickHandler, IPoin
             activeHighlights.Remove(linkIndex);
         }
 
-        // Create a container GameObject to hold all line-rects for this link
         GameObject container = new GameObject($"Highlight_{linkIndex}");
         container.transform.SetParent(highlightContainer, false);
         container.transform.SetAsFirstSibling();
@@ -143,55 +182,52 @@ public class RequirementHighlighter : MonoBehaviour, IPointerClickHandler, IPoin
         int firstChar = linkInfo.linkTextfirstCharacterIndex;
         int lastChar = firstChar + linkInfo.linkTextLength - 1;
 
-        // --- Group characters by line index ---
-        // Key = lineIndex, Value = (minX, maxX, minY, maxY) in TMP local space
         var lineBounds = new Dictionary<int, (float minX, float maxX, float minY, float maxY)>();
 
         for (int i = firstChar; i <= lastChar; i++)
         {
             TMP_CharacterInfo ci = textInfo.characterInfo[i];
-
-            // Skip invisible characters (spaces, line breaks)
             if (!ci.isVisible) continue;
 
             int line = ci.lineNumber;
-            float bLeft = ci.bottomLeft.x;
-            float bRight = ci.topRight.x;
-            float bBot = ci.bottomLeft.y;
-            float bTop = ci.topRight.y;
+            float left = ci.bottomLeft.x;
+            float right = ci.topRight.x;
+            float bot = ci.bottomLeft.y;
+            float top = ci.topRight.y;
 
             if (lineBounds.ContainsKey(line))
             {
                 var b = lineBounds[line];
                 lineBounds[line] = (
-                    Mathf.Min(b.minX, bLeft),
-                    Mathf.Max(b.maxX, bRight),
-                    Mathf.Min(b.minY, bBot),
-                    Mathf.Max(b.maxY, bTop)
+                    Mathf.Min(b.minX, left),
+                    Mathf.Max(b.maxX, right),
+                    Mathf.Min(b.minY, bot),
+                    Mathf.Max(b.maxY, top)
                 );
             }
             else
             {
-                lineBounds[line] = (bLeft, bRight, bBot, bTop);
+                lineBounds[line] = (left, right, bot, top);
             }
         }
 
-        // --- Spawn one Image rect per line ---
+        float fontSize = textInfo.characterInfo[firstChar].pointSize;
+
         foreach (var kvp in lineBounds)
         {
             var b = kvp.Value;
 
             float width = b.maxX - b.minX;
-            float height = b.maxY - b.minY;
 
-            // Local center in TMP's coordinate space
             Vector3 localCenter = new Vector3(
                 b.minX + width * 0.5f,
-                b.minY + height * 0.5f,
+                b.minY + (b.maxY - b.minY) * 0.5f,
                 0f
             );
 
-            // Convert to world, then to highlightContainer local space
+            // --- YENİ EKLENEN: Y Ekseni Kaydırması ---
+            localCenter.y += highlightVerticalOffset * fontSize;
+
             Vector3 worldPos = documentText.transform.TransformPoint(localCenter);
             Vector3 containerLocal = highlightContainer.InverseTransformPoint(worldPos);
 
@@ -199,9 +235,19 @@ public class RequirementHighlighter : MonoBehaviour, IPointerClickHandler, IPoin
             rect.transform.SetAsFirstSibling();
 
             RectTransform rt = rect.GetComponent<RectTransform>();
+
+            rt.anchorMin = new Vector2(0.5f, 0.5f);
+            rt.anchorMax = new Vector2(0.5f, 0.5f);
             rt.pivot = new Vector2(0.5f, 0.5f);
+            rt.localScale = Vector3.one;
+
             rt.localPosition = containerLocal;
-            rt.sizeDelta = new Vector2(width + 10f, height + 6f); // small padding
+
+            // --- YENİ EKLENEN: Inspector'dan gelen boyut hesapları ---
+            float finalHeight = fontSize * highlightHeightMultiplier;
+            float finalWidth = width + (fontSize * highlightWidthPaddingMultiplier);
+
+            rt.sizeDelta = new Vector2(finalWidth, finalHeight);
 
             Image img = rect.GetComponent<Image>();
             img.color = highlightColor;
@@ -211,7 +257,6 @@ public class RequirementHighlighter : MonoBehaviour, IPointerClickHandler, IPoin
 
     private void UpdateUnderline(int linkIndex)
     {
-        // Clear previous underline rects
         foreach (Transform child in activeUnderline.transform)
             Destroy(child.gameObject);
         activeUnderline.SetActive(true);
@@ -222,7 +267,6 @@ public class RequirementHighlighter : MonoBehaviour, IPointerClickHandler, IPoin
         int firstChar = linkInfo.linkTextfirstCharacterIndex;
         int lastChar = firstChar + linkInfo.linkTextLength - 1;
 
-        // Group characters by line (same approach as ApplyHighlight)
         var lineBounds = new Dictionary<int, (float minX, float maxX, float bottomY)>();
 
         for (int i = firstChar; i <= lastChar; i++)
@@ -241,7 +285,7 @@ public class RequirementHighlighter : MonoBehaviour, IPointerClickHandler, IPoin
                 lineBounds[line] = (
                     Mathf.Min(b.minX, left),
                     Mathf.Max(b.maxX, right),
-                    Mathf.Min(b.bottomY, bot)   // lowest point of line
+                    Mathf.Min(b.bottomY, bot)
                 );
             }
             else
@@ -250,20 +294,17 @@ public class RequirementHighlighter : MonoBehaviour, IPointerClickHandler, IPoin
             }
         }
 
-        // Spawn one underline Image per line
         foreach (var kvp in lineBounds)
         {
             var b = kvp.Value;
             float width = b.maxX - b.minX;
 
-            // Bottom-center in TMP local space, shifted down by offset
             Vector3 localPos = new Vector3(
                 b.minX + width * 0.5f,
                 b.bottomY - underlineOffset,
                 0f
             );
 
-            // Convert to world → highlightContainer local (same as ApplyHighlight)
             Vector3 worldPos = documentText.transform.TransformPoint(localPos);
             Vector3 containerLocal = highlightContainer.InverseTransformPoint(worldPos);
 

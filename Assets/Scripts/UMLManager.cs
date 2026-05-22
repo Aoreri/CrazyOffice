@@ -23,13 +23,26 @@ public class UMLManager : MonoBehaviour
     private int rightActorCount = 0;
     private int useCaseCount = 0;
 
-    // --- TAM ÝSTEDÝÐÝN ZÝNCÝR MANTIÐI ---
-    private RectTransform pendingActor;       // Sadece kendisinden sonraki ÝLK Use Case'e baðlanmak için bekleyen aktör
-    private RectTransform lastUseCaseInChain; // Use Case'leri yukarýdan aþaðýya birbirine baðlayan dikey zincir
+    
+    private RectTransform pendingActor;       
+    private RectTransform lastUseCaseInChain; 
 
-    public void DrawActor(string actorName)
+    
+    public void DrawPrimaryActor(string actorName)
     {
-        // Ayný obje tekrar seçilirse (yanlýþ sýra) cezalandýr ve sýfýrla
+        DrawActorCore(actorName, true); // true 
+    }
+
+    
+    public void DrawSecondaryActor(string actorName)
+    {
+        DrawActorCore(actorName, false); // false
+    }
+
+    
+    private void DrawActorCore(string actorName, bool isLeft)
+    {
+        
         if (createdObjects.ContainsKey(actorName))
         {
             ResetFlow();
@@ -41,7 +54,7 @@ public class UMLManager : MonoBehaviour
         createdObjects.Add(actorName, newActor);
         newActor.GetComponentInChildren<TextMeshProUGUI>().text = actorName;
 
-        bool isLeft = actorName.ToLower().Contains("müþteri") || actorName.ToLower().Contains("customer");
+        
         float posX = isLeft ? -horizontalOffset : horizontalOffset;
         float startY = (umlBoard.rect.height / 2f) - topStartOffset;
         float posY = startY - ((isLeft ? leftActorCount++ : rightActorCount++) * verticalSpacing);
@@ -49,13 +62,13 @@ public class UMLManager : MonoBehaviour
         RectTransform actorRect = newActor.GetComponent<RectTransform>();
         actorRect.anchoredPosition = new Vector2(posX, posY);
 
-        // Aktör sahneye çýktý, kendine ait bir Use Case gelmesini bekliyor
+        
         pendingActor = actorRect;
     }
 
     public void DrawUseCase(string useCaseName)
     {
-        // Ayný obje tekrar seçilirse sýfýrla
+        
         if (createdObjects.ContainsKey(useCaseName))
         {
             ResetFlow();
@@ -73,20 +86,20 @@ public class UMLManager : MonoBehaviour
         RectTransform useCaseRect = newUseCase.GetComponent<RectTransform>();
         useCaseRect.anchoredPosition = new Vector2(0f, posY);
 
-        // 1. KURAL (KIRMIZI ÇÝZGÝLER): Use Case'ler HER ZAMAN bir öncekine baðlanýr
+        
         if (lastUseCaseInChain != null)
         {
             CreateLine(lastUseCaseInChain, useCaseRect);
         }
 
-        // 2. KURAL (AKTÖR ÇÝZGÝSÝ): Bekleyen bir Aktör varsa, bu Use Case'e baðlanýr ve görevi biter
+        
         if (pendingActor != null)
         {
             CreateLine(pendingActor, useCaseRect);
-            pendingActor = null; // Aktör baðlandý! Artýk bir sonraki Use Case'e sataþmayacak.
+            pendingActor = null; 
         }
 
-        // Zinciri aþaðýya doðru uzatmak için bu Use Case'i hafýzaya alýyoruz
+        
         lastUseCaseInChain = useCaseRect;
         useCaseCount++;
     }
