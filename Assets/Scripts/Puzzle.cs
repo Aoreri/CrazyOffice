@@ -85,8 +85,8 @@ public abstract class Puzzle : MonoBehaviour
         else
         {
             Debug.Log("[Puzzle] Closing animation disabled.");
-            CleanUp();
             OnEndPuzzle();
+            CleanUp();
         }
     }
 
@@ -99,8 +99,8 @@ public abstract class Puzzle : MonoBehaviour
         yield return AnimateOutro(animTarget);
 
         Debug.Log("[Puzzle] Closing animation finished. Cleaning up.");
-        CleanUp();
         OnEndPuzzle();
+        CleanUp();
     }
 
     private void CleanUp()

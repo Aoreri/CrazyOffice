@@ -96,7 +96,7 @@ MonoBehaviour:
   snapDistance: 22
   rotateAngle: 110
   fillSpeed: 0.25
-  overfillPenaltyTime: 0.5
+  overfillPenaltyTime: 1
   rotationDuration: 0.15
 --- !u!1 &98401897983394498
 GameObject:
@@ -194,7 +194,7 @@ MonoBehaviour:
   snapDistance: 22
   rotateAngle: 110
   fillSpeed: 0.25
-  overfillPenaltyTime: 0.5
+  overfillPenaltyTime: 1
   rotationDuration: 0.15
 --- !u!1 &427987093620411574
 GameObject:
@@ -1675,7 +1675,7 @@ MonoBehaviour:
   snapDistance: 22
   rotateAngle: 110
   fillSpeed: 0.25
-  overfillPenaltyTime: 0.5
+  overfillPenaltyTime: 1
   rotationDuration: 0.15
 --- !u!1 &6294631532201141342
 GameObject:
@@ -1955,7 +1955,7 @@ MonoBehaviour:
   snapDistance: 22
   rotateAngle: 110
   fillSpeed: 0.25
-  overfillPenaltyTime: 0.5
+  overfillPenaltyTime: 1
   rotationDuration: 0.15
 --- !u!1 &6915188904838359982
 GameObject:

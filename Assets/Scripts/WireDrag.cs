@@ -118,6 +118,9 @@ public class WireDrag : MonoBehaviour, IPointerDownHandler, IDragHandler, IPoint
 
         if (hoveredTarget != null && !IsTargetOccupied(hoveredTarget))
         {
+            if (hoveredTarget.targetColor != wireColor)
+                TimeManager.Instance.ApplyPenalty();
+
             Connect(hoveredTarget);
             return;
         }
@@ -127,6 +130,10 @@ public class WireDrag : MonoBehaviour, IPointerDownHandler, IDragHandler, IPoint
         // CHANGED: Removed "target.targetColor == wireColor" so you can drop on any empty slot
         if (target != null && !IsTargetOccupied(target))
         {
+
+            if (target.targetColor != wireColor)
+                TimeManager.Instance.ApplyPenalty();
+
             Connect(target);
             return;
         }

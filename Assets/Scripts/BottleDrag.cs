@@ -74,7 +74,7 @@ public class BottleDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
                 {
                     Debug.Log($"PENALTY: Bottle kept pouring after '{targetTank.gameObject.name}' was full!");
 
-                    // TODO: apply actual penalty here (e.g., reduce score, play error sound)
+                    TimeManager.Instance.ApplyPenalty();
 
                     // Auto-pull (stop pouring and tilt the bottle back)
                     StopPouring();

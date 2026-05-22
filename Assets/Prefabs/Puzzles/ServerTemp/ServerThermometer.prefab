@@ -213,7 +213,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &982168673030993586
 RectTransform:
   m_ObjectHideFlags: 0
@@ -292,11 +292,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   puzzleName: Temp
   prefab: {fileID: 3811917267858188226}
+  useOpeningAnimation: 1
+  backgroundFadeDuration: 0.5
+  slideInDuration: 0.5
+  useClosingAnimation: 1
+  backgroundFadeOutDuration: 0.4
+  slideOutDuration: 0.4
+  disableLogicDuringAnimation: 1
   currentTemp: 1
   increaseSpeed: 0.5
   decreaseSpeed: 0.22
   criticalTemp: 0.85
-  damageInterval: 10
+  damageInterval: 3
   fanButton: {fileID: 5169636828586336986}
   fanButtonImage: {fileID: 2060121023958667262}
   fanOffSprite: {fileID: 21300000, guid: 9f5b401192d2ace4fb8d42b304134e02, type: 3}

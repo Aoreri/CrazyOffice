@@ -41,5 +41,10 @@ public class StageManager : MonoBehaviour
 
         player.GetComponent<PlayerMovement>().disableMovement = false;
         player.GetComponent<CapsuleCollider>().enabled = true;
+
+        TimeManager.Instance.StartTimer();
+        yield return new WaitForSeconds(0.5f);
+        TimeManager.Instance.ApplyPenalty(10f);
+
     }
 }

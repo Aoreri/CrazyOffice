@@ -46,6 +46,9 @@ public class TempSystem : Puzzle
     private float damageTimer;
     private Vector2 arrowStartPos;
 
+    private bool stopped = false;
+
+
     void Start()
     {
         arrowStartPos = arrow.anchoredPosition;
@@ -67,6 +70,9 @@ public class TempSystem : Puzzle
 
     void Update()
     {
+        if (stopped)
+            return;
+
         fanSpeed -= fanDecayRate * Time.deltaTime;
         fanSpeed = Mathf.Clamp(fanSpeed, 0f, maxFanSpeed);
 
@@ -88,6 +94,7 @@ public class TempSystem : Puzzle
             if (damageTimer >= damageInterval)
             {
                 damageTimer = 0f;
+                TimeManager.Instance.ApplyPenalty(3);
                 Debug.Log("Too hot! User loses points!");
             }
         }
@@ -101,6 +108,7 @@ public class TempSystem : Puzzle
 
         if(currentTemp == 0)
         {
+            stopped = true;
             EndPuzzle();
         }
 
