@@ -48,6 +48,9 @@ public abstract class Puzzle : MonoBehaviour
             {
                 animationCoroutine = animRunner.StartCoroutine(AnimateIntro(instance));
             }
+        } else
+        {
+            Debug.Log("no canvas or prefab!");
         }
 
         startTime = Time.time;
@@ -60,6 +63,9 @@ public abstract class Puzzle : MonoBehaviour
     {
         // Guard against being called twice (e.g. button spam)
         if (isEnding) return;
+
+        QuestManager.Instance.OnPuzzleSolved(puzzleName);
+
         isEnding = true;
 
         Debug.Log("[Puzzle] " + puzzleName + " ending. Duration: " + (Time.time - startTime));
@@ -79,12 +85,11 @@ public abstract class Puzzle : MonoBehaviour
             // otherwise fall back to this MonoBehaviour (lives on gameObject).
             MonoBehaviour coroutineHost = (animRunner != null) ? (MonoBehaviour)animRunner : this;
 
-            Debug.Log("[Puzzle] Starting closing animation on " + animTarget.name);
             animationCoroutine = coroutineHost.StartCoroutine(AnimateOutroAndCleanUp(animTarget));
         }
         else
         {
-            Debug.Log("[Puzzle] Closing animation disabled.");
+      
             OnEndPuzzle();
             CleanUp();
         }
@@ -98,7 +103,6 @@ public abstract class Puzzle : MonoBehaviour
     {
         yield return AnimateOutro(animTarget);
 
-        Debug.Log("[Puzzle] Closing animation finished. Cleaning up.");
         OnEndPuzzle();
         CleanUp();
     }

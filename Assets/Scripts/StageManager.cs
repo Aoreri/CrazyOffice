@@ -12,6 +12,8 @@ public class StageManager : MonoBehaviour
     public Transform startPosition;
     public Transform spawnPosition;
 
+    public Quest q;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -44,7 +46,8 @@ public class StageManager : MonoBehaviour
 
         TimeManager.Instance.StartTimer();
         yield return new WaitForSeconds(0.5f);
-        TimeManager.Instance.ApplyPenalty(10f);
+       
+        QuestManager.Instance.StartQuest(q);
 
     }
 }
