@@ -19,6 +19,7 @@ public class QuestManager : MonoBehaviour
     private int totalStepCount;
 
     [Header("UI")]
+    public GameObject questUI;
     public Image progressBar;
     public TextMeshProUGUI counter;
     public TextMeshProUGUI questText;
@@ -35,7 +36,9 @@ public class QuestManager : MonoBehaviour
         stepCount = 0;
 
         activeQuest = newQuest;
-        
+
+        questUI.SetActive(true);
+
         for(int i = 0; i < newQuest.steps.Count; i++)
         {
             if (newQuest.steps[i].shouldCount)
@@ -56,6 +59,8 @@ public class QuestManager : MonoBehaviour
         {
             Debug.Log($"Quest {activeQuest.questName} Complete!");
             activeQuest = null;
+            questUI.SetActive(false);
+
             return;
         }
 
@@ -78,7 +83,7 @@ public class QuestManager : MonoBehaviour
 
                 ChatManager.Instance.assignedNPC = targetNPCForCurrentStep;
 
-                AddHighlightLayerToNPC(targetNPCForCurrentStep);
+                AddHighlightLayer(targetNPCForCurrentStep);
             }
             else Debug.Log("NO NPC FOUND!");
         }
@@ -104,6 +109,8 @@ public class QuestManager : MonoBehaviour
                 int randomIndex = Random.Range(0, currentStep.itemObjects.Length);
                 targetItemForCurrentStep = currentStep.itemObjects[randomIndex];
                 Debug.Log("Assigned item: " + targetItemForCurrentStep);
+
+                AddHighlightLayer(targetItemForCurrentStep);
             }
             else Debug.Log("NO ITEM FOUND!");
         }
@@ -132,7 +139,7 @@ public class QuestManager : MonoBehaviour
         QuestStep currentStep = activeQuest.steps[currentStepIndex];
         if (currentStep.objectiveType == QuestObjectiveType.TalkToNPC && npc == targetNPCForCurrentStep)
         {
-            RemoveHighlightLayerFromNPC(targetNPCForCurrentStep);
+            RemoveHighlightLayer(targetNPCForCurrentStep);
 
             AdvanceQuest();
             targetNPCForCurrentStep = null;
@@ -146,6 +153,7 @@ public class QuestManager : MonoBehaviour
         QuestStep currentStep = activeQuest.steps[currentStepIndex];
         if (currentStep.objectiveType == QuestObjectiveType.CollectItem && item == targetItemForCurrentStep)
         {
+            RemoveHighlightLayer(targetItemForCurrentStep);
             AdvanceQuest();
             targetItemForCurrentStep = null;
         }
@@ -170,7 +178,7 @@ public class QuestManager : MonoBehaviour
             stepCount++;
 
             counter.text = $"{stepCount}/{totalStepCount}";
-            progressBar.fillAmount = totalStepCount / stepCount;
+            progressBar.fillAmount = ((float)stepCount / (float)totalStepCount);
         }
 
         Debug.Log("Step completed!");
@@ -178,7 +186,7 @@ public class QuestManager : MonoBehaviour
         InitializeStep();
     }
 
-    private void AddHighlightLayerToNPC(GameObject npc)
+    private void AddHighlightLayer(GameObject npc)
     {
         if (npc == null) return;
 
@@ -194,7 +202,7 @@ public class QuestManager : MonoBehaviour
     }
 
     // Helper to REMOVE the rendering layer
-    private void RemoveHighlightLayerFromNPC(GameObject npc)
+    private void RemoveHighlightLayer(GameObject npc)
     {
         if (npc == null) return;
 
