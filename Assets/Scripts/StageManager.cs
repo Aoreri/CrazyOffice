@@ -46,7 +46,8 @@ public class StageManager : MonoBehaviour
 
         TimeManager.Instance.StartTimer();
         yield return new WaitForSeconds(0.5f);
-       
+
+
         QuestManager.Instance.StartQuest(q);
 
     }

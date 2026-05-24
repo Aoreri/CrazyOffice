@@ -72,7 +72,22 @@ public class QuestManager : MonoBehaviour
             questText.text = currentStep.stepDescription;
         }
 
-        // If it's an NPC step, pick the random GameObject here
+        if(currentStep.objectiveType == QuestObjectiveType.ShowDialogue)
+        {
+            if(currentStep.dialogueArea.Length != 0 && currentStep.target != null)
+            {
+                int randomIndex = Random.Range(0, currentStep.dialogueArea.Length);
+                string dialogue = currentStep.dialogueArea[randomIndex];
+
+                DialogueManager.Instance.chatStart(currentStep.target, dialogue, () =>
+                {
+                    AdvanceQuest();
+                    Debug.Log("Dialogue ended.");
+                });
+
+            } else Debug.Log("NO DIALOGUE FOUND!");
+        }
+
         if (currentStep.objectiveType == QuestObjectiveType.TalkToNPC)
         {
             if (currentStep.possibleNPCs.Length > 0)

@@ -6,8 +6,9 @@ public enum QuestObjectiveType
     SolvePuzzle,
     CollectItem,
     ChangeDoorState,
-    CustomEvent1,   // Added Custom Event 1
-    CustomEvent2    // Added Custom Event 2
+    CustomEvent1,
+    CustomEvent2,
+    ShowDialogue    // Added ShowDialogue
 }
 
 [System.Serializable]
@@ -31,4 +32,9 @@ public class QuestStep
 
     [Header("Door Settings")]
     public GameObject[] doors;
+
+    [Header("Show Dialogue Settings")]
+    public GameObject target;
+    [TextArea]
+    public string[] dialogueArea; // Change type to GameObject or Transform if you are referencing a scene object/UI panel
 }

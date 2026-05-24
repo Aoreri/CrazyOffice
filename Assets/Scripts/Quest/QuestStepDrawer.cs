@@ -33,8 +33,12 @@ public class QuestStepDrawer : PropertyDrawer
             }
             else if (enumValue == (int)QuestObjectiveType.ChangeDoorState)
             {
-                // Door array height
                 height += EditorGUI.GetPropertyHeight(property.FindPropertyRelative("doors"), true) + EditorGUIUtility.standardVerticalSpacing;
+            }
+            else if (enumValue == (int)QuestObjectiveType.ShowDialogue)
+            {
+                height += EditorGUI.GetPropertyHeight(property.FindPropertyRelative("target")) + EditorGUIUtility.standardVerticalSpacing;
+                height += EditorGUI.GetPropertyHeight(property.FindPropertyRelative("dialogueArea")) + EditorGUIUtility.standardVerticalSpacing;
             }
             // CustomEvent1 and CustomEvent2 do not need extra height calculations
         }
@@ -103,6 +107,17 @@ public class QuestStepDrawer : PropertyDrawer
                 SerializedProperty doors = property.FindPropertyRelative("doors");
                 currentRect.height = EditorGUI.GetPropertyHeight(doors, true);
                 EditorGUI.PropertyField(currentRect, doors, true);
+            }
+            else if (enumValue == (int)QuestObjectiveType.ShowDialogue)
+            {
+                SerializedProperty targetProp = property.FindPropertyRelative("target");
+                currentRect.height = EditorGUI.GetPropertyHeight(targetProp);
+                EditorGUI.PropertyField(currentRect, targetProp);
+                currentRect.y += currentRect.height + EditorGUIUtility.standardVerticalSpacing;
+
+                SerializedProperty dialogueAreaProp = property.FindPropertyRelative("dialogueArea");
+                currentRect.height = EditorGUI.GetPropertyHeight(dialogueAreaProp);
+                EditorGUI.PropertyField(currentRect, dialogueAreaProp);
             }
             // CustomEvent1 and CustomEvent2 do not draw any extra fields
 
