@@ -30,12 +30,26 @@ public class DialogueManager : MonoBehaviour
     private DialogueBubble _activeBubble;
     private Transform _targetTransform;
 
+    public Transform player;
+
     // ── lifecycle ────────────────────────────────────────────────────────────
 
     private void Awake()
     {
         if (Instance != null && Instance != this) { Destroy(gameObject); return; }
         Instance = this;
+    }
+
+    void Start()
+    {
+        if (player == null)
+        {
+            GameObject playerObj = GameObject.FindGameObjectWithTag("Player");
+            if (playerObj != null)
+                player = playerObj.transform;
+            else
+                Debug.LogWarning("Player not found! Please assign the Player tag or drag the Player into the script.");
+        }
     }
 
     private void Update()
@@ -68,7 +82,14 @@ public class DialogueManager : MonoBehaviour
 
         SnapToTarget();
 
+        player.GetComponent<PlayerMovement>().disableMovement = true;
+
         _activeBubble.Init(lines, onEnd);
+    }
+
+    public void chatFinished()
+    {
+        player.GetComponent<PlayerMovement>().disableMovement = false;
     }
 
     // ── helpers ──────────────────────────────────────────────────────────────

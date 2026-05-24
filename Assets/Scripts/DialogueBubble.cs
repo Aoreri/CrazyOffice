@@ -164,6 +164,9 @@ public class DialogueBubble : MonoBehaviour
         if (closeOption != null) closeOption.SetActive(false);
 
         yield return StartCoroutine(FadeCanvas(1f, 0f, fadeOutDuration));
+
+        DialogueManager.Instance.chatFinished();
+
         _onEnd?.Invoke();
         Destroy(gameObject);
     }
