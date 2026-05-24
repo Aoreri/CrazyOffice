@@ -12817,7 +12817,7 @@ Transform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1493725758}
+  - {fileID: 1191588643}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &949809738
@@ -16521,6 +16521,39 @@ Transform:
   m_Children:
   - {fileID: 433737663}
   m_Father: {fileID: 511029826}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1191588642
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1191588643}
+  m_Layer: 0
+  m_Name: UseCase1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1191588643
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1191588642}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1493725758}
+  - {fileID: 1905066984}
+  m_Father: {fileID: 939041870}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1195254315 stripped
 Transform:
@@ -22112,12 +22145,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1493725757}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 939041870}
+  m_Father: {fileID: 1191588643}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1493725759
 MonoBehaviour:
@@ -29083,6 +29116,131 @@ Transform:
   - {fileID: 1655139808}
   m_Father: {fileID: 910246102}
   m_LocalEulerAnglesHint: {x: 8.532, y: 14.344, z: 2.662}
+--- !u!1 &1905066983
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1905066984}
+  - component: {fileID: 1905066985}
+  m_Layer: 0
+  m_Name: testquest2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1905066984
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1905066983}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1191588643}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1905066985
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1905066983}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d6bc1ff5f8df6a40a87f5ad6c99451a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Quest
+  questId: 1
+  questName: test
+  description: 
+  steps:
+  - stepDescription: 
+    objectiveType: 0
+    shouldCount: 0
+    possibleNPCs:
+    - {fileID: 2855172628724028016}
+    puzzleNames: []
+    itemObjects: []
+    amountRequired: 0
+    doors: []
+    target: {fileID: 0}
+    dialogueArea: []
+  - stepDescription: Talk to the CEO.
+    objectiveType: 6
+    shouldCount: 1
+    possibleNPCs: []
+    puzzleNames:
+    - Maze
+    itemObjects:
+    - {fileID: 1091700549}
+    amountRequired: 1
+    doors:
+    - {fileID: 1091700549}
+    target: {fileID: 2855172628724028016}
+    dialogueArea:
+    - Test testTest testTest testTest testTest testTest testTest testTest testTest
+      testTest testTest testTest test
+  - stepDescription: 
+    objectiveType: 3
+    shouldCount: 0
+    possibleNPCs: []
+    puzzleNames:
+    - Maze
+    itemObjects: []
+    amountRequired: 0
+    doors:
+    - {fileID: 1091700549}
+    target: {fileID: 0}
+    dialogueArea: []
+  - stepDescription: Open the door.
+    objectiveType: 2
+    shouldCount: 1
+    possibleNPCs: []
+    puzzleNames:
+    - Maze
+    itemObjects:
+    - {fileID: 1091700549}
+    amountRequired: 1
+    doors:
+    - {fileID: 1091700549}
+    target: {fileID: 0}
+    dialogueArea: []
+  - stepDescription: Open the door with the card.
+    objectiveType: 1
+    shouldCount: 0
+    possibleNPCs: []
+    puzzleNames:
+    - Card
+    itemObjects:
+    - {fileID: 1091700549}
+    amountRequired: 1
+    doors:
+    - {fileID: 1091700549}
+    target: {fileID: 0}
+    dialogueArea: []
+  - stepDescription: 
+    objectiveType: 3
+    shouldCount: 0
+    possibleNPCs: []
+    puzzleNames:
+    - Maze
+    itemObjects:
+    - {fileID: 1091700549}
+    amountRequired: 1
+    doors:
+    - {fileID: 1091700549}
+    target: {fileID: 0}
+    dialogueArea: []
 --- !u!1 &1907107545
 GameObject:
   m_ObjectHideFlags: 0

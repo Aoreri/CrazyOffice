@@ -6,8 +6,6 @@ public enum QuestObjectiveType
     SolvePuzzle,
     CollectItem,
     ChangeDoorState,
-    CustomEvent1,
-    CustomEvent2,
     ShowDialogue    // Added ShowDialogue
 }
 
@@ -36,5 +34,5 @@ public class QuestStep
     [Header("Show Dialogue Settings")]
     public GameObject target;
     [TextArea]
-    public string[] dialogueArea; // Change type to GameObject or Transform if you are referencing a scene object/UI panel
+    public string[] dialogueArea; 
 }

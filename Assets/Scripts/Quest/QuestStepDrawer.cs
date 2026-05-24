@@ -40,7 +40,6 @@ public class QuestStepDrawer : PropertyDrawer
                 height += EditorGUI.GetPropertyHeight(property.FindPropertyRelative("target")) + EditorGUIUtility.standardVerticalSpacing;
                 height += EditorGUI.GetPropertyHeight(property.FindPropertyRelative("dialogueArea")) + EditorGUIUtility.standardVerticalSpacing;
             }
-            // CustomEvent1 and CustomEvent2 do not need extra height calculations
         }
         return height;
     }
