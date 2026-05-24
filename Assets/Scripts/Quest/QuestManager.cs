@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -5,6 +6,8 @@ using UnityEngine.UI;
 public class QuestManager : MonoBehaviour
 {
     public static QuestManager Instance { get; private set; }
+
+    public Transform player;
 
     [Header("Current Progress")]
     public Quest activeQuest;
@@ -28,6 +31,18 @@ public class QuestManager : MonoBehaviour
     {
         if (Instance == null) Instance = this;
         else Destroy(gameObject);
+    }
+
+    void Start()
+    {
+        if (player == null)
+        {
+            GameObject playerObj = GameObject.FindGameObjectWithTag("Player");
+            if (playerObj != null)
+                player = playerObj.transform;
+            else
+                Debug.LogWarning("Player not found! Please assign the Player tag or drag the Player into the script.");
+        }
     }
 
     public void StartQuest(Quest newQuest)
@@ -228,6 +243,20 @@ public class QuestManager : MonoBehaviour
         {
             // REMOVE the layer using Bitwise AND NOT
             rend.renderingLayerMask &= ~layerBit;
+        }
+    }
+
+    void Update()
+    {
+  
+        if (player != null && Input.GetKeyDown(KeyCode.F) && activeQuest != null && targetItemForCurrentStep != null)
+        {
+            float distance = Vector3.Distance(targetItemForCurrentStep.transform.position, player.position);
+
+            if (distance <= 2f)
+            {
+                OnItemUsed(targetItemForCurrentStep);
+            }
         }
     }
 }

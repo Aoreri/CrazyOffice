@@ -84,27 +84,8 @@ public class DoorScript : MonoBehaviour
         if (!force)
         {
             if (!openable)
-            {
-                if (QuestManager.Instance.activeQuest != null)
-                {
-                    int currIndex = QuestManager.Instance.currentStepIndex;
-                    List<QuestStep> steps = QuestManager.Instance.activeQuest.steps;
-                    if (currIndex < steps.Count && steps[currIndex].objectiveType == QuestObjectiveType.CollectItem)
-                    {
-                        Debug.Log("3");
-                        for (int i = 0; i < steps[currIndex].itemObjects.Length; i++)
-                        {
-                            if (steps[currIndex].itemObjects[i] == gameObject)
-                            { 
-                                QuestManager.Instance.OnItemUsed(gameObject);
-                                break;
-                            }
-                        }
-                    }
-                }
-
-                return;
-            }
+                 return;
+            
                 
 
             if (isOpen && !closeable)
