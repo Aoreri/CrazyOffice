@@ -3,6 +3,22 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+// --- EKLENEN YENÝ SINIFLAR ---
+[System.Serializable]
+public class UseCaseTasks
+{
+    public string useCaseName; // Sadece senin okuman için (Örn: "Scan Label")
+    public Quest[] quests;     // Bu Use Case'in içereceði özel görevler
+}
+
+[System.Serializable]
+public class ScenarioData
+{
+    public string scenarioName; // Sadece senin okuman için (Örn: "Food Delivery")
+    public UseCaseTasks[] useCases = new UseCaseTasks[3]; // Her senaryonun 3 adet Use Case'i
+}
+// -----------------------------
+
 public class StageManager : MonoBehaviour
 {
     public static StageManager Instance { get; private set; }
@@ -14,19 +30,15 @@ public class StageManager : MonoBehaviour
     public Transform startPosition;
     public Transform spawnPosition;
 
-    [Header("Senaryo 1 Görevleri (Örn: Food Delivery)")]
-    public Quest[] scenario1Quests;
-
-    [Header("Senaryo 2 Görevleri")]
-    public Quest[] scenario2Quests;
-
-    [Header("Senaryo 3 Görevleri")]
-    public Quest[] scenario3Quests;
+    [Header("Tüm Senaryolar ve Use Case Görevleri")]
+    public ScenarioData[] allScenarios = new ScenarioData[3];
 
     public GameObject markerCanvas;
 
     [HideInInspector] public int selectedScenarioIndex = 0;
-    private Quest[] currentScenarioQuests;
+
+    // Takip deðiþkenleri
+    private int currentUseCaseIndex = 0;
     private int currentQuestIndex = 0;
 
     private void Awake()
@@ -60,7 +72,7 @@ public class StageManager : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
 
         player.transform.position = new Vector3(startPosition.position.x, player.transform.position.y, startPosition.position.z);
-        
+
         player.GetComponent<CapsuleCollider>().enabled = true;
 
         yield return new WaitForSeconds(0.5f);
@@ -69,43 +81,63 @@ public class StageManager : MonoBehaviour
             markerCanvas.SetActive(true);
     }
 
-    
     public void StartScenarioQuests()
     {
         if (markerCanvas != null) markerCanvas.SetActive(false);
         player.GetComponent<PlayerMovement>().enablePlayerMovement();
 
-        if (selectedScenarioIndex == 0) currentScenarioQuests = scenario1Quests;
-        else if (selectedScenarioIndex == 1) currentScenarioQuests = scenario2Quests;
-        else if (selectedScenarioIndex == 2) currentScenarioQuests = scenario3Quests;
-        else currentScenarioQuests = scenario1Quests;
+        // Sayaçlarý sýfýrla
+        currentUseCaseIndex = 0;
+        currentQuestIndex = 0;
 
-        currentQuestIndex = 0; 
         StartNextQuest();
     }
 
-    
     public void StartNextQuest()
     {
-        
-        if (currentScenarioQuests != null && currentQuestIndex < currentScenarioQuests.Length)
-        {
-            Quest nextQuest = currentScenarioQuests[currentQuestIndex];
-            currentQuestIndex++;
+        // Güvenlik kontrolü
+        if (selectedScenarioIndex >= allScenarios.Length) return;
 
-            QuestManager.Instance.StartQuest(nextQuest);
-        }
-        else
+        ScenarioData currentScenario = allScenarios[selectedScenarioIndex];
+
+        // 1. Eðer bu senaryodaki tüm Use Case'ler bittiyse OYUN BÝTER
+        if (currentUseCaseIndex >= currentScenario.useCases.Length)
         {
-            if(DataManager.Instance == null)
+            if (DataManager.Instance == null)
             {
                 Debug.Log("No data found!");
                 return;
             }
 
             DataManager.Instance.EndGame(TimeManager.Instance.timeElapsed);
-            SceneManager.LoadScene("MainMenu");            
-            //Debug.Log("BU SENARYONUN TÜM GÖREVLERÝ (USE CASE'LERÝ) BÝTTÝ!");
+            SceneManager.LoadScene("MainMenu");
+            return;
+        }
+
+        UseCaseTasks currentUseCase = currentScenario.useCases[currentUseCaseIndex];
+
+        // 2. Eðer bulunduðumuz Use Case'in görevleri devam ediyorsa sýradakini ver
+        if (currentQuestIndex < currentUseCase.quests.Length)
+        {
+            Quest nextQuest = currentUseCase.quests[currentQuestIndex];
+            currentQuestIndex++; // Sýradakine hazýrlan
+
+            // Eðer inspector'da bir kutuyu boþ unuttuysan hata vermesin diye kontrol
+            if (nextQuest != null)
+            {
+                QuestManager.Instance.StartQuest(nextQuest);
+            }
+            else
+            {
+                StartNextQuest(); // Boþsa sýradakine atla
+            }
+        }
+        // 3. Eðer bulunduðumuz Use Case'in görevleri bittiyse DÝÐER Use Case'e geç
+        else
+        {
+            currentUseCaseIndex++;
+            currentQuestIndex = 0;
+            StartNextQuest(); // Döngüyü tekrar tetikle
         }
     }
 }
