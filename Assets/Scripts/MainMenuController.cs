@@ -18,7 +18,12 @@ public class MainMenuController : MonoBehaviour
         //SceneManager.LoadScene("MapScene");
     }
 
-
+    public void OpenPath()
+    {
+        Application.OpenURL(
+Application.persistentDataPath
+);
+    }
 
     public void OnExit()
     {
