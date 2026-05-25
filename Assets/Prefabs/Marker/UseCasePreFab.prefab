@@ -150,6 +150,7 @@ GameObject:
   - component: {fileID: 4382271762342648849}
   - component: {fileID: 5040464423679230201}
   - component: {fileID: 1348934925481360701}
+  - component: {fileID: 2199807931837947488}
   m_Layer: 5
   m_Name: UseCasePreFab
   m_TagString: Untagged
@@ -240,3 +241,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UIFader
   fadeDuration: 1
+--- !u!114 &2199807931837947488
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2042159266084396324}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6bc70a41851d574786d22b6d91221b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Q
