@@ -13,7 +13,7 @@ public class TimeManager : MonoBehaviour
     [Tooltip("This will be used as a template and cloned for each penalty.")]
     public TextMeshProUGUI penaltyText;
 
-    private float timeElapsed;
+    public float timeElapsed;
     private bool isRunning = false;
 
     private void Awake()

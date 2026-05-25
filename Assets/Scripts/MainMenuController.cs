@@ -9,10 +9,13 @@ public class MainMenuController : MonoBehaviour
     public GameObject[] pages;
     public GameObject backButton;
 
+    public GameObject userDetails;
+
     public void OnPlay()
     {
-        SceneManager.LoadScene("MapScene");
-        Debug.Log("Play clicked");
+        userDetails.SetActive(true);
+        pages[0].SetActive(false);
+        //SceneManager.LoadScene("MapScene");
     }
 
 

@@ -7,6 +7,8 @@ using UnityEngine.EventSystems;
 
 public class RequirementHighlighter : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, IPointerExitHandler
 {
+    public StageManager stageManager;
+
     public UMLManager umlManager;
     public TextMeshProUGUI documentText;
     public RectTransform highlightContainer;
@@ -180,12 +182,11 @@ public class RequirementHighlighter : MonoBehaviour, IPointerClickHandler, IPoin
        
         yield return new WaitForSeconds(1.5f);
 
-        StageManager sm = Object.FindFirstObjectByType<StageManager>();
-        if (sm != null)
+        if (stageManager != null)
         {
-            
-            sm.selectedScenarioIndex = currentScenarioIndex;
-            sm.StartScenarioQuests();
+
+            stageManager.selectedScenarioIndex = currentScenarioIndex;
+            stageManager.StartScenarioQuests();
         }
     }
 

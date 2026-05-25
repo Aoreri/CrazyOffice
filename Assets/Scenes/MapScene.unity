@@ -5915,7 +5915,20 @@ MonoBehaviour:
   door: {fileID: 804933753}
   startPosition: {fileID: 1326923093896538935}
   spawnPosition: {fileID: 2108868155}
-  q: {fileID: 1493725759}
+  scenario1Quests:
+  - {fileID: 585735546}
+  - {fileID: 2087972177}
+  - {fileID: 1237841996}
+  scenario2Quests:
+  - {fileID: 490205802}
+  - {fileID: 1237841996}
+  - {fileID: 585735546}
+  scenario3Quests:
+  - {fileID: 585735546}
+  - {fileID: 585735546}
+  - {fileID: 490205802}
+  markerCanvas: {fileID: 880956077}
+  selectedScenarioIndex: 0
 --- !u!4 &392793888
 Transform:
   m_ObjectHideFlags: 0
@@ -8879,11 +8892,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 48c405a5940589944992b004420a5c38, type: 3}
   m_PrefabInstance: {fileID: 555886309}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &561709731 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 608074040588246492, guid: 67b7958f51626f8458685c8378688092, type: 3}
-  m_PrefabInstance: {fileID: 1490511336}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &568852811
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9223,7 +9231,7 @@ MonoBehaviour:
   steps:
   - stepDescription: Talk To Officer
     objectiveType: 0
-    shouldCount: 0
+    shouldCount: 1
     possibleNPCs:
     - {fileID: 669366391}
     puzzleNames: []
@@ -9246,7 +9254,7 @@ MonoBehaviour:
     - deneme
   - stepDescription: Talk To Officer
     objectiveType: 2
-    shouldCount: 0
+    shouldCount: 1
     possibleNPCs:
     - {fileID: 669366391}
     puzzleNames: []
@@ -14213,7 +14221,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 15704064}
-  - {fileID: 1492780231}
   - {fileID: 1191588643}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -14526,7 +14533,7 @@ PrefabInstance:
       addedObject: {fileID: 1091700555}
     - targetCorrespondingSourceObject: {fileID: 608074040588246492, guid: 67b7958f51626f8458685c8378688092, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1091700554}
+      addedObject: {fileID: 1091770754}
   m_SourcePrefab: {fileID: 100100000, guid: 67b7958f51626f8458685c8378688092, type: 3}
 --- !u!4 &972066682 stripped
 Transform:
@@ -16555,62 +16562,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 608074040588246492, guid: 67b7958f51626f8458685c8378688092, type: 3}
   m_PrefabInstance: {fileID: 972066681}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1091700554
---- !u!1 &1091770752
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1091770753}
-  - component: {fileID: 1091770754}
-  m_Layer: 0
-  m_Name: quest2(usb-serverroom)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1091770753
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1091770752}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 15704064}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1091770754
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1091700549}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c438bb9cc1b3c43e4be20fb4eb56ff19, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DoorSoundManager
-  audioSource: {fileID: 1091700555}
-  openSounds:
-  - {fileID: 8300000, guid: 8970cf4bd6bb1437a858ec258e67d582, type: 3}
-  - {fileID: 8300000, guid: 2d3a4f5cf9e3842b0aa050705bf6d80d, type: 3}
-  - {fileID: 8300000, guid: af7a0e478dd0b41aea01e1b8d70e5c04, type: 3}
-  - {fileID: 8300000, guid: 51c184049f1b2492ea27dfc97cd09f81, type: 3}
-  closeSounds:
-  - {fileID: 8300000, guid: 8217a6d23f67e48ef94e6948a74b9e65, type: 3}
-  - {fileID: 8300000, guid: de57308c32c9542ed9ab3d19b935fc1e, type: 3}
-  - {fileID: 8300000, guid: 7f8b72e411bf24d20ba7648fe6cd0aea, type: 3}
-  - {fileID: 8300000, guid: 8888fe2ebe930485d9f20b9152c8d567, type: 3}
 --- !u!82 &1091700555
 AudioSource:
   m_ObjectHideFlags: 0
@@ -16708,65 +16659,60 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &1091770752
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1091770753}
+  m_Layer: 0
+  m_Name: quest2(usb-serverroom)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1091770753
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1091770752}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 15704064}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1091770754
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1091700549}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3d6bc1ff5f8df6a40a87f5ad6c99451a, type: 3}
+  m_Script: {fileID: 11500000, guid: c438bb9cc1b3c43e4be20fb4eb56ff19, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Quest
-  questId: 
-  questName: 
-  description: 
-  steps:
-  - stepDescription: Talk To IT
-    objectiveType: 0
-    shouldCount: 0
-    possibleNPCs:
-    - {fileID: 919132149593364188}
-    puzzleNames: []
-    itemObjects: []
-    amountRequired: 0
-    doors: []
-    target: {fileID: 0}
-    dialogueArea: []
-  - stepDescription: Talk To Officer
-    objectiveType: 4
-    shouldCount: 0
-    possibleNPCs:
-    - {fileID: 669366391}
-    puzzleNames: []
-    itemObjects: []
-    amountRequired: 0
-    doors: []
-    target: {fileID: 919132149593364188}
-    dialogueArea:
-    - deneme
-  - stepDescription: Talk To Officer
-    objectiveType: 2
-    shouldCount: 0
-    possibleNPCs:
-    - {fileID: 669366391}
-    puzzleNames: []
-    itemObjects:
-    - {fileID: 1867291729}
-    amountRequired: 0
-    doors: []
-    target: {fileID: 0}
-    dialogueArea:
-    - deneme
-  - stepDescription: Solve Puzzle
-    objectiveType: 1
-    shouldCount: 0
-    possibleNPCs:
-    - {fileID: 669366391}
-    puzzleNames:
-    - USB
-    itemObjects: []
-    amountRequired: 0
-    doors: []
-    target: {fileID: 0}
-    dialogueArea:
-    - deneme
+  m_EditorClassIdentifier: Assembly-CSharp::DoorSoundManager
+  audioSource: {fileID: 1091700555}
+  openSounds:
+  - {fileID: 8300000, guid: 8970cf4bd6bb1437a858ec258e67d582, type: 3}
+  - {fileID: 8300000, guid: 2d3a4f5cf9e3842b0aa050705bf6d80d, type: 3}
+  - {fileID: 8300000, guid: af7a0e478dd0b41aea01e1b8d70e5c04, type: 3}
+  - {fileID: 8300000, guid: 51c184049f1b2492ea27dfc97cd09f81, type: 3}
+  closeSounds:
+  - {fileID: 8300000, guid: 8217a6d23f67e48ef94e6948a74b9e65, type: 3}
+  - {fileID: 8300000, guid: de57308c32c9542ed9ab3d19b935fc1e, type: 3}
+  - {fileID: 8300000, guid: 7f8b72e411bf24d20ba7648fe6cd0aea, type: 3}
+  - {fileID: 8300000, guid: 8888fe2ebe930485d9f20b9152c8d567, type: 3}
 --- !u!4 &1102180990 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 0ac38a7106d3e1f41986dfb75d6246e7, type: 3}
@@ -22115,55 +22061,48 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4228b5e06dc764614a74f493fc2fa8be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RequirementHighlighter
+  stageManager: {fileID: 392793887}
   umlManager: {fileID: 1785916683}
   documentText: {fileID: 1415601955}
   highlightContainer: {fileID: 1949415920}
   highlightPrefab: {fileID: 4613768592917034429, guid: 1c6f446f244ea96499e9e1b9d17f54c7, type: 3}
   randomTexts:
-  - 'Smart Warehouse Management System
+  - '<align="center">Smart Warehouse Management System</align>
 
 
-
-    TASK: Mark the actors with <color=#0055AA>BLUE</color>
-    and the actions (Use Case) with <color=#CC7700>YELLOW</color> pen sequentially.
-
-
-
-    Application
-    Expectations:
+    TASK: Mark the
+    actors with <color=#0055AA>BLUE</color> and the actions (Use Case) with <color=#CC7700>YELLOW</color>
+    pen sequentially.
 
 
-
-    <link="actor_left">Warehouse operators</link> can quickly
-    <link="usecase">scan barcode labels of incoming packages</link>.
+    Application Expectations:
 
 
-
-    <link="actor_right">Inventory
-    controllers</link> should be able to <link="usecase">track item locations within
-    the facility</link>.
-
+    <link="actor_left">Warehouse
+    operators</link> can quickly <link="usecase">scan barcode labels of incoming
+    packages</link>.
 
 
-    <link="actor_right">Logistics managers</link> can
-    automatically <link="usecase">generate shipping manifests for outgoing cargo</link>.'
-  - 'Cloud Storage System
+    <link="actor_right">Inventory controllers</link> should
+    be able to <link="usecase">track item locations within the facility</link>.
 
 
-
-    TASK: Mark the actors with <color=#0055AA>BLUE</color>
-    and the actions (Use Case) with <color=#CC7700>YELLOW</color> pen sequentially.
-
-
-
-    Application
-    Expectations:
+    <link="actor_right">Logistics
+    managers</link> can automatically <link="usecase">generate shipping manifests
+    for outgoing cargo</link>.'
+  - '<align="center">Cloud Storage System</align>
 
 
+    TASK: Mark the actors with
+    <color=#0055AA>BLUE</color> and the actions (Use Case) with <color=#CC7700>YELLOW</color>
+    pen sequentially.
 
-    <link="actor_left">Standard users</link> can seamlessly
-    <link="usecase">upload heavy files to the cloud folders</link>.
 
+    Application Expectations:
+
+
+    <link="actor_left">Standard
+    users</link> can seamlessly <link="usecase">upload heavy files to the cloud folders</link>.
 
 
     <link="actor_right">Storage
@@ -22171,31 +22110,25 @@ MonoBehaviour:
     to team requirements</link>.
 
 
-
     <link="actor_right">Security officers</link>
     can thoroughly <link="usecase">audit access logs to prevent data breaches</link>.'
-  - 'Food Delivery App
-
+  - '<align="center">Food Delivery App</align>
 
 
     TASK: Mark the actors with <color=#0055AA>BLUE</color>
     and the actions (Use Case) with <color=#CC7700>YELLOW</color> pen sequentially.
 
 
-
     Application
     Expectations:
-
 
 
     <link="actor_left">Customers</link> can easily <link="usecase">place
     orders through the system</link>.
 
 
-
     <link="actor_right">Restaurant managers</link>
     should be able to <link="usecase">update the menu based on stock levels</link>.
-
 
 
     <link="actor_right">Couriers</link>
@@ -22299,7 +22232,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 0, y: 0, z: 0, w: 0.68597406}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -22329,8 +22262,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -26.772882}
-  m_SizeDelta: {x: 700, y: 553.5458}
+  m_AnchoredPosition: {x: 0, y: 14.386}
+  m_SizeDelta: {x: 700, y: 576.77}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &1418562156
 PrefabInstance:
@@ -24087,162 +24020,13 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 608074040588246492, guid: 67b7958f51626f8458685c8378688092, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1490511343}
-    - targetCorrespondingSourceObject: {fileID: 608074040588246492, guid: 67b7958f51626f8458685c8378688092, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1490511342}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 67b7958f51626f8458685c8378688092, type: 3}
 --- !u!4 &1490511337 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2037994697043523897, guid: 67b7958f51626f8458685c8378688092, type: 3}
   m_PrefabInstance: {fileID: 1490511336}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1490511342
-MonoBehaviour:
---- !u!1 &1492780230
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 561709731}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c438bb9cc1b3c43e4be20fb4eb56ff19, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DoorSoundManager
-  audioSource: {fileID: 1490511343}
-  openSounds:
-  - {fileID: 8300000, guid: 8970cf4bd6bb1437a858ec258e67d582, type: 3}
-  - {fileID: 8300000, guid: 2d3a4f5cf9e3842b0aa050705bf6d80d, type: 3}
-  - {fileID: 8300000, guid: af7a0e478dd0b41aea01e1b8d70e5c04, type: 3}
-  - {fileID: 8300000, guid: 51c184049f1b2492ea27dfc97cd09f81, type: 3}
-  closeSounds:
-  - {fileID: 8300000, guid: 8217a6d23f67e48ef94e6948a74b9e65, type: 3}
-  - {fileID: 8300000, guid: de57308c32c9542ed9ab3d19b935fc1e, type: 3}
-  - {fileID: 8300000, guid: 7f8b72e411bf24d20ba7648fe6cd0aea, type: 3}
-  - {fileID: 8300000, guid: 8888fe2ebe930485d9f20b9152c8d567, type: 3}
---- !u!82 &1490511343
-AudioSource:
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1492780231}
-  m_Layer: 0
-  m_Name: UseCase2
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1492780231
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 561709731}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 0}
-  m_PlayOnAwake: 0
-  m_Volume: 0.1
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1.5
-  MaxDistance: 2
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0.5555556
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  m_GameObject: {fileID: 1492780230}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 939041870}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1493725757
 GameObject:
   m_ObjectHideFlags: 0

@@ -25,6 +25,8 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
+     
+
         // Movement
         Vector3 move = new Vector3(moveInput.x, 0, moveInput.y);
         Vector3 targetVelocity = move * speed;

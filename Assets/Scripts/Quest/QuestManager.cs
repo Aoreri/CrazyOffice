@@ -47,6 +47,8 @@ public class QuestManager : MonoBehaviour
 
     public void StartQuest(Quest newQuest)
     {
+        Debug.Log("Quest Started! " + newQuest.transform.name);
+
         totalStepCount = 0;
         stepCount = 0;
 

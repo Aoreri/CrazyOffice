@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class StageManager : MonoBehaviour
 {
@@ -97,7 +98,9 @@ public class StageManager : MonoBehaviour
         }
         else
         {
-            Debug.Log("BU SENARYONUN TÜM GÖREVLERÝ (USE CASE'LERÝ) BÝTTÝ!");
+            DataManager.Instance.EndGame(TimeManager.Instance.timeElapsed);
+            SceneManager.LoadScene("MainMenu");            
+            //Debug.Log("BU SENARYONUN TÜM GÖREVLERÝ (USE CASE'LERÝ) BÝTTÝ!");
         }
     }
 }
