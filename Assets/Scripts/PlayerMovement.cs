@@ -25,7 +25,9 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-     
+        if (disableMovement)
+            return;
+
 
         // Movement
         Vector3 move = new Vector3(moveInput.x, 0, moveInput.y);
