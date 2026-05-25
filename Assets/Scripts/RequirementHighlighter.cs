@@ -8,7 +8,6 @@ using UnityEngine.EventSystems;
 public class RequirementHighlighter : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, IPointerExitHandler
 {
     public StageManager stageManager;
-
     public UMLManager umlManager;
     public TextMeshProUGUI documentText;
     public RectTransform highlightContainer;
@@ -39,7 +38,6 @@ public class RequirementHighlighter : MonoBehaviour, IPointerClickHandler, IPoin
     private bool isPointerOverText = false;
     private Camera activeCamera;
 
-    
     private int currentScenarioIndex = 0;
 
     void Start()
@@ -55,7 +53,6 @@ public class RequirementHighlighter : MonoBehaviour, IPointerClickHandler, IPoin
     {
         if (randomTexts != null && randomTexts.Length > 0)
         {
-            
             currentScenarioIndex = Random.Range(0, randomTexts.Length);
             documentText.text = randomTexts[currentScenarioIndex];
             ClearAllHighlights();
@@ -158,36 +155,43 @@ public class RequirementHighlighter : MonoBehaviour, IPointerClickHandler, IPoin
             if (umlManager != null) umlManager.DrawUseCase(selectedText);
             isCorrect = true;
         }
+        else if (currentPen != PenType.None)
+        {
+            // --- YANLIÞ CEVAP DURUMU ---
+            // 1. Ýþaretlemeyi kýrmýzý yap
+            ApplyHighlight(linkInfo, linkIndex, new Color(1f, 0.2f, 0.2f, 0.9f));
 
-        
+            // 2. Süreye 10 saniye ceza ekle
+            if (TimeManager.Instance != null)
+            {
+                TimeManager.Instance.ApplyPenalty(10f);
+            }
+        }
+
         if (isCorrect)
         {
-            if(correctAnswers.Count == 0)
+            // Ýlk doðru cevap verildiðinde süreyi baþlat
+            if (correctAnswers.Count == 0 && TimeManager.Instance != null)
                 TimeManager.Instance.StartTimer();
 
             correctAnswers.Add(linkIndex);
 
-            
             int totalLinks = documentText.textInfo.linkCount;
 
-            
+            // Tüm doðru cevaplar bulunduðunda
             if (correctAnswers.Count == totalLinks)
             {
-                
                 StartCoroutine(CompleteAndStartFirstQuest());
             }
         }
     }
 
-    
     private IEnumerator CompleteAndStartFirstQuest()
     {
-       
         yield return new WaitForSeconds(1.5f);
 
         if (stageManager != null)
         {
-
             stageManager.selectedScenarioIndex = currentScenarioIndex;
             stageManager.StartScenarioQuests();
         }
@@ -195,8 +199,6 @@ public class RequirementHighlighter : MonoBehaviour, IPointerClickHandler, IPoin
 
     private void ApplyHighlight(TMP_LinkInfo linkInfo, int linkIndex, Color highlightColor)
     {
-  
-
         if (activeHighlights.ContainsKey(linkIndex))
         {
             foreach (Transform child in activeHighlights[linkIndex].transform)
