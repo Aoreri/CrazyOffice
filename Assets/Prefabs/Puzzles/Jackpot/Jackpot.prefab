@@ -545,6 +545,8 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  introSpinCount: 5
+  introSpinSpeed: 0.05
   isSpinning: 0
 --- !u!1 &4740027873078912839
 GameObject:
@@ -1133,6 +1135,8 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  introSpinCount: 5
+  introSpinSpeed: 0.05
   isSpinning: 0
 --- !u!1 &6531614235280768163
 GameObject:
@@ -1574,6 +1578,8 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  introSpinCount: 5
+  introSpinSpeed: 0.05
   isSpinning: 0
 --- !u!1 &8493218642568344402
 GameObject:
@@ -1673,13 +1679,13 @@ MonoBehaviour:
   useClosingAnimation: 1
   backgroundFadeOutDuration: 0.4
   slideOutDuration: 0.4
-  disableLogicDuringAnimation: 1
+  disableLogicDuringAnimation: 0
   columns:
   - {fileID: 8491183539780351268}
   - {fileID: 6341370954262621462}
   - {fileID: 6443743661815172639}
   winRowIndex: 1
-  targetSymbolPrefab: {fileID: 127996954623156441, guid: 1c69d9f29176e8d40985fc4d49739892, type: 3}
+  targetSymbolPrefab: {fileID: 90118454360410671, guid: 48598220c5103e848ab366bcfedaf9cd, type: 3}
   referance: {fileID: 2027294495736565904}
 --- !u!1 &8689227000616636413
 GameObject:

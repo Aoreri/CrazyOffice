@@ -20,13 +20,19 @@ public class Jackpot : MonoBehaviour
     public float spinDuration = 0.25f;
     public AnimationCurve spinCurve;
 
+    [Header("Intro Sequence")]
+    [Tooltip("How many fast spins to simulate when initialized")]
+    public int introSpinCount = 8;
+    [Tooltip("Speed of each simulated intro spin")]
+    public float introSpinSpeed = 0.1f;
+
     private List<RectTransform> items = new();
 
     // Data for GameManager to read
     public List<RectTransform> CurrentItems => items;
     public Action OnSpinComplete;
 
-    // NEW: Track if this specific column is spinning
+    // Track if this specific column is spinning
     public bool isSpinning = false;
 
     private bool hasSubscribedButton = false;
@@ -46,6 +52,9 @@ public class Jackpot : MonoBehaviour
     /// </summary>
     public void Initialize()
     {
+        // Stop any running spins if this is called to reset the puzzle
+        StopAllCoroutines();
+
         // Clear any existing items first
         foreach (var item in items)
         {
@@ -84,6 +93,12 @@ public class Jackpot : MonoBehaviour
         isSpinning = false;
 
         SubscribeButton();
+
+        // Start the fast visual simulation
+        if (gameObject.activeInHierarchy)
+        {
+            StartCoroutine(FastIntroSequence());
+        }
     }
 
     private void SubscribeButton()
@@ -191,6 +206,70 @@ public class Jackpot : MonoBehaviour
         isSpinning = false; // Mark as stopped BEFORE telling the GameManager
 
         OnSpinComplete?.Invoke();
+    }
+
+    IEnumerator FastIntroSequence()
+    {
+        isSpinning = true;
+        if (spinButton != null) spinButton.interactable = false;
+
+        for (int j = 0; j < introSpinCount; j++)
+        {
+            Vector3 localPos0 = itemParent.InverseTransformPoint(slots[0].position);
+            Vector3 localPos1 = itemParent.InverseTransformPoint(slots[1].position);
+            float slotDistance = Mathf.Abs(localPos0.y - localPos1.y);
+
+            RectTransform newItem = SpawnRandomItem(slots[0]);
+            newItem.position = slots[0].position;
+            Vector2 spawnPos = newItem.anchoredPosition;
+            spawnPos.y += slotDistance;
+            newItem.anchoredPosition = spawnPos;
+
+            items.Insert(0, newItem);
+
+            Vector2[] startPositions = new Vector2[items.Count];
+            for (int i = 0; i < items.Count; i++)
+            {
+                startPositions[i] = items[i].anchoredPosition;
+            }
+
+            float elapsed = 0f;
+
+            while (elapsed < introSpinSpeed)
+            {
+                elapsed += Time.deltaTime;
+                float t = Mathf.Clamp01(elapsed / introSpinSpeed);
+                // Linear lerp for the fast spins looks best visually
+                float moveY = Mathf.Lerp(0, slotDistance, t);
+
+                for (int i = 0; i < items.Count; i++)
+                {
+                    items[i].anchoredPosition = startPositions[i] + Vector2.down * moveY;
+                }
+                yield return null;
+            }
+
+            for (int i = 0; i < slots.Length; i++)
+            {
+                items[i].anchorMin = slots[i].anchorMin;
+                items[i].anchorMax = slots[i].anchorMax;
+                items[i].pivot = slots[i].pivot;
+                items[i].SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, slots[i].rect.width);
+                items[i].SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, slots[i].rect.height);
+                items[i].position = slots[i].position;
+            }
+
+            RectTransform bottom = items[items.Count - 1];
+            items.RemoveAt(items.Count - 1);
+            Destroy(bottom.gameObject);
+        }
+
+        // Release the lock so the user can play
+        if (spinButton != null) spinButton.interactable = true;
+        isSpinning = false;
+
+        // Note: OnSpinComplete is intentionally NOT invoked here.
+        // This prevents the GameManager from evaluating a win condition during the intro sequence.
     }
 
     public void RemoveAndRespawnItems()

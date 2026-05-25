@@ -96,20 +96,8 @@ public class JackpotPuzzle : Puzzle
 
         runtimeReference = GetRuntimeClone(referance, runtimeInstance);
 
-        // Wire events and initialize on the runtime columns
-        if (runtimeColumns != null)
-        {
-            foreach (Jackpot col in runtimeColumns)
-            {
-                if (col != null)
-                {
-                    col.OnSpinComplete -= HandleColumnFinished;
-                    col.OnSpinComplete += HandleColumnFinished;
-                    col.Initialize();
-                }
-            }
-        }
-
+        // FIX #1: Define the target symbol and reference BEFORE initializing the columns.
+        // If your Jackpot columns rely on this data during instantiation, this prevents nulls/jumps.
         if (runtimeColumns != null && runtimeColumns.Length > 0 && runtimeColumns[0] != null && runtimeColumns[0].itemPrefabs != null && runtimeColumns[0].itemPrefabs.Length > 0)
         {
             targetSymbolPrefab = runtimeColumns[0].itemPrefabs[UnityEngine.Random.Range(0, runtimeColumns[0].itemPrefabs.Length)];
@@ -129,6 +117,25 @@ public class JackpotPuzzle : Puzzle
                 }
             }
         }
+
+        // Wire events and initialize on the runtime columns
+        if (runtimeColumns != null)
+        {
+            foreach (Jackpot col in runtimeColumns)
+            {
+                if (col != null)
+                {
+                    col.OnSpinComplete -= HandleColumnFinished;
+                    col.OnSpinComplete += HandleColumnFinished;
+                    col.Initialize();
+                }
+            }
+        }
+
+        // FIX #2: Force the UI to calculate sizes and positions immediately.
+        // This stops UI elements from reporting a size/position of '0' during the first frame,
+        // which is the primary cause of the "teleporting" behavior when slot machines start scrolling.
+        Canvas.ForceUpdateCanvases();
     }
 
     protected override void OnEndPuzzle()
