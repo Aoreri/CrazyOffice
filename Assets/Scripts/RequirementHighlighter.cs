@@ -162,6 +162,9 @@ public class RequirementHighlighter : MonoBehaviour, IPointerClickHandler, IPoin
         
         if (isCorrect)
         {
+            if(correctAnswers.Count == 0)
+                TimeManager.Instance.StartTimer();
+
             correctAnswers.Add(linkIndex);
 
             
@@ -192,6 +195,8 @@ public class RequirementHighlighter : MonoBehaviour, IPointerClickHandler, IPoin
 
     private void ApplyHighlight(TMP_LinkInfo linkInfo, int linkIndex, Color highlightColor)
     {
+  
+
         if (activeHighlights.ContainsKey(linkIndex))
         {
             foreach (Transform child in activeHighlights[linkIndex].transform)

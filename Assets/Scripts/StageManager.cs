@@ -60,10 +60,9 @@ public class StageManager : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
 
         player.transform.position = new Vector3(startPosition.position.x, player.transform.position.y, startPosition.position.z);
-        player.GetComponent<PlayerMovement>().disableMovement = false;
+        
         player.GetComponent<CapsuleCollider>().enabled = true;
 
-        TimeManager.Instance.StartTimer();
         yield return new WaitForSeconds(0.5f);
 
         if (markerCanvas != null)
@@ -74,8 +73,8 @@ public class StageManager : MonoBehaviour
     public void StartScenarioQuests()
     {
         if (markerCanvas != null) markerCanvas.SetActive(false);
+        player.GetComponent<PlayerMovement>().disableMovement = false;
 
-        
         if (selectedScenarioIndex == 0) currentScenarioQuests = scenario1Quests;
         else if (selectedScenarioIndex == 1) currentScenarioQuests = scenario2Quests;
         else if (selectedScenarioIndex == 2) currentScenarioQuests = scenario3Quests;
@@ -98,6 +97,12 @@ public class StageManager : MonoBehaviour
         }
         else
         {
+            if(DataManager.Instance == null)
+            {
+                Debug.Log("No data found!");
+                return;
+            }
+
             DataManager.Instance.EndGame(TimeManager.Instance.timeElapsed);
             SceneManager.LoadScene("MainMenu");            
             //Debug.Log("BU SENARYONUN TÜM GÖREVLERÝ (USE CASE'LERÝ) BÝTTÝ!");
