@@ -82,14 +82,14 @@ public class DialogueManager : MonoBehaviour
 
         SnapToTarget();
 
-        player.GetComponent<PlayerMovement>().disableMovement = true;
+        player.GetComponent<PlayerMovement>().disablePlayerMovement();
 
         _activeBubble.Init(lines, onEnd);
     }
 
     public void chatFinished()
     {
-        player.GetComponent<PlayerMovement>().disableMovement = false;
+        player.GetComponent<PlayerMovement>().enablePlayerMovement();
     }
 
     // ── helpers ──────────────────────────────────────────────────────────────

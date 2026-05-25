@@ -40,7 +40,7 @@ public class StageManager : MonoBehaviour
 
         player.transform.position = new Vector3(spawnPosition.position.x, player.transform.position.y, spawnPosition.position.z);
         player.GetComponent<CapsuleCollider>().enabled = false;
-        player.GetComponent<PlayerMovement>().disableMovement = true;
+        player.GetComponent<PlayerMovement>().disablePlayerMovement();
         currCamera.GetComponent<CameraFollow>().enabled = false;
 
         StartCoroutine(startAnimation());
@@ -73,7 +73,7 @@ public class StageManager : MonoBehaviour
     public void StartScenarioQuests()
     {
         if (markerCanvas != null) markerCanvas.SetActive(false);
-        player.GetComponent<PlayerMovement>().disableMovement = false;
+        player.GetComponent<PlayerMovement>().enablePlayerMovement();
 
         if (selectedScenarioIndex == 0) currentScenarioQuests = scenario1Quests;
         else if (selectedScenarioIndex == 1) currentScenarioQuests = scenario2Quests;

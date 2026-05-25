@@ -3,7 +3,7 @@ using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public bool disableMovement = false;
+    private bool disableMovement = false;
 
     public float speed = 5f;
     public float rotationSpeed = 0.5f; // higher = snappier
@@ -56,5 +56,18 @@ public class PlayerMovement : MonoBehaviour
             return;
 
         moveInput = value.Get<Vector2>();
+    }
+
+
+    public void disablePlayerMovement()
+    {
+        disableMovement = true;
+        moveInput = Vector2.zero;
+    }
+
+    public void enablePlayerMovement()
+    {
+        disableMovement = false;
+        moveInput = Vector2.zero;
     }
 }
