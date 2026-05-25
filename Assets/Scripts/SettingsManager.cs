@@ -1,6 +1,8 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System.Collections.Generic;
+using System.Linq;
 
 public class SettingsManager : MonoBehaviour
 {
@@ -9,7 +11,7 @@ public class SettingsManager : MonoBehaviour
 
     [Header("Resolution")]
     public TMP_Dropdown resolutionDropdown;
-    private Resolution[] resolutions;
+    private List<Resolution> resolutions;
 
     [Header("Quality")]
     public TMP_Dropdown qualityDropdown;
@@ -41,23 +43,28 @@ public class SettingsManager : MonoBehaviour
         PlayerPrefs.SetInt("Fullscreen", isFullscreen ? 1 : 0);
     }
 
+    // =========================
+    // RESOLUTION
+    // =========================
 
     void SetupResolutionDropdown()
     {
-        resolutions = Screen.resolutions;
+        // Deduplicate by width+height, then sort highest to lowest
+        resolutions = Screen.resolutions
+            .GroupBy(r => new { r.width, r.height })
+            .Select(g => g.Last())
+            .OrderByDescending(r => r.width)
+            .ThenByDescending(r => r.height)
+            .ToList();
+
         resolutionDropdown.ClearOptions();
 
         int currentResolutionIndex = 0;
+        List<string> options = new List<string>();
 
-        System.Collections.Generic.List<string> options =
-            new System.Collections.Generic.List<string>();
-
-        for (int i = 0; i < resolutions.Length; i++)
+        for (int i = 0; i < resolutions.Count; i++)
         {
-            string option =
-                resolutions[i].width + " x " +
-                resolutions[i].height;
-
+            string option = resolutions[i].width + " x " + resolutions[i].height;
             options.Add(option);
 
             if (resolutions[i].width == Screen.currentResolution.width &&
@@ -75,13 +82,7 @@ public class SettingsManager : MonoBehaviour
     public void SetResolution(int resolutionIndex)
     {
         Resolution resolution = resolutions[resolutionIndex];
-
-        Screen.SetResolution(
-            resolution.width,
-            resolution.height,
-            Screen.fullScreen
-        );
-
+        Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen);
         PlayerPrefs.SetInt("Resolution", resolutionIndex);
     }
 
@@ -92,16 +93,12 @@ public class SettingsManager : MonoBehaviour
     void SetupQualityDropdown()
     {
         qualityDropdown.ClearOptions();
-
-        qualityDropdown.AddOptions(
-            new System.Collections.Generic.List<string>(QualitySettings.names)
-        );
+        qualityDropdown.AddOptions(new List<string>(QualitySettings.names));
     }
 
     public void SetQuality(int qualityIndex)
     {
         QualitySettings.SetQualityLevel(qualityIndex);
-
         PlayerPrefs.SetInt("Quality", qualityIndex);
     }
 
@@ -112,7 +109,6 @@ public class SettingsManager : MonoBehaviour
     public void SetVolume(float volume)
     {
         AudioListener.volume = volume;
-
         PlayerPrefs.SetFloat("Volume", volume);
     }
 
@@ -123,16 +119,14 @@ public class SettingsManager : MonoBehaviour
     void SetupFPSDropdown()
     {
         fpsDropdown.ClearOptions();
-
-        fpsDropdown.AddOptions(new System.Collections.Generic.List<string>
+        fpsDropdown.AddOptions(new List<string>
         {
             "Unlimited",
-            "30",
-            "60",
-            "120",
-            "144",
             "240",
-            
+            "144",
+            "120",
+            "60",
+            "30"
         });
     }
 
@@ -140,31 +134,12 @@ public class SettingsManager : MonoBehaviour
     {
         switch (index)
         {
-
-            case 0:
-                Application.targetFrameRate = -1;
-                break;
-
-            case 1:
-                Application.targetFrameRate = 30;
-                break;
-
-            case 2:
-                Application.targetFrameRate = 60;
-                break;
-
-            case 3:
-                Application.targetFrameRate = 120;
-                break;
-
-            case 4:
-                Application.targetFrameRate = 144;
-                break;
-
-            case 5:
-                Application.targetFrameRate = 240;
-                break;
-
+            case 0: Application.targetFrameRate = -1; break; // Unlimited
+            case 1: Application.targetFrameRate = 240; break;
+            case 2: Application.targetFrameRate = 144; break;
+            case 3: Application.targetFrameRate = 120; break;
+            case 4: Application.targetFrameRate = 60; break;
+            case 5: Application.targetFrameRate = 30; break;
         }
 
         PlayerPrefs.SetInt("FPS", index);
@@ -182,28 +157,22 @@ public class SettingsManager : MonoBehaviour
         Screen.fullScreen = fullscreen;
 
         // Resolution
-        int resolutionIndex =
-            PlayerPrefs.GetInt("Resolution", resolutionDropdown.value);
-
+        int resolutionIndex = PlayerPrefs.GetInt("Resolution", resolutionDropdown.value);
         resolutionDropdown.value = resolutionIndex;
         SetResolution(resolutionIndex);
 
         // Quality
-        int qualityIndex =
-            PlayerPrefs.GetInt("Quality", QualitySettings.GetQualityLevel());
-
+        int qualityIndex = PlayerPrefs.GetInt("Quality", QualitySettings.GetQualityLevel());
         qualityDropdown.value = qualityIndex;
         SetQuality(qualityIndex);
 
         // Volume
         float volume = PlayerPrefs.GetFloat("Volume", 1f);
-
         volumeSlider.value = volume;
         SetVolume(volume);
 
-        // FPS
-        int fpsIndex = PlayerPrefs.GetInt("FPS", 1);
-
+        // FPS — default 0 = Unlimited
+        int fpsIndex = PlayerPrefs.GetInt("FPS", 0);
         fpsDropdown.value = fpsIndex;
         SetFPSLimit(fpsIndex);
     }
