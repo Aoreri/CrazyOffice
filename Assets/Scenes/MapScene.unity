@@ -275,6 +275,161 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 72d1251422dbb436c9a2395d9ae27ad4, type: 3}
   m_PrefabInstance: {fileID: 1370331663}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &12073412
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 12073413}
+  - component: {fileID: 12073414}
+  m_Layer: 0
+  m_Name: quest10(tempature-server)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &12073413
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 12073412}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 15704064}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &12073414
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 12073412}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d6bc1ff5f8df6a40a87f5ad6c99451a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Quest
+  questId: 
+  questName: 
+  description: 
+  steps:
+  - stepDescription: Talk To Officer
+    objectiveType: 0
+    shouldCount: 1
+    possibleNPCs:
+    - {fileID: 919132149593364188}
+    puzzleNames: []
+    itemObjects: []
+    amountRequired: 0
+    doors: []
+    target: {fileID: 0}
+    dialogueArea: []
+  - stepDescription: Talk To Officer
+    objectiveType: 4
+    shouldCount: 0
+    possibleNPCs:
+    - {fileID: 669366391}
+    puzzleNames: []
+    itemObjects: []
+    amountRequired: 0
+    doors: []
+    target: {fileID: 919132149593364188}
+    dialogueArea:
+    - I believe you need some data. Okay, I can give it to you, but first you need
+      to lower the server temperature.
+  - stepDescription: Talk To Officer
+    objectiveType: 2
+    shouldCount: 1
+    possibleNPCs:
+    - {fileID: 669366391}
+    puzzleNames: []
+    itemObjects:
+    - {fileID: 1382540209}
+    amountRequired: 0
+    doors: []
+    target: {fileID: 0}
+    dialogueArea:
+    - deneme
+  - stepDescription: Talk To Officer
+    objectiveType: 1
+    shouldCount: 0
+    possibleNPCs:
+    - {fileID: 669366391}
+    puzzleNames:
+    - Temp
+    itemObjects: []
+    amountRequired: 0
+    doors: []
+    target: {fileID: 0}
+    dialogueArea:
+    - deneme
+  - stepDescription: Talk To Officer
+    objectiveType: 0
+    shouldCount: 0
+    possibleNPCs:
+    - {fileID: 919132149593364188}
+    puzzleNames:
+    - Temp
+    itemObjects: []
+    amountRequired: 0
+    doors: []
+    target: {fileID: 0}
+    dialogueArea:
+    - deneme
+  - stepDescription: Talk To Officer
+    objectiveType: 4
+    shouldCount: 0
+    possibleNPCs:
+    - {fileID: 919132149593364188}
+    puzzleNames:
+    - Temp
+    itemObjects: []
+    amountRequired: 0
+    doors: []
+    target: {fileID: 919132149593364188}
+    dialogueArea:
+    - Okay, the server temperature has dropped, you can now retrieve the data you
+      need.
+  - stepDescription: Talk To Officer
+    objectiveType: 2
+    shouldCount: 0
+    possibleNPCs:
+    - {fileID: 919132149593364188}
+    puzzleNames:
+    - Temp
+    itemObjects:
+    - {fileID: 1867291729}
+    amountRequired: 0
+    doors: []
+    target: {fileID: 919132149593364188}
+    dialogueArea:
+    - Okay, the server temperature has dropped, you can now retrieve the data you
+      need.
+  - stepDescription: Talk To Officer
+    objectiveType: 1
+    shouldCount: 0
+    possibleNPCs:
+    - {fileID: 919132149593364188}
+    puzzleNames:
+    - USB
+    itemObjects:
+    - {fileID: 1867291729}
+    amountRequired: 0
+    doors: []
+    target: {fileID: 919132149593364188}
+    dialogueArea:
+    - Okay, the server temperature has dropped, you can now retrieve the data you
+      need.
 --- !u!1 &15704063
 GameObject:
   m_ObjectHideFlags: 0
@@ -305,9 +460,19 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 585735545}
+  - {fileID: 12073413}
+  - {fileID: 1178193911}
+  - {fileID: 992318303}
+  - {fileID: 367508863}
+  - {fileID: 143247837}
+  - {fileID: 1840384631}
+  - {fileID: 2146054349}
+  - {fileID: 209858102}
+  - {fileID: 853209229}
   - {fileID: 1091770753}
   - {fileID: 1237841995}
   - {fileID: 490205801}
+  - {fileID: 800567209}
   - {fileID: 2087972176}
   m_Father: {fileID: 939041870}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1608,6 +1773,80 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 108308291}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1001 &111372920
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 4a751649cd4fb486786d0892d552cc67, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 30.854103
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 4a751649cd4fb486786d0892d552cc67, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 30.854103
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 4a751649cd4fb486786d0892d552cc67, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 30.854103
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 4a751649cd4fb486786d0892d552cc67, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.43587
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 4a751649cd4fb486786d0892d552cc67, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.93606
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 4a751649cd4fb486786d0892d552cc67, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 9.9206
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 4a751649cd4fb486786d0892d552cc67, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.08840433
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 4a751649cd4fb486786d0892d552cc67, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.08840444
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 4a751649cd4fb486786d0892d552cc67, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.70155877
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 4a751649cd4fb486786d0892d552cc67, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.70155877
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 4a751649cd4fb486786d0892d552cc67, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 4a751649cd4fb486786d0892d552cc67, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 4a751649cd4fb486786d0892d552cc67, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -14.364014
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 4a751649cd4fb486786d0892d552cc67, type: 3}
+      propertyPath: m_Name
+      value: router (1)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4a751649cd4fb486786d0892d552cc67, type: 3}
+--- !u!1 &111372921 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 4a751649cd4fb486786d0892d552cc67, type: 3}
+  m_PrefabInstance: {fileID: 111372920}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &114207132
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2245,6 +2484,103 @@ Transform:
   - {fileID: 757618362}
   m_Father: {fileID: 1460425598}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &143247836
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 143247837}
+  - component: {fileID: 143247838}
+  m_Layer: 0
+  m_Name: quest12(modem-manager)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &143247837
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 143247836}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 15704064}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &143247838
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 143247836}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d6bc1ff5f8df6a40a87f5ad6c99451a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Quest
+  questId: 
+  questName: 
+  description: 
+  steps:
+  - stepDescription: Talk To Officer
+    objectiveType: 0
+    shouldCount: 1
+    possibleNPCs:
+    - {fileID: 669366391}
+    puzzleNames: []
+    itemObjects: []
+    amountRequired: 0
+    doors: []
+    target: {fileID: 0}
+    dialogueArea: []
+  - stepDescription: Talk To Officer
+    objectiveType: 4
+    shouldCount: 0
+    possibleNPCs:
+    - {fileID: 669366391}
+    puzzleNames: []
+    itemObjects: []
+    amountRequired: 0
+    doors: []
+    target: {fileID: 2855172628724028016}
+    dialogueArea:
+    - deneme
+  - stepDescription: Talk To Officer
+    objectiveType: 2
+    shouldCount: 1
+    possibleNPCs:
+    - {fileID: 669366391}
+    puzzleNames: []
+    itemObjects:
+    - {fileID: 111372921}
+    amountRequired: 0
+    doors: []
+    target: {fileID: 0}
+    dialogueArea:
+    - deneme
+  - stepDescription: Talk To Officer
+    objectiveType: 1
+    shouldCount: 0
+    possibleNPCs:
+    - {fileID: 669366391}
+    puzzleNames:
+    - Printer
+    itemObjects: []
+    amountRequired: 0
+    doors: []
+    target: {fileID: 0}
+    dialogueArea:
+    - deneme
 --- !u!4 &149902167 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: d36d399bc0b05eb488c7df992541a730, type: 3}
@@ -3207,6 +3543,194 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.012084599, y: 0.012070938, z: 0.019099148}
   m_Center: {x: 0.000009909737, y: 0.0000138299065, z: -0.000012123956}
+--- !u!1 &209858101
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 209858102}
+  - component: {fileID: 209858103}
+  m_Layer: 0
+  m_Name: quest13(modem-storageroom)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &209858102
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 209858101}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 15704064}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &209858103
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 209858101}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d6bc1ff5f8df6a40a87f5ad6c99451a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Quest
+  questId: 
+  questName: 
+  description: 
+  steps:
+  - stepDescription: Go to Server Room
+    objectiveType: 3
+    shouldCount: 1
+    possibleNPCs:
+    - {fileID: 669366391}
+    puzzleNames: []
+    itemObjects: []
+    amountRequired: 0
+    doors:
+    - {fileID: 530434533}
+    target: {fileID: 0}
+    dialogueArea: []
+  - stepDescription: Solve Puzzle
+    objectiveType: 1
+    shouldCount: 1
+    possibleNPCs:
+    - {fileID: 669366391}
+    puzzleNames:
+    - Cable
+    itemObjects: []
+    amountRequired: 0
+    doors:
+    - {fileID: 530434533}
+    target: {fileID: 0}
+    dialogueArea: []
+  - stepDescription: Go to Server Room
+    objectiveType: 3
+    shouldCount: 1
+    possibleNPCs:
+    - {fileID: 669366391}
+    puzzleNames:
+    - Maze
+    itemObjects: []
+    amountRequired: 0
+    doors:
+    - {fileID: 530434533}
+    target: {fileID: 0}
+    dialogueArea: []
+  - stepDescription: Go to Server Room
+    objectiveType: 0
+    shouldCount: 1
+    possibleNPCs:
+    - {fileID: 919132149593364188}
+    puzzleNames:
+    - Maze
+    itemObjects: []
+    amountRequired: 0
+    doors:
+    - {fileID: 530434533}
+    target: {fileID: 0}
+    dialogueArea: []
+  - stepDescription: Go to Server Room
+    objectiveType: 4
+    shouldCount: 1
+    possibleNPCs:
+    - {fileID: 669366391}
+    puzzleNames:
+    - Maze
+    itemObjects: []
+    amountRequired: 0
+    doors:
+    - {fileID: 530434533}
+    target: {fileID: 919132149593364188}
+    dialogueArea:
+    - You need to go storage room and fix modem.
+  - stepDescription: Go to Storage Room
+    objectiveType: 3
+    shouldCount: 1
+    possibleNPCs:
+    - {fileID: 669366391}
+    puzzleNames:
+    - Maze
+    itemObjects:
+    - {fileID: 1422588142}
+    amountRequired: 0
+    doors:
+    - {fileID: 530434533}
+    target: {fileID: 919132149593364188}
+    dialogueArea:
+    - You need to go storage room and print some documents.
+  - stepDescription: Go to Storage Room
+    objectiveType: 1
+    shouldCount: 0
+    possibleNPCs:
+    - {fileID: 669366391}
+    puzzleNames:
+    - Card
+    itemObjects:
+    - {fileID: 1422588142}
+    amountRequired: 0
+    doors:
+    - {fileID: 530434533}
+    target: {fileID: 919132149593364188}
+    dialogueArea:
+    - You need to go storage room and print some documents.
+  - stepDescription: Go to Storage Room
+    objectiveType: 3
+    shouldCount: 1
+    possibleNPCs:
+    - {fileID: 669366391}
+    puzzleNames:
+    - Card
+    itemObjects:
+    - {fileID: 1422588142}
+    amountRequired: 0
+    doors:
+    - {fileID: 530434533}
+    target: {fileID: 919132149593364188}
+    dialogueArea:
+    - You need to go storage room and print some documents.
+  - stepDescription: Go to Storage Room
+    objectiveType: 2
+    shouldCount: 1
+    possibleNPCs:
+    - {fileID: 669366391}
+    puzzleNames:
+    - Card
+    itemObjects:
+    - {fileID: 404016717}
+    amountRequired: 0
+    doors:
+    - {fileID: 530434533}
+    target: {fileID: 919132149593364188}
+    dialogueArea:
+    - You need to go storage room and print some documents.
+  - stepDescription: Go to Storage Room
+    objectiveType: 1
+    shouldCount: 0
+    possibleNPCs:
+    - {fileID: 669366391}
+    puzzleNames:
+    - Modem
+    itemObjects:
+    - {fileID: 337833244}
+    amountRequired: 0
+    doors:
+    - {fileID: 530434533}
+    target: {fileID: 919132149593364188}
+    dialogueArea:
+    - You need to go storage room and print some documents.
 --- !u!1 &214228903
 GameObject:
   m_ObjectHideFlags: 0
@@ -5207,6 +5731,11 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 1578867148663277618, guid: 5666a79f5b1d50a4fb123bd1191bf392, type: 3}
   m_PrefabInstance: {fileID: 336312296}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &337833244 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 641d54c2e9ed140a6a5ff4258035909a, type: 3}
+  m_PrefabInstance: {fileID: 1727775210}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &341928147 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 9425621023191824ea96f899ff178d5a, type: 3}
@@ -5472,6 +6001,103 @@ Transform:
   - {fileID: 1008391587}
   m_Father: {fileID: 2043679100}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &367508862
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 367508863}
+  - component: {fileID: 367508864}
+  m_Layer: 0
+  m_Name: quest7(printer-manager)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &367508863
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 367508862}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 15704064}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &367508864
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 367508862}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d6bc1ff5f8df6a40a87f5ad6c99451a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Quest
+  questId: 
+  questName: 
+  description: 
+  steps:
+  - stepDescription: Talk To Officer
+    objectiveType: 0
+    shouldCount: 1
+    possibleNPCs:
+    - {fileID: 669366391}
+    puzzleNames: []
+    itemObjects: []
+    amountRequired: 0
+    doors: []
+    target: {fileID: 0}
+    dialogueArea: []
+  - stepDescription: Talk To Officer
+    objectiveType: 4
+    shouldCount: 0
+    possibleNPCs:
+    - {fileID: 669366391}
+    puzzleNames: []
+    itemObjects: []
+    amountRequired: 0
+    doors: []
+    target: {fileID: 2855172628724028016}
+    dialogueArea:
+    - deneme
+  - stepDescription: Talk To Officer
+    objectiveType: 2
+    shouldCount: 1
+    possibleNPCs:
+    - {fileID: 669366391}
+    puzzleNames: []
+    itemObjects:
+    - {fileID: 1252229265}
+    amountRequired: 0
+    doors: []
+    target: {fileID: 0}
+    dialogueArea:
+    - deneme
+  - stepDescription: Talk To Officer
+    objectiveType: 1
+    shouldCount: 0
+    possibleNPCs:
+    - {fileID: 669366391}
+    puzzleNames:
+    - Printer
+    itemObjects: []
+    amountRequired: 0
+    doors: []
+    target: {fileID: 0}
+    dialogueArea:
+    - deneme
 --- !u!1001 &367551302
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5916,18 +6542,31 @@ MonoBehaviour:
   door: {fileID: 804933753}
   startPosition: {fileID: 1326923093896538935}
   spawnPosition: {fileID: 2108868155}
-  scenario1Quests:
-  - {fileID: 585735546}
-  - {fileID: 2087972177}
-  - {fileID: 1237841996}
-  scenario2Quests:
-  - {fileID: 490205802}
-  - {fileID: 1237841996}
-  - {fileID: 585735546}
-  scenario3Quests:
-  - {fileID: 585735546}
-  - {fileID: 585735546}
-  - {fileID: 490205802}
+  allScenarios:
+  - scenarioName: 
+    useCases:
+    - useCaseName: 
+      quests: []
+    - useCaseName: 
+      quests: []
+    - useCaseName: 
+      quests: []
+  - scenarioName: 
+    useCases:
+    - useCaseName: 
+      quests: []
+    - useCaseName: 
+      quests: []
+    - useCaseName: 
+      quests: []
+  - scenarioName: 
+    useCases:
+    - useCaseName: 
+      quests: []
+    - useCaseName: 
+      quests: []
+    - useCaseName: 
+      quests: []
   markerCanvas: {fileID: 880956077}
   selectedScenarioIndex: 0
 --- !u!4 &392793888
@@ -6120,6 +6759,80 @@ Transform:
   - {fileID: 1574482860}
   m_Father: {fileID: 202108735}
   m_LocalEulerAnglesHint: {x: 91.63901, y: -43.307007, z: -44.451996}
+--- !u!1001 &404016716
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 4a751649cd4fb486786d0892d552cc67, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 29.041265
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 4a751649cd4fb486786d0892d552cc67, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 29.041265
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 4a751649cd4fb486786d0892d552cc67, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 29.041265
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 4a751649cd4fb486786d0892d552cc67, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 31.285086
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 4a751649cd4fb486786d0892d552cc67, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.032
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 4a751649cd4fb486786d0892d552cc67, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -19.313435
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 4a751649cd4fb486786d0892d552cc67, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.5952381
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 4a751649cd4fb486786d0892d552cc67, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.59523815
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 4a751649cd4fb486786d0892d552cc67, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.38169584
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 4a751649cd4fb486786d0892d552cc67, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.3816956
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 4a751649cd4fb486786d0892d552cc67, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 4a751649cd4fb486786d0892d552cc67, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 4a751649cd4fb486786d0892d552cc67, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -245.34
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 4a751649cd4fb486786d0892d552cc67, type: 3}
+      propertyPath: m_Name
+      value: router (2)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4a751649cd4fb486786d0892d552cc67, type: 3}
+--- !u!1 &404016717 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 4a751649cd4fb486786d0892d552cc67, type: 3}
+  m_PrefabInstance: {fileID: 404016716}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &406107912 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: e3999ff287e1f41dfb19f80ee36dc66d, type: 3}
@@ -8226,6 +8939,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 608074040588246492, guid: 67b7958f51626f8458685c8378688092, type: 3}
   m_PrefabInstance: {fileID: 1479735813}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &531009665 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 641d54c2e9ed140a6a5ff4258035909a, type: 3}
+  m_PrefabInstance: {fileID: 480602960}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &534648163
 GameObject:
   m_ObjectHideFlags: 0
@@ -8742,6 +9460,11 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &546189044 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 641d54c2e9ed140a6a5ff4258035909a, type: 3}
+  m_PrefabInstance: {fileID: 1539160851}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &546732585 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 85a0afa247766bb4fb38646e28ee338b, type: 3}
@@ -11939,6 +12662,83 @@ Transform:
   m_Children: []
   m_Father: {fileID: 957980792}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &800567208
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 800567209}
+  - component: {fileID: 800567210}
+  m_Layer: 0
+  m_Name: quest5(all jackpot)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &800567209
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 800567208}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 15704064}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &800567210
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 800567208}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d6bc1ff5f8df6a40a87f5ad6c99451a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Quest
+  questId: 
+  questName: 
+  description: 
+  steps:
+  - stepDescription: 
+    objectiveType: 2
+    shouldCount: 0
+    possibleNPCs: []
+    puzzleNames: []
+    itemObjects:
+    - {fileID: 1447892514}
+    - {fileID: 1448387259}
+    - {fileID: 1414534024}
+    - {fileID: 1220428826}
+    amountRequired: 0
+    doors: []
+    target: {fileID: 0}
+    dialogueArea: []
+  - stepDescription: 
+    objectiveType: 1
+    shouldCount: 0
+    possibleNPCs: []
+    puzzleNames:
+    - Jackpot
+    itemObjects:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    amountRequired: 0
+    doors: []
+    target: {fileID: 0}
+    dialogueArea: []
 --- !u!1001 &804276964
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13179,6 +13979,103 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &853209228
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 853209229}
+  - component: {fileID: 853209230}
+  m_Layer: 0
+  m_Name: quest1(usb-workspace) (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &853209229
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 853209228}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 15704064}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &853209230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 853209228}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d6bc1ff5f8df6a40a87f5ad6c99451a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Quest
+  questId: 
+  questName: 
+  description: 
+  steps:
+  - stepDescription: Talk To Officer
+    objectiveType: 0
+    shouldCount: 1
+    possibleNPCs:
+    - {fileID: 669366391}
+    puzzleNames: []
+    itemObjects: []
+    amountRequired: 0
+    doors: []
+    target: {fileID: 0}
+    dialogueArea: []
+  - stepDescription: Talk To Officer
+    objectiveType: 4
+    shouldCount: 0
+    possibleNPCs:
+    - {fileID: 669366391}
+    puzzleNames: []
+    itemObjects: []
+    amountRequired: 0
+    doors: []
+    target: {fileID: 669366391}
+    dialogueArea:
+    - deneme
+  - stepDescription: Talk To Officer
+    objectiveType: 2
+    shouldCount: 1
+    possibleNPCs:
+    - {fileID: 669366391}
+    puzzleNames: []
+    itemObjects:
+    - {fileID: 1150199270}
+    amountRequired: 0
+    doors: []
+    target: {fileID: 0}
+    dialogueArea:
+    - deneme
+  - stepDescription: Talk To Officer
+    objectiveType: 1
+    shouldCount: 0
+    possibleNPCs:
+    - {fileID: 669366391}
+    puzzleNames:
+    - USB
+    itemObjects: []
+    amountRequired: 0
+    doors: []
+    target: {fileID: 0}
+    dialogueArea:
+    - deneme
 --- !u!1001 &864081032
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13561,7 +14458,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.00012207031, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &880956079
@@ -13670,6 +14567,80 @@ Transform:
   - {fileID: 1501180037}
   m_Father: {fileID: 603155131}
   m_LocalEulerAnglesHint: {x: -65.4, y: -14.094, z: 21.382}
+--- !u!1001 &888732797
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 4a751649cd4fb486786d0892d552cc67, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 27.454077
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 4a751649cd4fb486786d0892d552cc67, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 27.454077
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 4a751649cd4fb486786d0892d552cc67, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 27.454077
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 4a751649cd4fb486786d0892d552cc67, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2.171
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 4a751649cd4fb486786d0892d552cc67, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.92302
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 4a751649cd4fb486786d0892d552cc67, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -20.818
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 4a751649cd4fb486786d0892d552cc67, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.64776146
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 4a751649cd4fb486786d0892d552cc67, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.6477616
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 4a751649cd4fb486786d0892d552cc67, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.2835578
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 4a751649cd4fb486786d0892d552cc67, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.2835579
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 4a751649cd4fb486786d0892d552cc67, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 4a751649cd4fb486786d0892d552cc67, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 4a751649cd4fb486786d0892d552cc67, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -132.717
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 4a751649cd4fb486786d0892d552cc67, type: 3}
+      propertyPath: m_Name
+      value: router
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4a751649cd4fb486786d0892d552cc67, type: 3}
+--- !u!1 &888732798 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 4a751649cd4fb486786d0892d552cc67, type: 3}
+  m_PrefabInstance: {fileID: 888732797}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &892917942
 GameObject:
   m_ObjectHideFlags: 0
@@ -14812,6 +15783,103 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 9425621023191824ea96f899ff178d5a, type: 3}
   m_PrefabInstance: {fileID: 1464203517}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &992318302
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 992318303}
+  - component: {fileID: 992318304}
+  m_Layer: 0
+  m_Name: quest11(modem-worker)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &992318303
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 992318302}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 15704064}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &992318304
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 992318302}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d6bc1ff5f8df6a40a87f5ad6c99451a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Quest
+  questId: 
+  questName: 
+  description: 
+  steps:
+  - stepDescription: Talk To Officer
+    objectiveType: 0
+    shouldCount: 1
+    possibleNPCs:
+    - {fileID: 669366391}
+    puzzleNames: []
+    itemObjects: []
+    amountRequired: 0
+    doors: []
+    target: {fileID: 0}
+    dialogueArea: []
+  - stepDescription: Talk To Officer
+    objectiveType: 4
+    shouldCount: 0
+    possibleNPCs:
+    - {fileID: 669366391}
+    puzzleNames: []
+    itemObjects: []
+    amountRequired: 0
+    doors: []
+    target: {fileID: 669366391}
+    dialogueArea:
+    - deneme
+  - stepDescription: Talk To Officer
+    objectiveType: 2
+    shouldCount: 1
+    possibleNPCs:
+    - {fileID: 669366391}
+    puzzleNames: []
+    itemObjects:
+    - {fileID: 888732798}
+    amountRequired: 0
+    doors: []
+    target: {fileID: 0}
+    dialogueArea:
+    - deneme
+  - stepDescription: Talk To Officer
+    objectiveType: 1
+    shouldCount: 0
+    possibleNPCs:
+    - {fileID: 669366391}
+    puzzleNames:
+    - Modem
+    itemObjects: []
+    amountRequired: 0
+    doors: []
+    target: {fileID: 0}
+    dialogueArea:
+    - deneme
 --- !u!1 &993620867
 GameObject:
   m_ObjectHideFlags: 0
@@ -18030,6 +19098,103 @@ Transform:
   - {fileID: 472163942}
   m_Father: {fileID: 1815650918}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1178193910
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1178193911}
+  - component: {fileID: 1178193912}
+  m_Layer: 0
+  m_Name: quest6(printer-worker)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1178193911
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1178193910}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 15704064}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1178193912
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1178193910}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d6bc1ff5f8df6a40a87f5ad6c99451a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Quest
+  questId: 
+  questName: 
+  description: 
+  steps:
+  - stepDescription: Talk To Officer
+    objectiveType: 0
+    shouldCount: 1
+    possibleNPCs:
+    - {fileID: 669366391}
+    puzzleNames: []
+    itemObjects: []
+    amountRequired: 0
+    doors: []
+    target: {fileID: 0}
+    dialogueArea: []
+  - stepDescription: Talk To Officer
+    objectiveType: 4
+    shouldCount: 0
+    possibleNPCs:
+    - {fileID: 669366391}
+    puzzleNames: []
+    itemObjects: []
+    amountRequired: 0
+    doors: []
+    target: {fileID: 669366391}
+    dialogueArea:
+    - deneme
+  - stepDescription: Talk To Officer
+    objectiveType: 2
+    shouldCount: 1
+    possibleNPCs:
+    - {fileID: 669366391}
+    puzzleNames: []
+    itemObjects:
+    - {fileID: 546189044}
+    amountRequired: 0
+    doors: []
+    target: {fileID: 0}
+    dialogueArea:
+    - deneme
+  - stepDescription: Talk To Officer
+    objectiveType: 1
+    shouldCount: 0
+    possibleNPCs:
+    - {fileID: 669366391}
+    puzzleNames:
+    - Printer
+    itemObjects: []
+    amountRequired: 0
+    doors: []
+    target: {fileID: 0}
+    dialogueArea:
+    - deneme
 --- !u!4 &1179001368 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 1056c64ae10c9dc44b8ffcf9f445ae0c, type: 3}
@@ -18917,6 +20082,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a6e70d237afad458f96b5cc2d037ae46, type: 3}
+--- !u!1 &1252229265 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 641d54c2e9ed140a6a5ff4258035909a, type: 3}
+  m_PrefabInstance: {fileID: 631377455}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1257906912
 GameObject:
   m_ObjectHideFlags: 0
@@ -21544,6 +22714,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 72d1251422dbb436c9a2395d9ae27ad4, type: 3}
+--- !u!1 &1382540209 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: b3d3cb0ffbf31bf4e8f93eda7746536f, type: 3}
+  m_PrefabInstance: {fileID: 1710252801}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1388094542
 GameObject:
   m_ObjectHideFlags: 0
@@ -22335,6 +23510,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9425621023191824ea96f899ff178d5a, type: 3}
+--- !u!1 &1422588142 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 608074040588246492, guid: 67b7958f51626f8458685c8378688092, type: 3}
+  m_PrefabInstance: {fileID: 1490511336}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1422608046
 GameObject:
   m_ObjectHideFlags: 0
@@ -30853,6 +32033,103 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.01635986, y: 0.017053057, z: 0.019098712}
   m_Center: {x: 0.000009743032, y: 0.0000041238964, z: -0.0000018235304}
+--- !u!1 &1840384630
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1840384631}
+  - component: {fileID: 1840384632}
+  m_Layer: 0
+  m_Name: quest8(printer-stakeholders)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1840384631
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1840384630}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 15704064}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1840384632
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1840384630}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d6bc1ff5f8df6a40a87f5ad6c99451a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Quest
+  questId: 
+  questName: 
+  description: 
+  steps:
+  - stepDescription: Talk To Officer
+    objectiveType: 0
+    shouldCount: 1
+    possibleNPCs:
+    - {fileID: 669366391}
+    puzzleNames: []
+    itemObjects: []
+    amountRequired: 0
+    doors: []
+    target: {fileID: 0}
+    dialogueArea: []
+  - stepDescription: Talk To Officer
+    objectiveType: 4
+    shouldCount: 0
+    possibleNPCs:
+    - {fileID: 669366391}
+    puzzleNames: []
+    itemObjects: []
+    amountRequired: 0
+    doors: []
+    target: {fileID: 5216946371888684778}
+    dialogueArea:
+    - deneme
+  - stepDescription: Talk To Officer
+    objectiveType: 2
+    shouldCount: 1
+    possibleNPCs:
+    - {fileID: 669366391}
+    puzzleNames: []
+    itemObjects:
+    - {fileID: 531009665}
+    amountRequired: 0
+    doors: []
+    target: {fileID: 0}
+    dialogueArea:
+    - deneme
+  - stepDescription: Talk To Officer
+    objectiveType: 1
+    shouldCount: 0
+    possibleNPCs:
+    - {fileID: 669366391}
+    puzzleNames:
+    - Printer
+    itemObjects: []
+    amountRequired: 0
+    doors: []
+    target: {fileID: 0}
+    dialogueArea:
+    - deneme
 --- !u!1 &1843825018
 GameObject:
   m_ObjectHideFlags: 0
@@ -36591,6 +37868,194 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.01910098, y: 0.010389181, z: 0.0076227426}
   m_Center: {x: 0.0000025755728, y: 0.00001054001, z: -0.0000063700145}
+--- !u!1 &2146054348
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2146054349}
+  - component: {fileID: 2146054350}
+  m_Layer: 0
+  m_Name: quest9(printer-storageroom)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2146054349
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2146054348}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 15704064}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2146054350
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2146054348}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d6bc1ff5f8df6a40a87f5ad6c99451a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Quest
+  questId: 
+  questName: 
+  description: 
+  steps:
+  - stepDescription: Go to Server Room
+    objectiveType: 3
+    shouldCount: 1
+    possibleNPCs:
+    - {fileID: 669366391}
+    puzzleNames: []
+    itemObjects: []
+    amountRequired: 0
+    doors:
+    - {fileID: 530434533}
+    target: {fileID: 0}
+    dialogueArea: []
+  - stepDescription: Solve Puzzle
+    objectiveType: 1
+    shouldCount: 1
+    possibleNPCs:
+    - {fileID: 669366391}
+    puzzleNames:
+    - Maze
+    itemObjects: []
+    amountRequired: 0
+    doors:
+    - {fileID: 530434533}
+    target: {fileID: 0}
+    dialogueArea: []
+  - stepDescription: Go to Server Room
+    objectiveType: 3
+    shouldCount: 1
+    possibleNPCs:
+    - {fileID: 669366391}
+    puzzleNames:
+    - Maze
+    itemObjects: []
+    amountRequired: 0
+    doors:
+    - {fileID: 530434533}
+    target: {fileID: 0}
+    dialogueArea: []
+  - stepDescription: Go to Server Room
+    objectiveType: 0
+    shouldCount: 1
+    possibleNPCs:
+    - {fileID: 919132149593364188}
+    puzzleNames:
+    - Maze
+    itemObjects: []
+    amountRequired: 0
+    doors:
+    - {fileID: 530434533}
+    target: {fileID: 0}
+    dialogueArea: []
+  - stepDescription: Go to Server Room
+    objectiveType: 4
+    shouldCount: 1
+    possibleNPCs:
+    - {fileID: 669366391}
+    puzzleNames:
+    - Maze
+    itemObjects: []
+    amountRequired: 0
+    doors:
+    - {fileID: 530434533}
+    target: {fileID: 919132149593364188}
+    dialogueArea:
+    - You need to go storage room and print some documents.
+  - stepDescription: Go to Storage Room
+    objectiveType: 3
+    shouldCount: 1
+    possibleNPCs:
+    - {fileID: 669366391}
+    puzzleNames:
+    - Maze
+    itemObjects:
+    - {fileID: 1422588142}
+    amountRequired: 0
+    doors:
+    - {fileID: 530434533}
+    target: {fileID: 919132149593364188}
+    dialogueArea:
+    - You need to go storage room and print some documents.
+  - stepDescription: Go to Storage Room
+    objectiveType: 1
+    shouldCount: 0
+    possibleNPCs:
+    - {fileID: 669366391}
+    puzzleNames:
+    - Card
+    itemObjects:
+    - {fileID: 1422588142}
+    amountRequired: 0
+    doors:
+    - {fileID: 530434533}
+    target: {fileID: 919132149593364188}
+    dialogueArea:
+    - You need to go storage room and print some documents.
+  - stepDescription: Go to Storage Room
+    objectiveType: 3
+    shouldCount: 1
+    possibleNPCs:
+    - {fileID: 669366391}
+    puzzleNames:
+    - Card
+    itemObjects:
+    - {fileID: 1422588142}
+    amountRequired: 0
+    doors:
+    - {fileID: 530434533}
+    target: {fileID: 919132149593364188}
+    dialogueArea:
+    - You need to go storage room and print some documents.
+  - stepDescription: Go to Storage Room
+    objectiveType: 2
+    shouldCount: 1
+    possibleNPCs:
+    - {fileID: 669366391}
+    puzzleNames:
+    - Card
+    itemObjects:
+    - {fileID: 337833244}
+    amountRequired: 0
+    doors:
+    - {fileID: 530434533}
+    target: {fileID: 919132149593364188}
+    dialogueArea:
+    - You need to go storage room and print some documents.
+  - stepDescription: Go to Storage Room
+    objectiveType: 1
+    shouldCount: 0
+    possibleNPCs:
+    - {fileID: 669366391}
+    puzzleNames:
+    - Printer
+    itemObjects:
+    - {fileID: 337833244}
+    amountRequired: 0
+    doors:
+    - {fileID: 530434533}
+    target: {fileID: 919132149593364188}
+    dialogueArea:
+    - You need to go storage room and print some documents.
 --- !u!1 &2146774343
 GameObject:
   m_ObjectHideFlags: 0
@@ -42715,6 +44180,9 @@ SceneRoots:
   - {fileID: 821850812}
   - {fileID: 104005011}
   - {fileID: 392793888}
+  - {fileID: 888732797}
+  - {fileID: 404016716}
+  - {fileID: 111372920}
   - {fileID: 939041870}
   - {fileID: 1785916684}
   - {fileID: 1864244589}
