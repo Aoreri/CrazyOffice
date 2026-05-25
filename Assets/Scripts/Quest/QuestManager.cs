@@ -226,22 +226,27 @@ public class QuestManager : MonoBehaviour
         InitializeStep();
     }
 
+    public DirectionArrow navigationArrow;
     private void AddHighlightLayer(GameObject npc)
     {
         if (npc == null) return;
 
-        // Calculate the bitmask for our specific layer (the 'u' ensures it's an unsigned int)
         uint layerBit = 1u << 8;
 
         Renderer[] renderers = npc.GetComponentsInChildren<Renderer>();
         foreach (Renderer rend in renderers)
         {
-            // ADD the layer using Bitwise OR
             rend.renderingLayerMask |= layerBit;
+        }
+
+        // TELL THE ARROW TO POINT AT THIS NPC
+        if (navigationArrow != null)
+        {
+            navigationArrow.gameObject.SetActive(true);
+            navigationArrow.SetTarget(npc.transform);
         }
     }
 
-    // Helper to REMOVE the rendering layer
     private void RemoveHighlightLayer(GameObject npc)
     {
         if (npc == null) return;
@@ -251,8 +256,13 @@ public class QuestManager : MonoBehaviour
         Renderer[] renderers = npc.GetComponentsInChildren<Renderer>();
         foreach (Renderer rend in renderers)
         {
-            // REMOVE the layer using Bitwise AND NOT
             rend.renderingLayerMask &= ~layerBit;
+        }
+
+        // TELL THE ARROW TO STOP POINTING (Pass null to hide it)
+        if (navigationArrow != null)
+        {
+            navigationArrow.SetTarget(null);
         }
     }
 
