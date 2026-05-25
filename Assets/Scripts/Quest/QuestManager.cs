@@ -54,7 +54,7 @@ public class QuestManager : MonoBehaviour
 
         questUI.SetActive(true);
 
-        for(int i = 0; i < newQuest.steps.Count; i++)
+        for (int i = 0; i < newQuest.steps.Count; i++)
         {
             if (newQuest.steps[i].shouldCount)
                 totalStepCount++;
@@ -63,18 +63,25 @@ public class QuestManager : MonoBehaviour
         questText.text = newQuest.description;
         counter.text = $"0/{totalStepCount}";
         progressBar.fillAmount = 0;
-        
+
         currentStepIndex = 0;
         InitializeStep();
     }
 
     private void InitializeStep()
     {
+        // GÖREVÝN BÝTTÝÐÝ YER BURASI
         if (currentStepIndex >= activeQuest.steps.Count)
         {
             Debug.Log($"Quest {activeQuest.questName} Complete!");
             activeQuest = null;
             questUI.SetActive(false);
+
+            // --- YENÝ EKLENEN KISIM: Görev bitince StageManager'a sýradaki görevi baþlatmasýný söyle ---
+            if (StageManager.Instance != null)
+            {
+                StageManager.Instance.StartNextQuest();
+            }
 
             return;
         }
@@ -82,14 +89,14 @@ public class QuestManager : MonoBehaviour
         QuestStep currentStep = activeQuest.steps[currentStepIndex];
         Debug.Log("New Step: " + currentStep.stepDescription);
 
-        if(currentStep.shouldCount)
+        if (currentStep.shouldCount)
         {
             questText.text = currentStep.stepDescription;
         }
 
-        if(currentStep.objectiveType == QuestObjectiveType.ShowDialogue)
+        if (currentStep.objectiveType == QuestObjectiveType.ShowDialogue)
         {
-            if(currentStep.dialogueArea.Length != 0 && currentStep.target != null)
+            if (currentStep.dialogueArea.Length != 0 && currentStep.target != null)
             {
                 int randomIndex = Random.Range(0, currentStep.dialogueArea.Length);
                 string dialogue = currentStep.dialogueArea[randomIndex];
@@ -100,7 +107,8 @@ public class QuestManager : MonoBehaviour
                     Debug.Log("Dialogue ended.");
                 });
 
-            } else Debug.Log("NO DIALOGUE FOUND!");
+            }
+            else Debug.Log("NO DIALOGUE FOUND!");
         }
 
         if (currentStep.objectiveType == QuestObjectiveType.TalkToNPC)
@@ -118,9 +126,9 @@ public class QuestManager : MonoBehaviour
             else Debug.Log("NO NPC FOUND!");
         }
 
-        if(currentStep.objectiveType == QuestObjectiveType.SolvePuzzle)
+        if (currentStep.objectiveType == QuestObjectiveType.SolvePuzzle)
         {
-            if(currentStep.puzzleNames.Length > 0)
+            if (currentStep.puzzleNames.Length > 0)
             {
                 int randomIndex = Random.Range(0, currentStep.puzzleNames.Length);
                 targetPuzzleForCurrentStep = currentStep.puzzleNames[randomIndex];
@@ -147,9 +155,9 @@ public class QuestManager : MonoBehaviour
 
         if (currentStep.objectiveType == QuestObjectiveType.ChangeDoorState)
         {
-            if(currentStep.doors.Length > 0)
+            if (currentStep.doors.Length > 0)
             {
-                for(int i = 0; i < currentStep.doors.Length; i++)
+                for (int i = 0; i < currentStep.doors.Length; i++)
                 {
                     DoorScript ds = currentStep.doors[i].GetComponent<DoorScript>();
                     ds.openable = !ds.openable;
@@ -248,7 +256,6 @@ public class QuestManager : MonoBehaviour
 
     void Update()
     {
-  
         if (player != null && Input.GetKeyDown(KeyCode.F) && activeQuest != null && targetItemForCurrentStep != null)
         {
             float distance = Vector3.Distance(targetItemForCurrentStep.transform.position, player.position);

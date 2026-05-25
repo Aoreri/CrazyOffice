@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
@@ -15,21 +16,10 @@ public class RequirementHighlighter : MonoBehaviour, IPointerClickHandler, IPoin
     [TextArea(5, 10)]
     public string[] randomTexts;
 
-    
     [Header("Highlight (Marker) Settings")]
-
-    [Tooltip("Fosforlu kalemin Yüksekliğini (kalınlığını) belirler. Normali 1.3'tür.")]
-    [Range(0.5f, 3f)]
-    public float highlightHeightMultiplier = 1.3f;
-
-    [Tooltip("Fosforlu kalemin Genişliğini (sağdan soldan taşma payı) belirler. Normali 0.6'dır.")]
-    [Range(0f, 2f)]
-    public float highlightWidthPaddingMultiplier = 0.6f;
-
-    [Tooltip("Vurgu çizgisini Y ekseninde yukarı veya aşağı kaydırmanıza yarar. Eksiler aşağı, artılar yukarı kaydırır.")]
-    [Range(-2f, 2f)]
-    public float highlightVerticalOffset = 0f;
-    
+    [Range(0.5f, 3f)] public float highlightHeightMultiplier = 1.3f;
+    [Range(0f, 2f)] public float highlightWidthPaddingMultiplier = 0.6f;
+    [Range(-2f, 2f)] public float highlightVerticalOffset = 0f;
 
     [Header("Underline Settings")]
     public Color underlineColor = Color.black;
@@ -47,6 +37,9 @@ public class RequirementHighlighter : MonoBehaviour, IPointerClickHandler, IPoin
     private bool isPointerOverText = false;
     private Camera activeCamera;
 
+    
+    private int currentScenarioIndex = 0;
+
     void Start()
     {
         activeUnderline = new GameObject("HoverUnderline");
@@ -60,8 +53,9 @@ public class RequirementHighlighter : MonoBehaviour, IPointerClickHandler, IPoin
     {
         if (randomTexts != null && randomTexts.Length > 0)
         {
-            int randomIndex = Random.Range(0, randomTexts.Length);
-            documentText.text = randomTexts[randomIndex];
+            
+            currentScenarioIndex = Random.Range(0, randomTexts.Length);
+            documentText.text = randomTexts[currentScenarioIndex];
             ClearAllHighlights();
         }
     }
@@ -141,25 +135,57 @@ public class RequirementHighlighter : MonoBehaviour, IPointerClickHandler, IPoin
     {
         if (correctAnswers.Contains(linkIndex)) return;
 
+        bool isCorrect = false;
         string selectedText = linkInfo.GetLinkText();
 
         if (currentPen == PenType.ActorPen && linkID == "actor_left")
         {
             ApplyHighlight(linkInfo, linkIndex, new Color(0.2f, 0.6f, 1f, 0.9f));
-            correctAnswers.Add(linkIndex);
             if (umlManager != null) umlManager.DrawPrimaryActor(selectedText);
+            isCorrect = true;
         }
         else if (currentPen == PenType.ActorPen && linkID == "actor_right")
         {
             ApplyHighlight(linkInfo, linkIndex, new Color(0.2f, 0.6f, 1f, 0.9f));
-            correctAnswers.Add(linkIndex);
             if (umlManager != null) umlManager.DrawSecondaryActor(selectedText);
+            isCorrect = true;
         }
         else if (currentPen == PenType.UseCasePen && linkID == "usecase")
         {
             ApplyHighlight(linkInfo, linkIndex, new Color(1f, 0.9f, 0.2f, 0.9f));
-            correctAnswers.Add(linkIndex);
             if (umlManager != null) umlManager.DrawUseCase(selectedText);
+            isCorrect = true;
+        }
+
+        
+        if (isCorrect)
+        {
+            correctAnswers.Add(linkIndex);
+
+            
+            int totalLinks = documentText.textInfo.linkCount;
+
+            
+            if (correctAnswers.Count == totalLinks)
+            {
+                
+                StartCoroutine(CompleteAndStartFirstQuest());
+            }
+        }
+    }
+
+    
+    private IEnumerator CompleteAndStartFirstQuest()
+    {
+       
+        yield return new WaitForSeconds(1.5f);
+
+        StageManager sm = Object.FindFirstObjectByType<StageManager>();
+        if (sm != null)
+        {
+            
+            sm.selectedScenarioIndex = currentScenarioIndex;
+            sm.StartScenarioQuests();
         }
     }
 
@@ -225,7 +251,6 @@ public class RequirementHighlighter : MonoBehaviour, IPointerClickHandler, IPoin
                 0f
             );
 
-            // --- YENİ EKLENEN: Y Ekseni Kaydırması ---
             localCenter.y += highlightVerticalOffset * fontSize;
 
             Vector3 worldPos = documentText.transform.TransformPoint(localCenter);
@@ -243,7 +268,6 @@ public class RequirementHighlighter : MonoBehaviour, IPointerClickHandler, IPoin
 
             rt.localPosition = containerLocal;
 
-            // --- YENİ EKLENEN: Inspector'dan gelen boyut hesapları ---
             float finalHeight = fontSize * highlightHeightMultiplier;
             float finalWidth = width + (fontSize * highlightWidthPaddingMultiplier);
 
