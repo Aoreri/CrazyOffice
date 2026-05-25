@@ -60,6 +60,13 @@ public class DoorScript : MonoBehaviour
             if (openTimer >= autoCloseTime)
             {
                 isOpen = false;
+                
+                // KORUMALI SES ÇALMA: Script varsa çalışır, yoksa hata vermez
+                DoorSoundManager soundManager = GetComponent<DoorSoundManager>();
+                if (soundManager != null)
+                {
+                    soundManager.PlayCloseSound();
+                }
             }
         }
 
@@ -104,8 +111,6 @@ public class DoorScript : MonoBehaviour
 
                 return;
             }
-            
-                
 
             if (isOpen && !closeable)
                 return;
@@ -113,8 +118,17 @@ public class DoorScript : MonoBehaviour
 
         isOpen = !isOpen;
 
+        // Ses yöneticisini güvenli bir şekilde çekiyoruz
+        DoorSoundManager soundManager = GetComponent<DoorSoundManager>();
+
         if (isOpen)
         {
+            // KORUMALI SES ÇALMA
+            if (soundManager != null)
+            {
+                soundManager.PlayOpenSound();
+            }
+
             openTimer = 0f; // Reset auto-close timer
 
             // Determine which side the player is on
@@ -142,6 +156,14 @@ public class DoorScript : MonoBehaviour
             {
                 // Fallback if player isn't assigned
                 targetRotation = Quaternion.Euler(0, openAngle, 0) * startRotation;
+            }
+        }
+        else
+        {
+            // KORUMALI SES ÇALMA
+            if (soundManager != null)
+            {
+                soundManager.PlayCloseSound();
             }
         }
     }
