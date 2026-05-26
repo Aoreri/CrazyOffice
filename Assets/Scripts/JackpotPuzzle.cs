@@ -12,6 +12,11 @@ public class JackpotPuzzle : Puzzle
 
     public Image referance;
 
+    [Header("Audio Settings")]
+    public AudioSource audioSource;
+    [Tooltip("3 Slot da doğru eşleştiğinde çalacak Jackpot başarı sesi!")]
+    public AudioClip successSound;
+
     // Runtime state (do not modify the inspector fields, as they will be lost on second play)
     private Jackpot[] runtimeColumns;
     private Image runtimeReference;
@@ -55,6 +60,13 @@ public class JackpotPuzzle : Puzzle
 
         if (isJackpot)
         {
+            // YENİ EKLENDİ: Başarı durumunda Jackpot sesini patlatıyoruz
+            if (audioSource != null && successSound != null)
+            {
+                audioSource.pitch = 1f; 
+                audioSource.PlayOneShot(successSound);
+            }
+
             EndPuzzle();
         }
     }

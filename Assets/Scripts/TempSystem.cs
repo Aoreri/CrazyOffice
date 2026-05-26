@@ -28,12 +28,24 @@ public class TempSystem : Puzzle
     public RectTransform arrow;
     public RectTransform arrowEnd;
 
-
     [Header("Temperature Images")]
     public Image tempImage;
     public Sprite greenSprite;
     public Sprite orangeSprite;
     public Sprite redSprite;
+
+    [Header("Audio Settings")]
+    // YENİ EKLENDİ: Sesleri yönetecek iki ayrı AudioSource (Fan ve Alarm çakışmasın diye)
+    public AudioSource fanAudioSource;
+    public AudioSource alarmAudioSource;
+    [Space(5)]
+    public AudioClip fanLoopClip;         // Kesintisiz dönen fan uğultusu
+    public AudioClip alarmBeepClip;       // "Beep beep" şeklinde döngüsel alarm
+    public AudioClip successSound;         // Bulmaca bittiğinde çalacak mutlu ses
+
+    [Header("Dynamic Audio Modifiers")]
+    public float minFanPitch = 0.4f;       // Fan en yavaş dönerkenki kalın ses (Bass)
+    public float maxFanPitch = 1.3f;       // Fan tam hızdayken çıkacağı tiz ses
 
     private Sprite currentSprite;
     private float crossfadeTimer = 1f;
@@ -48,14 +60,12 @@ public class TempSystem : Puzzle
 
     private bool stopped = false;
 
-
     void Start()
     {
         arrowStartPos = arrow.anchoredPosition;
         fanButton.onClick.AddListener(OnFanClick);
         tempImage.fillAmount = Mathf.Lerp(0.3f, 0.8f, currentTemp);
 
-        
         if (currentTemp >= 0.7f)
             currentSprite = redSprite;
         else if (currentTemp >= 0.4f)
@@ -66,6 +76,27 @@ public class TempSystem : Puzzle
         tempImage.sprite = currentSprite;
         tempImage.color = new Color(1f, 1f, 1f, 1f);
         crossfadeTimer = 1f;
+
+        // YENİ EKLENDİ: Başlangıçta döngüsel sesleri hazır hale getiriyoruz
+        SetupLoopingSounds();
+    }
+
+    private void SetupLoopingSounds()
+    {
+        if (fanAudioSource != null && fanLoopClip != null)
+        {
+            fanAudioSource.clip = fanLoopClip;
+            fanAudioSource.loop = true;
+            fanAudioSource.volume = 0f; // Başlangıçta fan duruyor, ses kapalı
+            fanAudioSource.Play();
+        }
+
+        if (alarmAudioSource != null && alarmBeepClip != null)
+        {
+            alarmAudioSource.clip = alarmBeepClip;
+            alarmAudioSource.loop = true;
+            alarmAudioSource.volume = 0.6f; // Sabit net duyulabilir bir alarm volümü
+        }
     }
 
     void Update()
@@ -86,6 +117,32 @@ public class TempSystem : Puzzle
         }
 
         currentTemp = Mathf.Clamp01(currentTemp);
+
+        // --- YENİ EKLENDİ: DİNAMİK FAN SESİ OTOMASYONU ---
+        if (fanAudioSource != null && fanAudioSource.isPlaying)
+        {
+            float normalizedSpeed = fanSpeed / maxFanSpeed; // 0 ile 1 arası değer
+            
+            // Volüm ve Pitch tamamen fannın anlık dönüş hızına (devrine) bağlandı
+            fanAudioSource.volume = normalizedSpeed; 
+            fanAudioSource.pitch = Mathf.Lerp(minFanPitch, maxFanPitch, normalizedSpeed);
+        }
+
+        // --- YENİ EKLENDİ: ALARM (BEEP BEEP) KONTROLÜ ---
+        if (alarmAudioSource != null && alarmBeepClip != null)
+        {
+            // Turuncu (0.4) veya Kırmızı (0.7) seviyedeyse alarm çalsın
+            if (currentTemp >= 0.4f)
+            {
+                if (!alarmAudioSource.isPlaying)
+                    alarmAudioSource.Play();
+            }
+            else
+            {
+                if (alarmAudioSource.isPlaying)
+                    alarmAudioSource.Stop();
+            }
+        }
 
         // Critical temperature check
         if (currentTemp >= criticalTemp)
@@ -109,25 +166,31 @@ public class TempSystem : Puzzle
         if(currentTemp == 0)
         {
             stopped = true;
+
+            // YENİ EKLENDİ: Başarı durumunda tüm döngüleri kapatıp jingle patlatıyoruz
+            if (fanAudioSource != null) fanAudioSource.Stop();
+            if (alarmAudioSource != null) alarmAudioSource.Stop();
+
+            if (fanAudioSource != null && successSound != null)
+            {
+                fanAudioSource.pitch = 1f; // Pitch'i normale çek
+                fanAudioSource.PlayOneShot(successSound);
+            }
+
             EndPuzzle();
         }
-
     }
 
     void OnFanClick()
     {
-
         fanSpeed = Mathf.Min(fanSpeed + clickPower, maxFanSpeed);
-
         fanButtonImage.sprite = fanSpeed > 0f ? fanOnSprite : fanOffSprite;
     }
 
     void UpdateArrow()
     {
-
         float t = fanSpeed / maxFanSpeed;
         arrow.anchoredPosition = arrowStartPos + Vector2.right * ((arrowEnd.anchoredPosition - arrowStartPos) * t);
-
         fanButtonImage.sprite = fanSpeed > 0f ? fanOnSprite : fanOffSprite;
     }
 
@@ -147,7 +210,6 @@ public class TempSystem : Puzzle
 
         if (targetSprite != currentSprite)
         {
-    
             if (fadingOutImage != null)
                 Destroy(fadingOutImage.gameObject);
 
@@ -190,13 +252,6 @@ public class TempSystem : Puzzle
             fadingOutImage.fillAmount = fill;
     }
 
-    protected override void OnStartPuzzle()
-    {
-     
-    }
-
-    protected override void OnEndPuzzle()
-    {
-       
-    }
+    protected override void OnStartPuzzle() { }
+    protected override void OnEndPuzzle() { }
 }
