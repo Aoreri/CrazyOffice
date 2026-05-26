@@ -47,24 +47,21 @@ public class DataManager : MonoBehaviour
 
     void Awake()
     {
-        // SINGLETON LOGIC: Ensure only ONE of these ever exists
+        // If one already exists, destroy the OLD one (not this one)
+        // so the new scene's fresh references are used
         if (Instance != null && Instance != this)
         {
-            Destroy(gameObject); // Destroy duplicates if we return to the main menu
-            return;
+            Destroy(Instance.gameObject); // destroy the stale old one
         }
+
         Instance = this;
-        DontDestroyOnLoad(gameObject); // Make this object survive scene loads
+        DontDestroyOnLoad(gameObject);
 
         saveFilePath = Application.persistentDataPath + "/studentData.json";
         LoadDatabase();
 
-        // Only set up UI if we are actually in the Main Menu scene
-        if (loginPanel != null && registerPanel != null)
-        {
-            loginPanel.SetActive(true);
-            registerPanel.SetActive(false);
-        }
+        loginPanel.SetActive(true);
+        registerPanel.SetActive(false);
     }
 
     private void LoadDatabase()

@@ -150,6 +150,9 @@ public class StageManager : MonoBehaviour
         currentQuestIndex = 0;
 
         StartNextQuest();
+
+        DataManager.Instance.EndGame(TimeManager.Instance.timeElapsed);
+        SceneManager.LoadScene("MainMenu");
     }
 
     public void StartNextQuest()

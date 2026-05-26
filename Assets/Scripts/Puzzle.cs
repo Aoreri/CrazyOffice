@@ -382,10 +382,6 @@ public abstract class Puzzle : MonoBehaviour
         }
     }
 
-    void Start()
-    {
-  
-    }
 }
 
 // Dummy motor to run the coroutine safely on the active prefab instance
