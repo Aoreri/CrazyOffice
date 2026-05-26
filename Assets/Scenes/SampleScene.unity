@@ -150,7 +150,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec6ced382b64d9545a2464220c1d077c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  disableMovement: 0
   speed: 4
   rotationSpeed: 25
   moveInput: {x: 0, y: 0}
@@ -522,7 +521,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!20 &330585545
 Camera:
   m_ObjectHideFlags: 0
@@ -648,7 +647,10 @@ MonoBehaviour:
   target: {fileID: 134730186}
   offset: {x: 0, y: 10, z: -6}
   smoothTime: 0.15
-  fixedRotation: {x: 0, y: 0, z: 0, w: 0}
+  xShiftAmount: 2
+  yRotationAmount: 10
+  transitionSpeed: 5
+  fixedRotationAngles: {x: 40, y: 0, z: 0}
 --- !u!1 &334010088
 GameObject:
   m_ObjectHideFlags: 0
@@ -8661,6 +8663,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Jackpot
       objectReference: {fileID: 0}
+    - target: {fileID: 8493218642568344402, guid: 4be85d2b93d54394b9feb83a33066c17, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -8830,6 +8836,10 @@ PrefabInstance:
     - target: {fileID: 6658539372031160096, guid: 8abfc076af9211946aa617e187c9994c, type: 3}
       propertyPath: m_Name
       value: PrinterFix
+      objectReference: {fileID: 0}
+    - target: {fileID: 6658539372031160096, guid: 8abfc076af9211946aa617e187c9994c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -27,7 +27,6 @@ public abstract class Puzzle : MonoBehaviour
     private PuzzleAnimRunner animRunner;
     private bool isEnding;
 
-    public PlayerMovement playerMovement;
 
     /// <summary>
     /// Returns the active UI root — the instantiated prefab if one exists, otherwise this puzzle's own gameObject.
@@ -40,7 +39,14 @@ public abstract class Puzzle : MonoBehaviour
         gameObject.SetActive(true);
         GameObject canvasObj = GameObject.FindGameObjectWithTag("UI");
 
-        playerMovement.disablePlayerMovement();
+        GameObject playerObj = GameObject.FindGameObjectWithTag("Player");
+        if (playerObj != null)
+        {
+            PlayerMovement pm = playerObj.GetComponent<PlayerMovement>();
+            if(pm != null)
+                pm.disablePlayerMovement();
+        }
+            
 
         if (canvasObj != null && prefab != null)
         {
@@ -68,9 +74,16 @@ public abstract class Puzzle : MonoBehaviour
         // Guard against being called twice (e.g. button spam)
         if (isEnding) return;
 
-        playerMovement.enablePlayerMovement();
+        GameObject playerObj = GameObject.FindGameObjectWithTag("Player");
+        if (playerObj != null)
+        {
+            PlayerMovement pm = playerObj.GetComponent<PlayerMovement>();
+            if (pm != null)
+                pm.enablePlayerMovement();
+        }
 
-        QuestManager.Instance.OnPuzzleSolved(puzzleName);
+        if(QuestManager.Instance != null)
+            QuestManager.Instance.OnPuzzleSolved(puzzleName);
 
         isEnding = true;
 
@@ -367,6 +380,11 @@ public abstract class Puzzle : MonoBehaviour
             canvasGroup.interactable = true;
             canvasGroup.blocksRaycasts = true;
         }
+    }
+
+    void Start()
+    {
+  
     }
 }
 
