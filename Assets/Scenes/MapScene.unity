@@ -4636,7 +4636,6 @@ GameObject:
   - component: {fileID: 272741325}
   - component: {fileID: 272741324}
   - component: {fileID: 272741323}
-  - component: {fileID: 272741326}
   m_Layer: 5
   m_Name: Leave
   m_TagString: Untagged
@@ -4758,37 +4757,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 272741321}
   m_CullTransparentMesh: 1
---- !u!114 &272741326
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 272741321}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1632df7317930a24c85b57baacae6b82, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ButtonAnimator
-  hoverScale: 1.07
-  pressedScale: 0.94
-  scaleSpeed: 14
-  exitDelay: 0.07
-  normalColor: {r: 0.13, g: 0.13, b: 0.2, a: 1}
-  hoverColor: {r: 0.25, g: 0.45, b: 0.95, a: 1}
-  pressedColor: {r: 0.1, g: 0.28, b: 0.75, a: 1}
-  colorSpeed: 16
-  glowNormal: {r: 0.25, g: 0.45, b: 0.95, a: 0}
-  glowHover: {r: 0.25, g: 0.45, b: 0.95, a: 0.45}
-  glowPressed: {r: 0.1, g: 0.28, b: 0.75, a: 0.75}
-  rippleDuration: 0.45
-  enableBounce: 1
-  bounceImpulse: 14
-  bounceSpring: 220
-  bounceDamp: 18
-  enableFloat: 1
-  floatAmplitude: 3
-  floatFrequency: 1.1
 --- !u!1001 &279910262
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -22605,7 +22573,6 @@ GameObject:
   - component: {fileID: 1351007439}
   - component: {fileID: 1351007438}
   - component: {fileID: 1351007437}
-  - component: {fileID: 1351007440}
   m_Layer: 5
   m_Name: Resume
   m_TagString: Untagged
@@ -22727,37 +22694,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1351007435}
   m_CullTransparentMesh: 1
---- !u!114 &1351007440
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1351007435}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1632df7317930a24c85b57baacae6b82, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ButtonAnimator
-  hoverScale: 1.07
-  pressedScale: 0.94
-  scaleSpeed: 14
-  exitDelay: 0.07
-  normalColor: {r: 0.13, g: 0.13, b: 0.2, a: 1}
-  hoverColor: {r: 0.25, g: 0.45, b: 0.95, a: 1}
-  pressedColor: {r: 0.1, g: 0.28, b: 0.75, a: 1}
-  colorSpeed: 16
-  glowNormal: {r: 0.25, g: 0.45, b: 0.95, a: 0}
-  glowHover: {r: 0.25, g: 0.45, b: 0.95, a: 0.45}
-  glowPressed: {r: 0.1, g: 0.28, b: 0.75, a: 0.75}
-  rippleDuration: 0.45
-  enableBounce: 1
-  bounceImpulse: 14
-  bounceSpring: 220
-  bounceDamp: 18
-  enableFloat: 1
-  floatAmplitude: 3
-  floatFrequency: 1.1
 --- !u!1 &1351407723
 GameObject:
   m_ObjectHideFlags: 0
