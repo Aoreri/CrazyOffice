@@ -11115,11 +11115,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CameraFollow
   target: {fileID: 1934713387}
-  offset: {x: 0, y: 11.58, z: -13.2}
+  offset: {x: 0, y: 10.7, z: -11.6}
   smoothTime: 0.32
-  xShiftAmount: -2
-  yRotationAmount: -5
-  transitionSpeed: 3
+  xShiftAmount: 0
+  yRotationAmount: 0
+  transitionSpeed: 0
   fixedRotationAngles: {x: 40, y: 0, z: 0}
 --- !u!1 &672667277
 GameObject:
