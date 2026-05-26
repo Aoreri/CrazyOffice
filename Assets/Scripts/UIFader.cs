@@ -4,21 +4,20 @@ using UnityEngine;
 [RequireComponent(typeof(CanvasGroup))]
 public class UIFader : MonoBehaviour
 {
-    [Header("Fade Ayarlarý")]
     public float fadeDuration = 0.5f; // Efektin kaç saniye süreceði
 
     private CanvasGroup canvasGroup;
 
     void Awake()
     {
-        // Script çalýþtýðýnda Canvas Group'u otomatik bulur ve görünmez yapar
+        
         canvasGroup = GetComponent<CanvasGroup>();
         canvasGroup.alpha = 0f;
     }
 
     void Start()
     {
-        // Obje sahneye ilk yaratýldýðýnda yumuþakça belirme efektini baþlatýr
+        
         StartCoroutine(FadeInRoutine());
     }
 
@@ -29,32 +28,38 @@ public class UIFader : MonoBehaviour
         while (elapsedTime < fadeDuration)
         {
             elapsedTime += Time.deltaTime;
-            // Geçen zamana göre 0 ile 1 arasýnda saydamlýðý artýrýr
+          
             canvasGroup.alpha = Mathf.Clamp01(elapsedTime / fadeDuration);
-            yield return null; // Bir sonraki frame'i bekle
+            yield return null; 
         }
 
-        canvasGroup.alpha = 1f; // Sonunda kesin olarak tam görünür yap
+        canvasGroup.alpha = 1f; 
     }
 
-    // Ýleride tahtayý temizlemek istersen diye Fade Out ve Silme özelliði
     public void FadeOutAndDestroy()
     {
-        StartCoroutine(FadeOutRoutine());
+        StartCoroutine(FadeOutRoutine(true));
     }
 
-    private IEnumerator FadeOutRoutine()
+    public void FadeOut()
+    {
+        StartCoroutine(FadeOutRoutine(false));
+    }
+
+    private IEnumerator FadeOutRoutine(bool shouldDestroy)
     {
         float elapsedTime = 0f;
 
         while (elapsedTime < fadeDuration)
         {
             elapsedTime += Time.deltaTime;
-            // 1'den 0'a doðru saydamlýðý azaltýr
             canvasGroup.alpha = 1f - Mathf.Clamp01(elapsedTime / fadeDuration);
             yield return null;
         }
 
-        Destroy(gameObject); // Tamamen görünmez olunca objeyi sahneden sil
+        if(shouldDestroy)
+            Destroy(gameObject);
+        else
+            gameObject.SetActive(false);
     }
 }

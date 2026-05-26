@@ -137,10 +137,15 @@ public class StageManager : MonoBehaviour
 
     public void StartScenarioQuests()
     {
-        if (markerCanvas != null) markerCanvas.SetActive(false);
+        
+        if (markerCanvas != null)
+        {
+            UIFader uf = markerCanvas.GetComponent<UIFader>();
+            if (uf != null)
+                uf.FadeOut();
+        }
         player.GetComponent<PlayerMovement>().enablePlayerMovement();
 
-        // Sayaçlarý sýfýrla
         currentUseCaseIndex = 0;
         currentQuestIndex = 0;
 
