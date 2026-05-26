@@ -7,19 +7,23 @@ public class PrinterScript : Puzzle
     [Header("Animation Settings")]
     [SerializeField] private float fillAnimationDuration = 0.25f; // How long the initial fill takes
 
+    [Header("Audio Settings")]
+    // YENİ EKLENDİ: Ses bileşenleri
+    [SerializeField] private AudioSource audioSource;
+    [Tooltip("Mürekkep doldurulurken çalacak gluk gluk sesi (Loop)")]
+    [SerializeField] private AudioClip fillingLoopSound;
+    [Tooltip("Tüm tanklar dolduğunda çalacak olan yazıcı/çıktı sesi")]
+    [SerializeField] private AudioClip successSound;
+
     private TankFill[] allTanks;
     private bool isFinished = false;
     private bool isSpawning = false; // Blocks completion checks during the start animation
+    
+    // YENİ EKLENDİ: Sinyal takibi için bir önceki karenin doluluk oranı
+    private float _lastTotalFill = 0f; 
 
-    protected override void OnEndPuzzle()
-    {
-
-    }
-
-    protected override void OnStartPuzzle()
-    {
-
-    }
+    protected override void OnEndPuzzle() { }
+    protected override void OnStartPuzzle() { }
 
     void Start()
     {
@@ -63,11 +67,7 @@ public class PrinterScript : Puzzle
         for (int i = 0; i < allTanks.Length; i++)
         {
             TankFill tank = allTanks[i];
-
-            // Determine if this tank is supposed to be full or empty at the end
             targetFills[i] = emptyIndices.Contains(i) ? tank.minFill : tank.maxFill;
-
-            // Force visual to empty to start the animation
             tank.fillAmount = tank.minFill;
             tank.AddFill(0f);
         }
@@ -76,37 +76,34 @@ public class PrinterScript : Puzzle
         while (elapsedTime < fillAnimationDuration)
         {
             elapsedTime += Time.deltaTime;
-
-            // Calculate interpolation factor (0 to 1)
             float t = elapsedTime / fillAnimationDuration;
-
-            // Add SmoothStep so the fill starts and ends nicely instead of linearly snapping
             t = Mathf.SmoothStep(0f, 1f, t);
 
             for (int i = 0; i < allTanks.Length; i++)
             {
-                // We only need to animate tanks that are actually supposed to fill up
                 if (!emptyIndices.Contains(i))
                 {
                     TankFill tank = allTanks[i];
                     tank.fillAmount = Mathf.Lerp(tank.minFill, targetFills[i], t);
-                    tank.AddFill(0f); // Force visual update
+                    tank.AddFill(0f); 
                 }
             }
-
-            // Wait until next frame
             yield return null;
         }
 
         // Ensure all tanks are exactly at their final target values just in case
+        float initialTotalFill = 0f;
         for (int i = 0; i < allTanks.Length; i++)
         {
             TankFill tank = allTanks[i];
             tank.fillAmount = targetFills[i];
             tank.AddFill(0f);
+            
+            // YENİ EKLENDİ: Başlangıçtaki toplam doluluğu kaydediyoruz
+            initialTotalFill += tank.fillAmount;
         }
 
-        // Allow the puzzle to be played and checked
+        _lastTotalFill = initialTotalFill;
         isSpawning = false;
     }
 
@@ -116,21 +113,60 @@ public class PrinterScript : Puzzle
         if (isFinished || isSpawning || allTanks == null || allTanks.Length == 0) return;
 
         bool allTanksFull = true;
+        float currentTotalFill = 0f;
 
         // Check if every tank has reached its maximum fill limit
         foreach (TankFill tank in allTanks)
         {
+            currentTotalFill += tank.fillAmount; // Toplam doluluğu hesapla
+            
             if (tank.fillAmount < tank.maxFill - 0.001f)
             {
                 allTanksFull = false;
-                break;
             }
         }
+
+        // --- YENİ EKLENDİ: SES TETİKLEME MANTIĞI ---
+        // Eğer şu anki doluluk, bir önceki kareden büyükse oyuncu fareye basıp dolduruyordur
+        if (currentTotalFill > _lastTotalFill + 0.0001f)
+        {
+            if (audioSource != null && fillingLoopSound != null && !audioSource.isPlaying)
+            {
+                audioSource.clip = fillingLoopSound;
+                audioSource.loop = true;
+                audioSource.Play();
+            }
+        }
+        else
+        {
+            // Eğer doluluk artmıyorsa (oyuncu fareyi bıraktıysa) sesi anında duraklat
+            if (audioSource != null && audioSource.isPlaying && audioSource.clip == fillingLoopSound)
+            {
+                audioSource.Pause(); // Stop yerine Pause yapıyoruz ki tekrar bastığında ses baştan değil kaldığı yerden organik aksın
+            }
+        }
+
+        // Bir sonraki karede karşılaştırmak için güncel değeri hafızaya al
+        _lastTotalFill = currentTotalFill;
+        // -------------------------------------------
 
         // If all are full, destroy the target object
         if (allTanksFull)
         {
             isFinished = true;
+            
+            // YENİ EKLENDİ: Tüm tanklar dolduysa loop sesini tamamen kes ve çıktı sesini çal
+            if (audioSource != null)
+            {
+                audioSource.Stop();
+                audioSource.loop = false;
+                
+                if (successSound != null)
+                {
+                    audioSource.PlayOneShot(successSound);
+                }
+            }
+
             EndPuzzle();
         }
     }

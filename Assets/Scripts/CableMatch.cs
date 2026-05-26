@@ -8,7 +8,17 @@ public class CableMatch : Puzzle
     public GameObject[] connects = new GameObject[4];
     public Color[] colors = new Color[4];
 
+    [Header("Audio Settings")]
+    public AudioSource audioSource;
+    [Tooltip("Doğru kablo bağlantıları için rastgele seçilecek elektrik çıtırtısı sample havuzu")]
+    public AudioClip[] connectionSounds;       
+    [Tooltip("Yanlış renk eşleştiğinde çalacak olan darbe/ark sesi")]
+    public AudioClip electricImpactSound;      
+    [Tooltip("Tüm kablolar doğru eşleşip mini game bittiğinde çalacak mutlu ses")]
+    public AudioClip successNotificationSound; 
+
     private bool isFinished = false;
+    private bool[] lastConnectedStates;        // Kabloların bir önceki frame'deki bağlantı durumunu hafızada tutar
 
     void Start()
     {
@@ -21,6 +31,18 @@ public class CableMatch : Puzzle
         }
 
         PreConnectWires();
+
+        // Harita ilk yüklendiğinde önceden bağlanan kabloların ses tetiklememesi için
+        // hafıza dizimizi PreConnectWires işleminden SONRA, Start'ın en sonunda dolduruyoruz.
+        lastConnectedStates = new bool[hubs.Length];
+        for (int i = 0; i < hubs.Length; i++)
+        {
+            WireDrag wire = hubs[i].GetComponent<WireDrag>();
+            if (wire != null)
+            {
+                lastConnectedStates[i] = wire.isConnected;
+            }
+        }
     }
 
     void Update()
@@ -34,11 +56,31 @@ public class CableMatch : Puzzle
             WireDrag wire = hubs[i].GetComponent<WireDrag>();
             if (wire != null)
             {
+                // SİNYAL TAKİBİ: Eğer kablo geçen frame bağlı değildiyse ama BU frame bağlıysa (Yeni takıldıysa)
+                if (wire.isConnected && !lastConnectedStates[i])
+                {
+                    // Doğru renkli kutuya mı takılmış kontrol et
+                    if (wire.connectedTarget != null && wire.wireColor == wire.connectedTarget.targetColor)
+                    {
+                        PlayRandomConnectionSound();
+                    }
+                    else
+                    {
+                        // Yanlış bağlantı! Kıvılcım/Darbe sesini (Electric Impact) çal
+                        if (audioSource != null && electricImpactSound != null)
+                        {
+                            audioSource.PlayOneShot(electricImpactSound);
+                        }
+                    }
+                }
+
+                // Bir sonraki frame için mevcut durumu hafızaya kaydet
+                lastConnectedStates[i] = wire.isConnected;
+
                 // CHANGED: Fail the check if it's NOT connected, OR if it's connected to the WRONG color
                 if (!wire.isConnected || wire.connectedTarget == null || wire.wireColor != wire.connectedTarget.targetColor)
                 {
                     allMatched = false;
-                    break;
                 }
             }
         }
@@ -47,7 +89,27 @@ public class CableMatch : Puzzle
         {
             isFinished = true;
             Debug.Log("All cables matched successfully!");
+            
+            // Bölüm bitti, o tatlı notification sesini patlat
+            if (audioSource != null && successNotificationSound != null)
+            {
+                audioSource.pitch = 1f; // Önceki seslerden kalan pitch modülasyonu varsa sıfırla
+                audioSource.PlayOneShot(successNotificationSound);
+            }
+
             EndPuzzle();
+        }
+    }
+
+    void PlayRandomConnectionSound()
+    {
+        if (audioSource != null && connectionSounds.Length > 0)
+        {
+            int randomIndex = Random.Range(0, connectionSounds.Length);
+            
+            // İnce bir ses tasarımı dokunuşu: Her kıvılcım sesinin frekansı milimetrik değişsin ki robotik tınlamasın
+            audioSource.pitch = Random.Range(0.93f, 1.07f);
+            audioSource.PlayOneShot(connectionSounds[randomIndex]);
         }
     }
 
@@ -127,13 +189,6 @@ public class CableMatch : Puzzle
         }
     }
 
-    protected override void OnStartPuzzle()
-    {
-       
-    }
-
-    protected override void OnEndPuzzle()
-    {
-     
-    }
+    protected override void OnStartPuzzle() { }
+    protected override void OnEndPuzzle() { }
 }

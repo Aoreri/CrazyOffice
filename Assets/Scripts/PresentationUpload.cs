@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.EventSystems;
-using UnityEngine.UI; // Required for Image
+using UnityEngine.UI; 
 
 public class PresentationUpload : Puzzle
 {
@@ -14,7 +14,15 @@ public class PresentationUpload : Puzzle
     public GameObject folderObject;
 
     [Header("Upload Settings")]
-    public Image uploadFillImage; // Assign your UI Image here in the inspector
+    public Image uploadFillImage; 
+
+    [Header("Audio Settings")]
+    // YENİ EKLENDİ: Ses yöneticisi ve dosyaları
+    public AudioSource audioSource;
+    [Tooltip("Yükleme barı dolarken çalacak, kendi içinde dönen (loop) işlem sesi")]
+    public AudioClip loadingSound;
+    [Tooltip("Yükleme %100 olduğunda çalacak olan başarı sesi")]
+    public AudioClip successSound;
 
     private bool _isUSBMoving = false;
 
@@ -82,6 +90,14 @@ public class PresentationUpload : Puzzle
             uploadFillImage.transform.parent.gameObject.SetActive(true);
             uploadFillImage.fillAmount = 0f;
 
+            // YENİ EKLENDİ: Yükleme başladığında o dijital işlem sesini döngüye alarak başlatıyoruz
+            if (audioSource != null && loadingSound != null)
+            {
+                audioSource.clip = loadingSound;
+                audioSource.loop = true; // Bar dolana kadar aralıksız dönsün
+                audioSource.Play();
+            }
+
             // Pick a random time between 1 and 3 seconds
             float randomDuration = Random.Range(minUploadTime, maxUploadTime);
             float elapsedTime = 0f;
@@ -96,20 +112,25 @@ public class PresentationUpload : Puzzle
 
             // Ensure it hits exactly 100% at the end
             uploadFillImage.fillAmount = 1f;
+            
+            // YENİ EKLENDİ: Bar tam dolduğunda yükleme sesini bıçak gibi kes ve başarı sesini patlat
+            if (audioSource != null)
+            {
+                audioSource.Stop(); // Döngüyü durdur
+                audioSource.loop = false; // Diğer seslerin döngüye girmemesi için kapat
+                
+                if (successSound != null)
+                {
+                    audioSource.PlayOneShot(successSound); // Mutlu son!
+                }
+            }
         }
 
         // Trigger the end of the puzzle once the upload finishes
-        // (Assuming your base 'Puzzle' class handles the logic via EndPuzzle())
         EndPuzzle();
     }
 
-    protected override void OnStartPuzzle()
-    {
-    
-    }
+    protected override void OnStartPuzzle() { }
 
-    protected override void OnEndPuzzle()
-    {
-        
-    }
+    protected override void OnEndPuzzle() { }
 }

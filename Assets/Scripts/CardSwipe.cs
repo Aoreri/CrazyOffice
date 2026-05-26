@@ -2,10 +2,8 @@ using System.Collections;
 using TMPro;
 using UnityEngine;
 
-
 public class CardSwipe : Puzzle
 {
-    
     public CardSwipeHandler cardSwipe;
    
     public float allowedSwipeTimeMin = 0.8f;
@@ -16,11 +14,16 @@ public class CardSwipe : Puzzle
     //Least allowed swap
     public RectTransform cardSwipeLast;
 
-
     public TMPro.TextMeshProUGUI deviceText;
 
     public GameObject greenLightOn, greenLightOff, redLightOn, redLightOff;
 
+    [Header("Audio Settings")]
+    public AudioSource audioSource;
+    [Tooltip("Kart hızlı, yavaş veya ters çekildiğinde çalacak olan hata/reddetme sesi")]
+    public AudioClip errorSound;
+    [Tooltip("Kart doğru hızda çekildiğinde çalacak olan olumlu onaylama sesi")]
+    public AudioClip successSound;
 
     private Coroutine replaceCoroutine;
     private Coroutine lightCoroutine;
@@ -28,20 +31,17 @@ public class CardSwipe : Puzzle
     void Start()
     {
         cardSwipe.OnSwipeRight += HandleRightSwipe;
-  
     }
 
     void HandleRightSwipe(float swipeTime)
     {
-        //Debug.Log("RIGHT swipe time: " + swipeTime);
-        //Debug.Log("diff: " + (cardSwipe.transform.position.x - cardSwipeLast.transform.position.x));
-
         float swipeCordDiff = (cardSwipe.transform.position.x - cardSwipeLast.transform.position.x);
 
         if (swipeCordDiff < 0)
         {
             SwitchLight(false);
             ReplaceText("INVALID READING");
+            PlayErrorSound(); // HATA SESİ
             return;
         }
 
@@ -49,6 +49,7 @@ public class CardSwipe : Puzzle
         {
             SwitchLight(false);
             ReplaceText("TOO FAST");
+            PlayErrorSound(); // HATA SESİ
             return;
         }
 
@@ -56,14 +57,33 @@ public class CardSwipe : Puzzle
         {
             SwitchLight(false);
             ReplaceText("TOO SLOW");
+            PlayErrorSound(); // HATA SESİ
             return;
         }
 
         SwitchLight(true);
         ReplaceText("LETS GO");
 
+        // BAŞARI SESİ
+        if (audioSource != null && successSound != null)
+        {
+            audioSource.pitch = 1f; // Başarı sesinde orijinal frekansı koru
+            audioSource.PlayOneShot(successSound);
+        }
+
         EndPuzzle();
         return;
+    }
+
+    // Hata sesini pitch modülasyonu ile çalan yardımcı fonksiyon
+    void PlayErrorSound()
+    {
+        if (audioSource != null && errorSound != null)
+        {
+            // Arka arkaya hızlıca kart çekilirse robotik tınlamasın diye çok hafif pitch dalgalanması
+            audioSource.pitch = Random.Range(0.97f, 1.03f);
+            audioSource.PlayOneShot(errorSound);
+        }
     }
 
     void SwitchLight(bool passed)
@@ -81,8 +101,6 @@ public class CardSwipe : Puzzle
 
         replaceCoroutine = StartCoroutine(ReplaceTextEnumerator(text));
     }
-
-
     
     IEnumerator ReplaceTextEnumerator(string text)
     {
@@ -90,7 +108,6 @@ public class CardSwipe : Puzzle
         yield return new WaitForSeconds(textChangeTime);
         deviceText.text = "SWIPE CARD";
     }
-
     
     IEnumerator SwitchLightEnumerator(bool passed)
     {
@@ -103,7 +120,6 @@ public class CardSwipe : Puzzle
             redLightOn.SetActive(true);
             redLightOff.SetActive(false);
         }
-
 
         yield return new WaitForSeconds(textChangeTime);
 
@@ -119,13 +135,6 @@ public class CardSwipe : Puzzle
         }
     }
 
-    protected override void OnStartPuzzle()
-    {
-
-    }
-
-    protected override void OnEndPuzzle()
-    {
-        
-    }
+    protected override void OnStartPuzzle() { }
+    protected override void OnEndPuzzle() { }
 }

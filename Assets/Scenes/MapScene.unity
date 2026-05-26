@@ -5127,10 +5127,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: CardSwipe
       objectReference: {fileID: 0}
-    - target: {fileID: 6821398458449047719, guid: 5666a79f5b1d50a4fb123bd1191bf392, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6127,10 +6123,6 @@ PrefabInstance:
     - target: {fileID: 8047771638007759012, guid: b0a90a988275e7a4793d2d80778e7422, type: 3}
       propertyPath: m_Name
       value: CableMatch
-      objectReference: {fileID: 0}
-    - target: {fileID: 8047771638007759012, guid: b0a90a988275e7a4793d2d80778e7422, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -48,6 +48,12 @@ public class MazePuzzle : Puzzle
     [Space(10)]
     [SerializeField] private PathTextureSet pathSprites;
 
+    [Header("Audio Settings")]
+    // YENİ EKLENDİ: Ses bileşenleri
+    [SerializeField] private AudioSource audioSource;
+    [Tooltip("Labirent başarıyla tamamlandığında çalacak jingle/notifikasyon sesi")]
+    [SerializeField] private AudioClip successSound;
+
     private int centerX;
     private int centerY;
     private float tileWidth;
@@ -268,11 +274,9 @@ public class MazePuzzle : Puzzle
         Vector2Int lastCell = visitedPath[visitedPath.Count - 1];
         if (!AreTouching(grid, lastCell))
         {
-
             List<Vector2Int> fillPath = FindPathBFS(lastCell, grid);
             if (fillPath != null && fillPath.Count - 1 <= autoCompleteCount)
             {
-
                 for (int i = 1; i < fillPath.Count; i++)
                     visitedPath.Add(fillPath[i]);
 
@@ -403,6 +407,13 @@ public class MazePuzzle : Puzzle
     private void OnMazeSolved()
     {
         Debug.Log("Maze Solved!");
+
+        // YENİ EKLENDİ: Labirent kutuları yok edilmeden hemen önce jingle sesini tetikliyoruz
+        if (audioSource != null && successSound != null)
+        {
+            audioSource.PlayOneShot(successSound);
+        }
+
         if (GridObjects != null)
         {
             for (int y = 0; y < GridObjects.GetLength(0); y++)
@@ -434,13 +445,6 @@ public class MazePuzzle : Puzzle
         return (dx + dy) == 1;
     }
 
-    protected override void OnEndPuzzle()
-    {
-
-    }
-
-    protected override void OnStartPuzzle()
-    {
-
-    }
+    protected override void OnEndPuzzle() { }
+    protected override void OnStartPuzzle() { }
 }
