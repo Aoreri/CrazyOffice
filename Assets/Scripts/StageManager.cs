@@ -3,18 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-// --- EKLENEN YENİ SINIFLAR ---
+// --- EKLENEN YENÃ SINIFLAR ---
 [System.Serializable]
 public class UseCaseTasks
 {
-    public string useCaseName; // Sadece senin okuman için (Örn: "Scan Label")
-    public Quest[] quests;     // Bu Use Case'in içereceği özel görevler
+    public string useCaseName; // Sadece senin okuman iÃ§in (Ã–rn: "Scan Label")
+    public Quest[] quests;     // Bu Use Case'in iÃ§ereceÃ°i Ã¶zel gÃ¶revler
 }
 
 [System.Serializable]
 public class ScenarioData
 {
-    public string scenarioName; // Sadece senin okuman için (Örn: "Food Delivery")
+    public string scenarioName; // Sadece senin okuman iÃ§in (Ã–rn: "Food Delivery")
     public UseCaseTasks[] useCases = new UseCaseTasks[3]; // Her senaryonun 3 adet Use Case'i
 }
 // -----------------------------
@@ -29,14 +29,14 @@ public class StageManager : MonoBehaviour
 
     public Transform spawnPosition;
 
-    [Header("Tüm Senaryolar ve Use Case Görevleri")]
+    [Header("TÃ¼m Senaryolar ve Use Case GÃ¶revleri")]
     public ScenarioData[] allScenarios = new ScenarioData[3];
 
     public GameObject markerCanvas;
 
     [HideInInspector] public int selectedScenarioIndex = 0;
 
-    // Takip değişkenleri
+    // Takip deÃ°iÃ¾kenleri
     private int currentUseCaseIndex = 0;
     private int currentQuestIndex = 0;
 
@@ -151,18 +151,16 @@ public class StageManager : MonoBehaviour
 
         StartNextQuest();
 
-        DataManager.Instance.EndGame(TimeManager.Instance.timeElapsed);
-        SceneManager.LoadScene("MainMenu");
     }
 
     public void StartNextQuest()
     {
-        // Güvenlik kontrolü
+        // GÃ¼venlik kontrolÃ¼
         if (selectedScenarioIndex >= allScenarios.Length) return;
 
         ScenarioData currentScenario = allScenarios[selectedScenarioIndex];
 
-        // 1. Eğer bu senaryodaki tüm Use Case'ler bittiyse OYUN BİTER
+        // 1. EÃ°er bu senaryodaki tÃ¼m Use Case'ler bittiyse OYUN BÃTER
         if (currentUseCaseIndex >= currentScenario.useCases.Length)
         {
             if (DataManager.Instance == null)
@@ -178,28 +176,28 @@ public class StageManager : MonoBehaviour
 
         UseCaseTasks currentUseCase = currentScenario.useCases[currentUseCaseIndex];
 
-        // 2. Eğer bulunduğumuz Use Case'in görevleri devam ediyorsa sıradakini ver
+        // 2. EÃ°er bulunduÃ°umuz Use Case'in gÃ¶revleri devam ediyorsa sÃ½radakini ver
         if (currentQuestIndex < currentUseCase.quests.Length)
         {
             Quest nextQuest = currentUseCase.quests[currentQuestIndex];
-            currentQuestIndex++; // Sıradakine hazırlan
+            currentQuestIndex++; // SÃ½radakine hazÃ½rlan
 
-            // Eğer inspector'da bir kutuyu boş unuttuysan hata vermesin diye kontrol
+            // EÃ°er inspector'da bir kutuyu boÃ¾ unuttuysan hata vermesin diye kontrol
             if (nextQuest != null)
             {
                 QuestManager.Instance.StartQuest(nextQuest);
             }
             else
             {
-                StartNextQuest(); // Boşsa sıradakine atla
+                StartNextQuest(); // BoÃ¾sa sÃ½radakine atla
             }
         }
-        // 3. Eğer bulunduğumuz Use Case'in görevleri bittiyse DİĞER Use Case'e geç
+        // 3. EÃ°er bulunduÃ°umuz Use Case'in gÃ¶revleri bittiyse DÃÃER Use Case'e geÃ§
         else
         {
             currentUseCaseIndex++;
             currentQuestIndex = 0;
-            StartNextQuest(); // Döngüyü tekrar tetikle
+            StartNextQuest(); // DÃ¶ngÃ¼yÃ¼ tekrar tetikle
         }
     }
 }
