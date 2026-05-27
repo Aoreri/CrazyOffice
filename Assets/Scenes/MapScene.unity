@@ -8,8 +8,8 @@ OcclusionCullingSettings:
     smallestOccluder: 5
     smallestHole: 0.25
     backfaceThreshold: 100
-  m_SceneGUID: 00000000000000000000000000000000
-  m_OcclusionCullingData: {fileID: 0}
+  m_SceneGUID: d30ad4b1eeeff494d986fb409522dc9d
+  m_OcclusionCullingData: {fileID: 36300000, guid: 7a3fa29515bcc407eb56528b537798d8, type: 2}
 --- !u!104 &2
 RenderSettings:
   m_ObjectHideFlags: 0
@@ -93,8 +93,8 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 20201, guid: 0000000000000000f000000000000000, type: 0}
-  m_LightingSettings: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: 8afc8aef4c13d4b0693d1bda3058e5be, type: 2}
+  m_LightingSettings: {fileID: 4890085278179872738, guid: cbfa1d7ef075047f69dbde2ed5337ca3, type: 2}
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -183,6 +183,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Meshy_AI_Retro_Two_Tone_Refrig_0513012804_texture
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 85a0afa247766bb4fb38646e28ee338b, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -215,7 +219,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &2990547
 Transform:
@@ -488,7 +492,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &15973670
 Transform:
@@ -570,6 +574,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Meshy_AI_robot_0513091852_texture (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 4a2ba3f51fda2467aaa82aef63675f8d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -638,6 +646,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: d36d399bc0b05eb488c7df992541a730, type: 3}
       propertyPath: m_Name
       value: Meshy_AI_Verdant_Pot_0513010638_texture (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d36d399bc0b05eb488c7df992541a730, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -889,6 +901,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Meshy_AI_Brown_Leather_Armchai_0513012342_texture (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: fc2130c305bfe244ebcbb5d2de1611f8, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -965,6 +981,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: fc2130c305bfe244ebcbb5d2de1611f8, type: 3}
       propertyPath: m_Name
       value: Meshy_AI_Brown_Leather_Armchai_0513012342_texture (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: fc2130c305bfe244ebcbb5d2de1611f8, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1131,7 +1151,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &61800942
 Transform:
@@ -1326,6 +1346,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 9425621023191824ea96f899ff178d5a, type: 3}
       propertyPath: m_Name
       value: Meshy_AI_Spiral_Bound_Notebook_0513012527_texture (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 9425621023191824ea96f899ff178d5a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1676,7 +1700,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &108308292
 Transform:
@@ -1686,12 +1710,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 108308291}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 2.5042, y: 1.106, z: -5.919}
-  m_LocalScale: {x: 0.07873988, y: 2.22, z: 9.580917}
+  m_LocalRotation: {x: -0, y: -0.7071068, z: -0, w: 0.70710677}
+  m_LocalPosition: {x: 7.7626, y: 1.106, z: -34.764}
+  m_LocalScale: {x: 0.47243935, y: 2.22, z: 28.742756}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1351407724}
+  m_Father: {fileID: 828243224}
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!65 &108308293
 BoxCollider:
@@ -1834,6 +1858,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 4a751649cd4fb486786d0892d552cc67, type: 3}
       propertyPath: m_Name
       value: router (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 4a751649cd4fb486786d0892d552cc67, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2106,6 +2134,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: e08e2be20f6fd404ba76da105b5f682b, type: 3}
       propertyPath: m_Name
       value: Meshy_AI_office_chair_0513204900_texture
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e08e2be20f6fd404ba76da105b5f682b, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2416,6 +2448,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Meshy_AI_Verdant_Pot_0513010638_texture (21)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d36d399bc0b05eb488c7df992541a730, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2469,7 +2505,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &141191418
 Transform:
@@ -2605,7 +2641,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &157258867
 Transform:
@@ -2744,7 +2780,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!1 &171437548
 GameObject:
@@ -2760,7 +2796,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &171437549
 Transform:
@@ -2842,6 +2878,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Meshy_AI_Crimson_Chair_on_a_Bl_0513200211_texture (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 4c956349a073c5c478e6cf0de6b6a166, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2895,7 +2935,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &175001390
 Transform:
@@ -2927,7 +2967,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &182107370
 Transform:
@@ -3039,6 +3079,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: c6d19ca023d7743f58a68750e7cfde63, type: 3}
       propertyPath: m_Name
       value: Meshy_AI_Wooden_Table_0513084325_texture (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c6d19ca023d7743f58a68750e7cfde63, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3255,6 +3299,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Meshy_AI_Polygonal_Chair_0513014028_texture (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f41e5ddcc078a744c8e721815a5af367, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3426,7 +3474,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &205252885
 Transform:
@@ -3506,6 +3554,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: d36d399bc0b05eb488c7df992541a730, type: 3}
       propertyPath: m_Name
       value: Meshy_AI_Verdant_Pot_0513010638_texture (22)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d36d399bc0b05eb488c7df992541a730, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3828,7 +3880,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &222023837
 Transform:
@@ -3863,7 +3915,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &230455565
 Transform:
@@ -4053,7 +4105,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &245906194
 Transform:
@@ -4093,7 +4145,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!65 &247837060
 BoxCollider:
@@ -4260,7 +4312,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &255002195
 Transform:
@@ -4388,7 +4440,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &256247318
 Transform:
@@ -4420,7 +4472,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &256955266
 Transform:
@@ -4501,6 +4553,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Meshy_AI_Polygonal_Chair_0513014028_texture (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f41e5ddcc078a744c8e721815a5af367, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4577,6 +4633,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: e3999ff287e1f41dfb19f80ee36dc66d, type: 3}
       propertyPath: m_Name
       value: Meshy_AI_Blockchain_Whiteboard_0513083604_texture (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e3999ff287e1f41dfb19f80ee36dc66d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4819,6 +4879,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Meshy_AI_Terracotta_Armchair_0513012059_texture (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 4c7fac2c0f5e34349898549cc81688fd, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4948,6 +5012,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Meshy_AI_Spiral_Bound_Notebook_0513012527_texture (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 9425621023191824ea96f899ff178d5a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5017,6 +5085,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Meshy_AI_Verdant_Pot_0513010638_texture (18)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d36d399bc0b05eb488c7df992541a730, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5070,7 +5142,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &299722897
 Transform:
@@ -5104,7 +5176,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &303988318
 Transform:
@@ -5136,7 +5208,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &304563844
 Transform:
@@ -5216,6 +5288,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 6fc3b5ff0d66a004b81919b6bd94714d, type: 3}
       propertyPath: m_Name
       value: Meshy_AI_Hydration_Station_0513012641_texture (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 6fc3b5ff0d66a004b81919b6bd94714d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5328,6 +5404,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Meshy_AI_Still_Life_with_Tea_C_0520185247_texture
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b3d6ce96b694e1b43a5036c616512a6c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5381,7 +5461,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &305868260
 Transform:
@@ -5528,7 +5608,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!65 &323515606
 BoxCollider:
@@ -5702,6 +5782,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BlueOfficeChair (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 48c405a5940589944992b004420a5c38, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5729,7 +5813,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &348043226
 Transform:
@@ -5814,6 +5898,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Meshy_AI_Brown_Leather_Armchai_0513012342_texture (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: fc2130c305bfe244ebcbb5d2de1611f8, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5846,7 +5934,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &356436373
 Transform:
@@ -6059,6 +6147,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Meshy_AI_Wooden_pedestal_table_0513014104_texture (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 760760934e02d8f47a56b4e4a8179992, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6091,7 +6183,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &369286639
 Transform:
@@ -6123,7 +6215,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &369532009
 Transform:
@@ -6138,6 +6230,10 @@ Transform:
   m_LocalScale: {x: 100.00003, y: 100, z: 100.00003}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 2019500094}
+  - {fileID: 1292597692}
+  - {fileID: 1126448596}
+  - {fileID: 609912800}
   - {fileID: 1311231117}
   - {fileID: 866369609}
   - {fileID: 498059198}
@@ -6205,6 +6301,9 @@ Transform:
   - {fileID: 849841411}
   - {fileID: 888732799}
   - {fileID: 1539160852}
+  - {fileID: 1639056317}
+  - {fileID: 512938576}
+  - {fileID: 576534217}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!1 &371109160
@@ -6474,6 +6573,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Meshy_AI_Floating_Dresser_0513084639_texture
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 21d34695cdbb045f481e4f1bdde14dc2, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6501,7 +6604,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &390932306
 Transform:
@@ -6602,7 +6705,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &394274081
 Transform:
@@ -6844,6 +6947,55 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: e3999ff287e1f41dfb19f80ee36dc66d, type: 3}
   m_PrefabInstance: {fileID: 1315903882}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &409963985
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 409963987}
+  - component: {fileID: 409963986}
+  m_Layer: 4
+  m_Name: Post Proccessing
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &409963986
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 409963985}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b9a305e18de0c04dbd257a21cd47087, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.Postprocessing.Runtime::UnityEngine.Rendering.PostProcessing.PostProcessVolume
+  sharedProfile: {fileID: 11400000, guid: 1a7b2d5e749fe485aafb08fdd3b246f7, type: 2}
+  isGlobal: 1
+  blendDistance: 0
+  weight: 1
+  priority: 0
+--- !u!4 &409963987
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 409963985}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &411444510
 GameObject:
   m_ObjectHideFlags: 0
@@ -6933,7 +7085,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &426577295
 Transform:
@@ -6969,7 +7121,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &433737663
 Transform:
@@ -7067,7 +7219,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &446334336
 Transform:
@@ -7255,7 +7407,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &457829833
 Transform:
@@ -7337,6 +7489,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Meshy_AI_Verdant_Pot_0513010638_texture (11)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d36d399bc0b05eb488c7df992541a730, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -7393,7 +7549,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &467631522
 Transform:
@@ -7583,6 +7739,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Meshy_AI_Verdant_Pot_0513010638_texture (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d36d399bc0b05eb488c7df992541a730, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -7748,7 +7908,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &477879618
 Transform:
@@ -7830,6 +7990,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Meshy_AI_Verdant_Pot_0513010638_texture (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d36d399bc0b05eb488c7df992541a730, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -7883,7 +8047,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &479828464
 Transform:
@@ -8076,6 +8240,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: printer (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 641d54c2e9ed140a6a5ff4258035909a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -8086,6 +8254,96 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 641d54c2e9ed140a6a5ff4258035909a, type: 3}
   m_PrefabInstance: {fileID: 480602960}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &481935515
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 481935516}
+  - component: {fileID: 481935518}
+  - component: {fileID: 481935517}
+  m_Layer: 0
+  m_Name: LightBlocker (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 109
+  m_IsActive: 1
+--- !u!4 &481935516
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 481935515}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.324953, y: 0.051954, z: -0.105147}
+  m_LocalScale: {x: 0.20008142, y: 0.081097476, z: 0.00203353}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1394356696}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!23 &481935517
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 481935515}
+  m_Enabled: 1
+  m_CastShadows: 3
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 0
+  m_StaticShadowCaster: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: faac4a174a3bc8542a1114023b1aa081, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 2
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_MaskInteraction: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &481935518
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 481935515}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &490205800
 GameObject:
   m_ObjectHideFlags: 0
@@ -8259,6 +8517,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Meshy_AI_Polygonal_Chair_0513014028_texture (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f41e5ddcc078a744c8e721815a5af367, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -8315,7 +8577,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &506365379
 Transform:
@@ -8326,8 +8588,8 @@ Transform:
   m_GameObject: {fileID: 506365378}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -2.213, y: 1.106, z: -3.48655}
-  m_LocalScale: {x: 3.5049815, y: 2.22, z: 0.14785261}
+  m_LocalPosition: {x: -2.213, y: 1.106, z: -3.48501}
+  m_LocalScale: {x: 3.508136, y: 2.22, z: 0.14785261}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1351407724}
@@ -8466,7 +8728,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &511029826
 Transform:
@@ -8486,6 +8748,96 @@ Transform:
   - {fileID: 182107370}
   m_Father: {fileID: 245906194}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &512938575
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 512938576}
+  - component: {fileID: 512938578}
+  - component: {fileID: 512938577}
+  m_Layer: 0
+  m_Name: LightBlocker (3)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 109
+  m_IsActive: 1
+--- !u!4 &512938576
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 512938575}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.389596, y: 0.046338, z: 0.083863}
+  m_LocalScale: {x: 0.002548338, y: 0.07150352, z: 0.19306943}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 369532009}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!23 &512938577
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 512938575}
+  m_Enabled: 1
+  m_CastShadows: 3
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 0
+  m_StaticShadowCaster: 1
+  m_MotionVectors: 2
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: faac4a174a3bc8542a1114023b1aa081, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 2
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_MaskInteraction: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &512938578
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 512938575}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &516026916
 GameObject:
   m_ObjectHideFlags: 0
@@ -8582,6 +8934,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BrownSofa (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 1056c64ae10c9dc44b8ffcf9f445ae0c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -8609,7 +8965,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &522303292
 Transform:
@@ -8643,7 +8999,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &522567841
 Transform:
@@ -8869,7 +9225,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &535586175
 Transform:
@@ -8900,7 +9256,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &537651283
 Transform:
@@ -8982,6 +9338,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 4c7fac2c0f5e34349898549cc81688fd, type: 3}
       propertyPath: m_Name
       value: Meshy_AI_Terracotta_Armchair_0513012059_texture (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 4c7fac2c0f5e34349898549cc81688fd, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -9399,6 +9759,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BlueOfficeChair (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 48c405a5940589944992b004420a5c38, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -9481,6 +9845,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Meshy_AI_Colorful_Books_in_a_R_0513200200_texture (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 0ac38a7106d3e1f41986dfb75d6246e7, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -9520,6 +9888,96 @@ Transform:
   - {fileID: 1482549724}
   m_Father: {fileID: 1335563207}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &576534216
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 576534217}
+  - component: {fileID: 576534219}
+  - component: {fileID: 576534218}
+  m_Layer: 0
+  m_Name: LightBlocker (4)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 109
+  m_IsActive: 1
+--- !u!4 &576534217
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 576534216}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.1374, y: 0.046338, z: 0.0839}
+  m_LocalScale: {x: 0.002548338, y: 0.07150352, z: 0.19306943}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 369532009}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!23 &576534218
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 576534216}
+  m_Enabled: 1
+  m_CastShadows: 3
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 0
+  m_StaticShadowCaster: 1
+  m_MotionVectors: 2
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: faac4a174a3bc8542a1114023b1aa081, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 2
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_MaskInteraction: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &576534219
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 576534216}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1001 &580027305
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9584,6 +10042,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Meshy_AI_Desktop_Computer_with_0513085201_texture
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: a6e70d237afad458f96b5cc2d037ae46, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -9611,7 +10073,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &582684672
 Transform:
@@ -9849,7 +10311,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &604534784
 Transform:
@@ -9872,6 +10334,133 @@ Transform:
   - {fileID: 1762881849}
   m_Father: {fileID: 369532009}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &609912799
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 609912800}
+  - component: {fileID: 609912802}
+  - component: {fileID: 609912801}
+  m_Layer: 0
+  m_Name: Area Light (4)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 2147483647
+  m_IsActive: 1
+--- !u!4 &609912800
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 609912799}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 0.2081, y: 0.044, z: 0.1729}
+  m_LocalScale: {x: 0.99116033, y: 0.99116033, z: 1.8237342}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 369532009}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!114 &609912801
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 609912799}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.RenderPipelines.Universal.Runtime::UnityEngine.Rendering.Universal.UniversalAdditionalLightData
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_CustomShadowLayers: 0
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
+  m_SoftShadowQuality: 0
+  m_RenderingLayersMask:
+    serializedVersion: 0
+    m_Bits: 1
+  m_ShadowRenderingLayersMask:
+    serializedVersion: 0
+    m_Bits: 1
+  m_Version: 4
+  m_LightLayerMask: 1
+  m_ShadowLayerMask: 1
+  m_RenderingLayers: 1
+  m_ShadowRenderingLayers: 1
+--- !u!108 &609912802
+Light:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 609912799}
+  m_Enabled: 1
+  serializedVersion: 13
+  m_Type: 0
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Intensity: 48.9
+  m_Range: 25.2
+  m_SpotAngle: 159.70102
+  m_InnerSpotAngle: 104.50097
+  m_CookieSize2D: {x: 0.5, y: 0.5}
+  m_Shadows:
+    m_Type: 2
+    m_Resolution: -1
+    m_CustomResolution: -1
+    m_Strength: 1
+    m_Bias: 0.05
+    m_NormalBias: 0.4
+    m_NearPlane: 0.2
+    m_CullingMatrixOverride:
+      e00: 1
+      e01: 0
+      e02: 0
+      e03: 0
+      e10: 0
+      e11: 1
+      e12: 0
+      e13: 0
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    m_UseCullingMatrixOverride: 0
+  m_Cookie: {fileID: 0}
+  m_DrawHalo: 0
+  m_Flare: {fileID: 0}
+  m_RenderMode: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RenderingLayerMask: 1
+  m_Lightmapping: 2
+  m_LightShadowCasterMode: 0
+  m_AreaSize: {x: 15.89, y: 1.84}
+  m_BounceIntensity: 1.5
+  m_ColorTemperature: 6570
+  m_UseColorTemperature: 0
+  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_UseBoundingSphereOverride: 0
+  m_UseViewFrustumForShadowCasterCull: 1
+  m_ForceVisible: 0
+  m_ShapeRadius: 0.025
+  m_ShadowAngle: 0
+  m_LightUnit: 1
+  m_LuxAtDistance: 1
+  m_EnableSpotReflector: 1
 --- !u!1001 &613408811
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9936,6 +10525,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Meshy_AI_Rainbow_on_Walnut_She_0520182354_texture
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2e5f682dcf9915c4a8275af16b55b926, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -9989,7 +10582,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &618079018
 Transform:
@@ -10105,6 +10698,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Meshy_AI_Verdant_Pot_0513010638_texture (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d36d399bc0b05eb488c7df992541a730, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -10208,6 +10805,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: printer (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 641d54c2e9ed140a6a5ff4258035909a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -10300,7 +10901,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &641402061
 Transform:
@@ -10419,6 +11020,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Meshy_AI_Verdant_Pot_0513010638_texture (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d36d399bc0b05eb488c7df992541a730, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -10492,6 +11097,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: a5b50f076f07bf2428a85e7716db0d07, type: 3}
       propertyPath: m_Name
       value: Meshy_AI_Mid_Century_Red_Leath_0513200238_texture (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: a5b50f076f07bf2428a85e7716db0d07, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -10578,7 +11187,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &669366392
 Transform:
@@ -10633,7 +11242,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &669593263
 Transform:
@@ -10665,6 +11274,7 @@ GameObject:
   - component: {fileID: 671552733}
   - component: {fileID: 671552735}
   - component: {fileID: 671552736}
+  - component: {fileID: 671552737}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -10681,8 +11291,8 @@ Camera:
   m_GameObject: {fileID: 671552731}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 0.4078409, g: 0.48718548, b: 0.6132076, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -10801,6 +11411,66 @@ MonoBehaviour:
   yRotationAmount: 0
   transitionSpeed: 0
   fixedRotationAngles: {x: 40, y: 0, z: 0}
+--- !u!114 &671552737
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 671552731}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 948f4100a11a5c24981795d21301da5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.Postprocessing.Runtime::UnityEngine.Rendering.PostProcessing.PostProcessLayer
+  volumeTrigger: {fileID: 671552734}
+  volumeLayer:
+    serializedVersion: 2
+    m_Bits: 16
+  stopNaNPropagation: 1
+  finalBlitToCameraTarget: 0
+  antialiasingMode: 0
+  temporalAntialiasing:
+    jitterSpread: 0.75
+    sharpness: 0.25
+    stationaryBlending: 0.95
+    motionBlending: 0.85
+  subpixelMorphologicalAntialiasing:
+    quality: 2
+  fastApproximateAntialiasing:
+    fastMode: 0
+    keepAlpha: 0
+  fog:
+    enabled: 1
+    excludeSkybox: 1
+  debugLayer:
+    lightMeter:
+      width: 512
+      height: 256
+      showCurves: 1
+    histogram:
+      width: 512
+      height: 256
+      channel: 3
+    waveform:
+      exposure: 0.12
+      height: 256
+    vectorscope:
+      size: 256
+      exposure: 0.12
+    overlaySettings:
+      linearDepth: 0
+      motionColorIntensity: 4
+      motionGridSize: 64
+      colorBlindnessType: 0
+      colorBlindnessStrength: 1
+  m_Resources: {fileID: 11400000, guid: d82512f9c8e5d4a4d938b575d47f88d4, type: 2}
+  m_ShowToolkit: 0
+  m_ShowCustomSorter: 0
+  breakBeforeColorGrading: 0
+  m_BeforeTransparentBundles: []
+  m_BeforeStackBundles: []
+  m_AfterStackBundles: []
 --- !u!1 &672667277
 GameObject:
   m_ObjectHideFlags: 0
@@ -10944,6 +11614,133 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1573131196}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &687640251
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 687640252}
+  - component: {fileID: 687640254}
+  - component: {fileID: 687640253}
+  m_Layer: 0
+  m_Name: Area Light
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 2147483647
+  m_IsActive: 1
+--- !u!4 &687640252
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 687640251}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 12.59, y: 10.64, z: -29.51}
+  m_LocalScale: {x: 1, y: 1, z: 1.84}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 828243224}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!114 &687640253
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 687640251}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.RenderPipelines.Universal.Runtime::UnityEngine.Rendering.Universal.UniversalAdditionalLightData
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_CustomShadowLayers: 0
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
+  m_SoftShadowQuality: 0
+  m_RenderingLayersMask:
+    serializedVersion: 0
+    m_Bits: 1
+  m_ShadowRenderingLayersMask:
+    serializedVersion: 0
+    m_Bits: 1
+  m_Version: 4
+  m_LightLayerMask: 1
+  m_ShadowLayerMask: 1
+  m_RenderingLayers: 1
+  m_ShadowRenderingLayers: 1
+--- !u!108 &687640254
+Light:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 687640251}
+  m_Enabled: 1
+  serializedVersion: 13
+  m_Type: 0
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Intensity: 89.7
+  m_Range: 32
+  m_SpotAngle: 159.82744
+  m_InnerSpotAngle: 129.48843
+  m_CookieSize2D: {x: 0.5, y: 0.5}
+  m_Shadows:
+    m_Type: 2
+    m_Resolution: -1
+    m_CustomResolution: -1
+    m_Strength: 1
+    m_Bias: 0.05
+    m_NormalBias: 0.4
+    m_NearPlane: 0.2
+    m_CullingMatrixOverride:
+      e00: 1
+      e01: 0
+      e02: 0
+      e03: 0
+      e10: 0
+      e11: 1
+      e12: 0
+      e13: 0
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    m_UseCullingMatrixOverride: 0
+  m_Cookie: {fileID: 0}
+  m_DrawHalo: 0
+  m_Flare: {fileID: 0}
+  m_RenderMode: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RenderingLayerMask: 1
+  m_Lightmapping: 2
+  m_LightShadowCasterMode: 0
+  m_AreaSize: {x: 15.89, y: 1.84}
+  m_BounceIntensity: 1.5
+  m_ColorTemperature: 6570
+  m_UseColorTemperature: 0
+  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_UseBoundingSphereOverride: 0
+  m_UseViewFrustumForShadowCasterCull: 1
+  m_ForceVisible: 0
+  m_ShapeRadius: 0.025
+  m_ShadowAngle: 0
+  m_LightUnit: 1
+  m_LuxAtDistance: 1
+  m_EnableSpotReflector: 1
 --- !u!1 &688385462
 GameObject:
   m_ObjectHideFlags: 0
@@ -11213,6 +12010,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Meshy_AI_Spiral_Bound_Notebook_0513012527_texture (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 9425621023191824ea96f899ff178d5a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -11313,6 +12114,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: a5b50f076f07bf2428a85e7716db0d07, type: 3}
       propertyPath: m_Name
       value: Meshy_AI_Mid_Century_Red_Leath_0513200238_texture (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: a5b50f076f07bf2428a85e7716db0d07, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -11417,6 +12222,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Meshy_AI_Morning_Paper_on_a_Wo_0513012206_texture
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 935980cd7c20fa74f86d373661f79bea, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -11473,7 +12282,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &719320196
 Transform:
@@ -11632,6 +12441,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Meshy_AI_Curved_Wood_Chair_0513085338_texture
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d9deb51c665f44be98f50f4252abb903, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -11691,7 +12504,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &750231370
 Transform:
@@ -11792,7 +12605,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &757618362
 Transform:
@@ -11827,7 +12640,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &761714126
 Transform:
@@ -11936,7 +12749,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &769279475
 Transform:
@@ -12305,7 +13118,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &799422855
 Transform:
@@ -12462,6 +13275,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 9425621023191824ea96f899ff178d5a, type: 3}
       propertyPath: m_Name
       value: Meshy_AI_Spiral_Bound_Notebook_0513012527_texture (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 9425621023191824ea96f899ff178d5a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -12885,7 +13702,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!65 &815957655
 BoxCollider:
@@ -13044,6 +13861,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Meshy_AI_Spiral_Bound_Notebook_0513012527_texture (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 9425621023191824ea96f899ff178d5a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -13169,7 +13990,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &828243224
 Transform:
@@ -13210,6 +14031,8 @@ Transform:
   - {fileID: 873233809}
   - {fileID: 8169686282213581814}
   - {fileID: 543450652625453185}
+  - {fileID: 1625780543}
+  - {fileID: 1291920165}
   - {fileID: 4840667806968071248}
   - {fileID: 2066312254}
   - {fileID: 815957658}
@@ -13219,6 +14042,9 @@ Transform:
   - {fileID: 1027217426}
   - {fileID: 1719128255}
   - {fileID: 480602961}
+  - {fileID: 108308292}
+  - {fileID: 687640252}
+  - {fileID: 2030157301}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!4 &829787792 stripped
@@ -13264,7 +14090,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &840725399
 Transform:
@@ -13376,7 +14202,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &842087319
 Transform:
@@ -13485,7 +14311,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &847786056
 Transform:
@@ -13518,7 +14344,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &849841411
 Transform:
@@ -13696,6 +14522,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Meshy_AI_Wooden_Table_0513084325_texture
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c6d19ca023d7743f58a68750e7cfde63, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -13793,6 +14623,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: fc2130c305bfe244ebcbb5d2de1611f8, type: 3}
       propertyPath: m_Name
       value: Meshy_AI_Brown_Leather_Armchai_0513012342_texture (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: fc2130c305bfe244ebcbb5d2de1611f8, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -13912,6 +14746,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 5ec76970f7cecf347968a09fe0ec5952, type: 3}
       propertyPath: m_Name
       value: Meshy_AI_Books_and_Turkish_cof_0513012246_texture (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5ec76970f7cecf347968a09fe0ec5952, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -14101,7 +14939,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &885007881
 Transform:
@@ -14214,6 +15052,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: router
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 4a751649cd4fb486786d0892d552cc67, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -14274,7 +15116,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &893519018
 Transform:
@@ -14306,7 +15148,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &906399829
 Transform:
@@ -14426,6 +15268,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Meshy_AI_Verdant_Pot_0513010638_texture (15)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d36d399bc0b05eb488c7df992541a730, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -14528,6 +15374,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 4c7fac2c0f5e34349898549cc81688fd, type: 3}
       propertyPath: m_Name
       value: Meshy_AI_Terracotta_Armchair_0513012059_texture
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 4c7fac2c0f5e34349898549cc81688fd, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -14848,6 +15698,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BlueOfficeChair (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 48c405a5940589944992b004420a5c38, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -14928,7 +15782,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &951014061
 Transform:
@@ -14960,7 +15814,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &957980792
 Transform:
@@ -15028,6 +15882,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Door
       objectReference: {fileID: 0}
+    - target: {fileID: 608074040588246492, guid: 67b7958f51626f8458685c8378688092, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2037994697043523897, guid: 67b7958f51626f8458685c8378688092, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.00167954
@@ -15080,9 +15938,49 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4690874584360653745, guid: 67b7958f51626f8458685c8378688092, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5065550169224267043, guid: 67b7958f51626f8458685c8378688092, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5580894117010150018, guid: 67b7958f51626f8458685c8378688092, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.30982363
+      objectReference: {fileID: 0}
+    - target: {fileID: 5580894117010150018, guid: 67b7958f51626f8458685c8378688092, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.4424
+      objectReference: {fileID: 0}
+    - target: {fileID: 5763624300041677155, guid: 67b7958f51626f8458685c8378688092, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.06977572
+      objectReference: {fileID: 0}
+    - target: {fileID: 5763624300041677155, guid: 67b7958f51626f8458685c8378688092, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.08494713
+      objectReference: {fileID: 0}
+    - target: {fileID: 5763624300041677155, guid: 67b7958f51626f8458685c8378688092, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -160.297
+      objectReference: {fileID: 0}
     - target: {fileID: 5808371780213105889, guid: 67b7958f51626f8458685c8378688092, type: 3}
       propertyPath: interactionDistance
       value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6081664200368985754, guid: 67b7958f51626f8458685c8378688092, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6342549877587156875, guid: 67b7958f51626f8458685c8378688092, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7387465251707269171, guid: 67b7958f51626f8458685c8378688092, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -15236,7 +16134,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &980334052
 Transform:
@@ -15271,7 +16169,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &982269603
 Transform:
@@ -15482,7 +16380,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &993620868
 Transform:
@@ -15773,6 +16671,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BlueOfficeChair
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 48c405a5940589944992b004420a5c38, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -15849,6 +16751,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 4c956349a073c5c478e6cf0de6b6a166, type: 3}
       propertyPath: m_Name
       value: Meshy_AI_Crimson_Chair_on_a_Bl_0513200211_texture (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 4c956349a073c5c478e6cf0de6b6a166, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -15953,6 +16859,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Meshy_AI_Wooden_pedestal_table_0513014104_texture
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 760760934e02d8f47a56b4e4a8179992, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -15977,6 +16887,10 @@ PrefabInstance:
     - target: {fileID: 608074040588246492, guid: 67b7958f51626f8458685c8378688092, type: 3}
       propertyPath: m_Name
       value: Door (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 608074040588246492, guid: 67b7958f51626f8458685c8378688092, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2037994697043523897, guid: 67b7958f51626f8458685c8378688092, type: 3}
       propertyPath: m_LocalScale.x
@@ -16030,9 +16944,29 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4690874584360653745, guid: 67b7958f51626f8458685c8378688092, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5065550169224267043, guid: 67b7958f51626f8458685c8378688092, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5808371780213105889, guid: 67b7958f51626f8458685c8378688092, type: 3}
       propertyPath: interactionDistance
       value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6081664200368985754, guid: 67b7958f51626f8458685c8378688092, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6342549877587156875, guid: 67b7958f51626f8458685c8378688092, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7387465251707269171, guid: 67b7958f51626f8458685c8378688092, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -16234,6 +17168,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Meshy_AI_Hydration_Station_0513012641_texture
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 6fc3b5ff0d66a004b81919b6bd94714d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -16414,6 +17352,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Meshy_AI_Oakwood_Kitchen_Studi_0520182324_texture
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 15d2b7d352c317d498f7d9f98992df78, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -16582,7 +17524,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1046300431
 Transform:
@@ -16694,7 +17636,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1047290725
 Transform:
@@ -16936,7 +17878,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1052201033
 Transform:
@@ -17174,6 +18116,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: a5b50f076f07bf2428a85e7716db0d07, type: 3}
       propertyPath: m_Name
       value: Meshy_AI_Mid_Century_Red_Leath_0513200238_texture (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: a5b50f076f07bf2428a85e7716db0d07, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -17513,7 +18459,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!65 &1115964027
 BoxCollider:
@@ -17676,6 +18622,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: d36d399bc0b05eb488c7df992541a730, type: 3}
       propertyPath: m_Name
       value: Meshy_AI_Verdant_Pot_0513010638_texture (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d36d399bc0b05eb488c7df992541a730, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -17916,6 +18866,133 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!1 &1126448595
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1126448596}
+  - component: {fileID: 1126448598}
+  - component: {fileID: 1126448597}
+  m_Layer: 0
+  m_Name: Area Light (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 2147483647
+  m_IsActive: 1
+--- !u!4 &1126448596
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1126448595}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 0.208, y: 0.044, z: 0.043}
+  m_LocalScale: {x: 0.99116033, y: 0.99116033, z: 1.8237342}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 369532009}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!114 &1126448597
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1126448595}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.RenderPipelines.Universal.Runtime::UnityEngine.Rendering.Universal.UniversalAdditionalLightData
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_CustomShadowLayers: 0
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
+  m_SoftShadowQuality: 0
+  m_RenderingLayersMask:
+    serializedVersion: 0
+    m_Bits: 1
+  m_ShadowRenderingLayersMask:
+    serializedVersion: 0
+    m_Bits: 1
+  m_Version: 4
+  m_LightLayerMask: 1
+  m_ShadowLayerMask: 1
+  m_RenderingLayers: 1
+  m_ShadowRenderingLayers: 1
+--- !u!108 &1126448598
+Light:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1126448595}
+  m_Enabled: 1
+  serializedVersion: 13
+  m_Type: 0
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Intensity: 48.9
+  m_Range: 25.2
+  m_SpotAngle: 159.70102
+  m_InnerSpotAngle: 104.50097
+  m_CookieSize2D: {x: 0.5, y: 0.5}
+  m_Shadows:
+    m_Type: 2
+    m_Resolution: -1
+    m_CustomResolution: -1
+    m_Strength: 1
+    m_Bias: 0.05
+    m_NormalBias: 0.4
+    m_NearPlane: 0.2
+    m_CullingMatrixOverride:
+      e00: 1
+      e01: 0
+      e02: 0
+      e03: 0
+      e10: 0
+      e11: 1
+      e12: 0
+      e13: 0
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    m_UseCullingMatrixOverride: 0
+  m_Cookie: {fileID: 0}
+  m_DrawHalo: 0
+  m_Flare: {fileID: 0}
+  m_RenderMode: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RenderingLayerMask: 1
+  m_Lightmapping: 2
+  m_LightShadowCasterMode: 0
+  m_AreaSize: {x: 15.89, y: 1.84}
+  m_BounceIntensity: 1.5
+  m_ColorTemperature: 6570
+  m_UseColorTemperature: 0
+  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_UseBoundingSphereOverride: 0
+  m_UseViewFrustumForShadowCasterCull: 1
+  m_ForceVisible: 0
+  m_ShapeRadius: 0.025
+  m_ShadowAngle: 0
+  m_LightUnit: 1
+  m_LuxAtDistance: 1
+  m_EnableSpotReflector: 1
 --- !u!4 &1130864789 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 48c405a5940589944992b004420a5c38, type: 3}
@@ -17985,6 +19062,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Meshy_AI_Sunlit_River_Valley_0513012453_texture
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e89bf30bac2c26b489f87a1c10e49071, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -18039,7 +19120,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1147071321
 Transform:
@@ -18340,6 +19421,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Meshy_AI_robot_0513091852_texture
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 4a2ba3f51fda2467aaa82aef63675f8d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -18426,7 +19511,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1170481862
 Transform:
@@ -18507,6 +19592,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: be59201b61258ab49a45fc1e0c87fe08, type: 3}
       propertyPath: m_Name
       value: Trashcan (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: be59201b61258ab49a45fc1e0c87fe08, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -18784,7 +19873,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1186497945
 Transform:
@@ -18851,7 +19940,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1205005217
 Transform:
@@ -18969,6 +20058,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Meshy_AI_System_Status_Data_Ki_0513011913_texture
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3a188449f976bc949ab3dc090a6ece51, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -19020,7 +20113,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1222874491
 Transform:
@@ -19031,8 +20124,8 @@ Transform:
   m_GameObject: {fileID: 1222874490}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -2.217, y: 1.106, z: 1.32608}
-  m_LocalScale: {x: 5.6143026, y: 2.22, z: 0.14785261}
+  m_LocalPosition: {x: -2.217, y: 1.106, z: 1.3204}
+  m_LocalScale: {x: 5.625531, y: 2.22, z: 0.14785261}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1351407724}
@@ -19613,6 +20706,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Meshy_AI_Desktop_Computer_with_0513085201_texture (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: a6e70d237afad458f96b5cc2d037ae46, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -19637,7 +20734,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1257906913
 Transform:
@@ -19669,7 +20766,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1259129224
 Transform:
@@ -19774,6 +20871,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Meshy_AI_coffee_mug_0513091138_texture (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 72d1251422dbb436c9a2395d9ae27ad4, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -19873,6 +20974,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 48c405a5940589944992b004420a5c38, type: 3}
       propertyPath: m_Name
       value: BlueOfficeChair (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 48c405a5940589944992b004420a5c38, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -20003,6 +21108,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Meshy_AI_Verdant_Pot_0513010638_texture (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d36d399bc0b05eb488c7df992541a730, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -20106,6 +21215,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Meshy_AI_Spiral_Bound_Notebook_0513012527_texture (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 9425621023191824ea96f899ff178d5a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -20125,7 +21238,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1289168548
 Transform:
@@ -20148,6 +21261,223 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: a6e70d237afad458f96b5cc2d037ae46, type: 3}
   m_PrefabInstance: {fileID: 1248091453}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1291920164
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1291920165}
+  - component: {fileID: 1291920167}
+  - component: {fileID: 1291920166}
+  m_Layer: 0
+  m_Name: LightBlocker (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 109
+  m_IsActive: 1
+--- !u!4 &1291920165
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1291920164}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 3.2525, y: 7.29, z: -29.7085}
+  m_LocalScale: {x: 0.5878277, y: 10, z: 9.442564}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 828243224}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!23 &1291920166
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1291920164}
+  m_Enabled: 1
+  m_CastShadows: 3
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 0
+  m_StaticShadowCaster: 1
+  m_MotionVectors: 2
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: faac4a174a3bc8542a1114023b1aa081, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 2
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_MaskInteraction: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &1291920167
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1291920164}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1292597691
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1292597692}
+  - component: {fileID: 1292597694}
+  - component: {fileID: 1292597693}
+  m_Layer: 0
+  m_Name: Area Light (3)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 2147483647
+  m_IsActive: 1
+--- !u!4 &1292597692
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1292597691}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 0.3128, y: 0.044, z: 0.1729}
+  m_LocalScale: {x: 0.99116033, y: 0.99116033, z: 1.8237342}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 369532009}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!114 &1292597693
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1292597691}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.RenderPipelines.Universal.Runtime::UnityEngine.Rendering.Universal.UniversalAdditionalLightData
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_CustomShadowLayers: 0
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
+  m_SoftShadowQuality: 0
+  m_RenderingLayersMask:
+    serializedVersion: 0
+    m_Bits: 1
+  m_ShadowRenderingLayersMask:
+    serializedVersion: 0
+    m_Bits: 1
+  m_Version: 4
+  m_LightLayerMask: 1
+  m_ShadowLayerMask: 1
+  m_RenderingLayers: 1
+  m_ShadowRenderingLayers: 1
+--- !u!108 &1292597694
+Light:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1292597691}
+  m_Enabled: 1
+  serializedVersion: 13
+  m_Type: 0
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Intensity: 48.9
+  m_Range: 25.2
+  m_SpotAngle: 159.70102
+  m_InnerSpotAngle: 104.50097
+  m_CookieSize2D: {x: 0.5, y: 0.5}
+  m_Shadows:
+    m_Type: 2
+    m_Resolution: -1
+    m_CustomResolution: -1
+    m_Strength: 1
+    m_Bias: 0.05
+    m_NormalBias: 0.4
+    m_NearPlane: 0.2
+    m_CullingMatrixOverride:
+      e00: 1
+      e01: 0
+      e02: 0
+      e03: 0
+      e10: 0
+      e11: 1
+      e12: 0
+      e13: 0
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    m_UseCullingMatrixOverride: 0
+  m_Cookie: {fileID: 0}
+  m_DrawHalo: 0
+  m_Flare: {fileID: 0}
+  m_RenderMode: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RenderingLayerMask: 1
+  m_Lightmapping: 2
+  m_LightShadowCasterMode: 0
+  m_AreaSize: {x: 15.89, y: 1.84}
+  m_BounceIntensity: 1.5
+  m_ColorTemperature: 6570
+  m_UseColorTemperature: 0
+  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_UseBoundingSphereOverride: 0
+  m_UseViewFrustumForShadowCasterCull: 1
+  m_ForceVisible: 0
+  m_ShapeRadius: 0.025
+  m_ShadowAngle: 0
+  m_LightUnit: 1
+  m_LuxAtDistance: 1
+  m_EnableSpotReflector: 1
 --- !u!1001 &1294334037
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -20470,6 +21800,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BlueOfficeChair (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 48c405a5940589944992b004420a5c38, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -20567,6 +21901,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 0ac38a7106d3e1f41986dfb75d6246e7, type: 3}
       propertyPath: m_Name
       value: Meshy_AI_Colorful_Books_in_a_R_0513200200_texture
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 0ac38a7106d3e1f41986dfb75d6246e7, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -20698,6 +22036,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: e3999ff287e1f41dfb19f80ee36dc66d, type: 3}
       propertyPath: m_Name
       value: Meshy_AI_Blockchain_Whiteboard_0513083604_texture (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e3999ff287e1f41dfb19f80ee36dc66d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -20873,7 +22215,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1323447570
 Transform:
@@ -20982,7 +22324,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1323472765
 Transform:
@@ -21048,7 +22390,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!65 &1325646813
 BoxCollider:
@@ -21189,7 +22531,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1329460537
 Transform:
@@ -21302,6 +22644,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: c6d19ca023d7743f58a68750e7cfde63, type: 3}
       propertyPath: m_Name
       value: Meshy_AI_Wooden_Table_0513084325_texture
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c6d19ca023d7743f58a68750e7cfde63, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -21537,7 +22883,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1341464510
 Transform:
@@ -21618,6 +22964,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Meshy_AI_coffee_mug_0513091138_texture (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 72d1251422dbb436c9a2395d9ae27ad4, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -21687,6 +23037,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Meshy_AI_Colorful_Books_in_a_R_0513200200_texture
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 0ac38a7106d3e1f41986dfb75d6246e7, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -21709,7 +23063,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1343638685
 Transform:
@@ -21867,6 +23221,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: d36d399bc0b05eb488c7df992541a730, type: 3}
       propertyPath: m_Name
       value: Meshy_AI_Verdant_Pot_0513010638_texture (19)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d36d399bc0b05eb488c7df992541a730, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -22043,7 +23401,6 @@ Transform:
   - {fileID: 1046300431}
   - {fileID: 761714126}
   - {fileID: 506365379}
-  - {fileID: 108308292}
   - {fileID: 1222874491}
   - {fileID: 1695926370}
   - {fileID: 582684672}
@@ -22148,6 +23505,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Meshy_AI_coffee_mug_0513091138_texture (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 72d1251422dbb436c9a2395d9ae27ad4, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -22210,7 +23571,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1394356696
 Transform:
@@ -22252,6 +23613,8 @@ Transform:
   - {fileID: 972066682}
   - {fileID: 631377456}
   - {fileID: 111372922}
+  - {fileID: 2061941944}
+  - {fileID: 481935516}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!4 &1395973902 stripped
@@ -22343,6 +23706,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: d36d399bc0b05eb488c7df992541a730, type: 3}
       propertyPath: m_Name
       value: Meshy_AI_Verdant_Pot_0513010638_texture (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d36d399bc0b05eb488c7df992541a730, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -22447,6 +23814,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BlueOfficeChair (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 48c405a5940589944992b004420a5c38, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -22495,7 +23866,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1410749671
 Transform:
@@ -22607,6 +23978,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 3a188449f976bc949ab3dc090a6ece51, type: 3}
       propertyPath: m_Name
       value: Meshy_AI_System_Status_Data_Ki_0513011913_texture (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3a188449f976bc949ab3dc090a6ece51, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -22946,6 +24321,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Meshy_AI_Spiral_Bound_Notebook_0513012527_texture (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 9425621023191824ea96f899ff178d5a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -23089,7 +24468,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1424422995
 Transform:
@@ -23248,6 +24627,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Meshy_AI_coffee_mug_0513091138_texture (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 72d1251422dbb436c9a2395d9ae27ad4, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -23317,6 +24700,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Meshy_AI_Polygonal_Chair_0513014028_texture
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f41e5ddcc078a744c8e721815a5af367, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -23375,7 +24762,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1436631835
 Transform:
@@ -23407,7 +24794,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1438777925
 Transform:
@@ -23488,6 +24875,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 3a188449f976bc949ab3dc090a6ece51, type: 3}
       propertyPath: m_Name
       value: Meshy_AI_System_Status_Data_Ki_0513011913_texture (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3a188449f976bc949ab3dc090a6ece51, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -23592,6 +24983,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Meshy_AI_System_Status_Data_Ki_0513011913_texture (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3a188449f976bc949ab3dc090a6ece51, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -23651,7 +25046,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1456299107
 Transform:
@@ -23706,7 +25101,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1457542827
 Transform:
@@ -23737,7 +25132,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1460425598
 Transform:
@@ -23769,7 +25164,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1460426357
 Transform:
@@ -23850,6 +25245,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 48c405a5940589944992b004420a5c38, type: 3}
       propertyPath: m_Name
       value: BlueOfficeChair (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 48c405a5940589944992b004420a5c38, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -23953,6 +25352,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 9425621023191824ea96f899ff178d5a, type: 3}
       propertyPath: m_Name
       value: Meshy_AI_Spiral_Bound_Notebook_0513012527_texture (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 9425621023191824ea96f899ff178d5a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -24087,7 +25490,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1473146725
 Transform:
@@ -24406,6 +25809,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: d36d399bc0b05eb488c7df992541a730, type: 3}
       propertyPath: m_Name
       value: Meshy_AI_Verdant_Pot_0513010638_texture (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d36d399bc0b05eb488c7df992541a730, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -25022,6 +26429,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Meshy_AI_Colorful_Books_in_a_R_0513200200_texture (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 0ac38a7106d3e1f41986dfb75d6246e7, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -25126,6 +26537,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Meshy_AI_Brown_Leather_Armchai_0513012342_texture
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: fc2130c305bfe244ebcbb5d2de1611f8, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -25205,7 +26620,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1513377308
 Transform:
@@ -25286,6 +26701,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 9425621023191824ea96f899ff178d5a, type: 3}
       propertyPath: m_Name
       value: Meshy_AI_Spiral_Bound_Notebook_0513012527_texture
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 9425621023191824ea96f899ff178d5a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -25387,6 +26806,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 1056c64ae10c9dc44b8ffcf9f445ae0c, type: 3}
       propertyPath: m_Name
       value: BrownSofa
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 1056c64ae10c9dc44b8ffcf9f445ae0c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -25685,7 +27108,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1529735048
 Transform:
@@ -25844,6 +27267,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: printer
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 641d54c2e9ed140a6a5ff4258035909a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -25918,6 +27345,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BlueOfficeChair (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 48c405a5940589944992b004420a5c38, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -25977,17 +27408,17 @@ Light:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1554519351}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 13
   m_Type: 1
   m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
-  m_Intensity: 1
+  m_Intensity: 1.18
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize2D: {x: 0.5, y: 0.5}
   m_Shadows:
-    m_Type: 2
+    m_Type: 0
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
@@ -26020,7 +27451,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 2
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -26564,6 +27995,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Meshy_AI_Verdant_Pot_0513010638_texture (17)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d36d399bc0b05eb488c7df992541a730, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -26699,6 +28134,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Meshy_AI_Terracotta_Armchair_0513012059_texture (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 4c7fac2c0f5e34349898549cc81688fd, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -26758,7 +28197,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1594862636
 Transform:
@@ -26816,7 +28255,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1598077684
 Transform:
@@ -26870,6 +28309,96 @@ Transform:
   - {fileID: 411444511}
   m_Father: {fileID: 2127316847}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1625780542
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1625780543}
+  - component: {fileID: 1625780545}
+  - component: {fileID: 1625780544}
+  m_Layer: 0
+  m_Name: LightBlocker
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 109
+  m_IsActive: 1
+--- !u!4 &1625780543
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1625780542}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 12.378, y: 7.29, z: -25.2331}
+  m_LocalScale: {x: 18.721178, y: 10, z: 0.49167985}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 828243224}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!23 &1625780544
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1625780542}
+  m_Enabled: 1
+  m_CastShadows: 3
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 0
+  m_StaticShadowCaster: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: faac4a174a3bc8542a1114023b1aa081, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 2
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_MaskInteraction: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &1625780545
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1625780542}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1001 &1626288965
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -26933,6 +28462,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: f72de987478f0594ea95e64d97f658da, type: 3}
       propertyPath: m_Name
       value: Meshy_AI_Oval_Oak_Table_0513012135_texture
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f72de987478f0594ea95e64d97f658da, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -27033,6 +28566,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Trashcan
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: be59201b61258ab49a45fc1e0c87fe08, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -27093,6 +28630,96 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.007689871, y: 0.00818599, z: 0.019109271}
   m_Center: {x: 0.000009965618, y: 0.000009989599, z: -0.000008306}
+--- !u!1 &1639056316
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1639056317}
+  - component: {fileID: 1639056319}
+  - component: {fileID: 1639056318}
+  m_Layer: 0
+  m_Name: LightBlocker (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 109
+  m_IsActive: 1
+--- !u!4 &1639056317
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1639056316}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.262826, y: 0.051018, z: -0.011558}
+  m_LocalScale: {x: 0.24732709, y: 0.080862746, z: 0.002226969}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 369532009}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!23 &1639056318
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1639056316}
+  m_Enabled: 1
+  m_CastShadows: 3
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 0
+  m_StaticShadowCaster: 1
+  m_MotionVectors: 2
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: faac4a174a3bc8542a1114023b1aa081, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 2
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_MaskInteraction: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &1639056319
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1639056316}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!4 &1639392742 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 4c7fac2c0f5e34349898549cc81688fd, type: 3}
@@ -27133,7 +28760,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1639663246
 Transform:
@@ -27246,6 +28873,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Meshy_AI_Brown_Leather_Armchai_0513012342_texture (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: fc2130c305bfe244ebcbb5d2de1611f8, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -27344,6 +28975,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Meshy_AI_Verdant_Pot_0513010638_texture (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d36d399bc0b05eb488c7df992541a730, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -27429,7 +29064,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1649004531
 Transform:
@@ -27630,6 +29265,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Meshy_AI_coffee_mug_0513091138_texture (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 72d1251422dbb436c9a2395d9ae27ad4, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -27730,6 +29369,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Meshy_AI_Verdant_Pot_0513010638_texture (12)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d36d399bc0b05eb488c7df992541a730, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -27786,7 +29429,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1663983290
 Transform:
@@ -27893,6 +29536,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Door (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 608074040588246492, guid: 67b7958f51626f8458685c8378688092, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 2037994697043523897, guid: 67b7958f51626f8458685c8378688092, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.0016646931
@@ -27945,9 +29592,29 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4690874584360653745, guid: 67b7958f51626f8458685c8378688092, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 5065550169224267043, guid: 67b7958f51626f8458685c8378688092, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 5808371780213105889, guid: 67b7958f51626f8458685c8378688092, type: 3}
       propertyPath: interactionDistance
       value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6081664200368985754, guid: 67b7958f51626f8458685c8378688092, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 6342549877587156875, guid: 67b7958f51626f8458685c8378688092, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 7387465251707269171, guid: 67b7958f51626f8458685c8378688092, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -28101,7 +29768,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1668246142
 Transform:
@@ -28320,6 +29987,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Meshy_AI_Verdant_Pot_0513010638_texture (14)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d36d399bc0b05eb488c7df992541a730, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -28454,6 +30125,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Meshy_AI_Blockchain_Whiteboard_0513083604_texture
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e3999ff287e1f41dfb19f80ee36dc66d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -28530,6 +30205,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 72d1251422dbb436c9a2395d9ae27ad4, type: 3}
       propertyPath: m_Name
       value: Meshy_AI_coffee_mug_0513091138_texture (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 72d1251422dbb436c9a2395d9ae27ad4, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -28941,7 +30620,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1695926370
 Transform:
@@ -29050,7 +30729,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1698878888
 Transform:
@@ -29118,7 +30797,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1703142937
 Transform:
@@ -29645,6 +31324,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Meshy_AI_Curved_Wood_Chair_0513085338_texture (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d9deb51c665f44be98f50f4252abb903, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -29719,7 +31402,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1724838962
 Transform:
@@ -29876,6 +31559,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BlueOfficeChair (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 48c405a5940589944992b004420a5c38, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -29924,7 +31611,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1729600202
 Transform:
@@ -29988,7 +31675,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1743954910
 Transform:
@@ -30176,6 +31863,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Meshy_AI_Verdant_Pot_0513010638_texture (16)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d36d399bc0b05eb488c7df992541a730, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -30229,7 +31920,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1749390280
 Transform:
@@ -30400,7 +32091,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1762881849
 Transform:
@@ -30597,7 +32288,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1783533221
 Transform:
@@ -30678,6 +32369,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Meshy_AI_Desktop_Computer_with_0513085201_texture (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: a6e70d237afad458f96b5cc2d037ae46, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -30746,6 +32441,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Door
       objectReference: {fileID: 0}
+    - target: {fileID: 608074040588246492, guid: 67b7958f51626f8458685c8378688092, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 2037994697043523897, guid: 67b7958f51626f8458685c8378688092, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.0016646931
@@ -30798,9 +32497,29 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4690874584360653745, guid: 67b7958f51626f8458685c8378688092, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 5065550169224267043, guid: 67b7958f51626f8458685c8378688092, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 5808371780213105889, guid: 67b7958f51626f8458685c8378688092, type: 3}
       propertyPath: interactionDistance
       value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6081664200368985754, guid: 67b7958f51626f8458685c8378688092, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 6342549877587156875, guid: 67b7958f51626f8458685c8378688092, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 7387465251707269171, guid: 67b7958f51626f8458685c8378688092, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -30984,7 +32703,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1817283162
 Transform:
@@ -31172,6 +32891,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Meshy_AI_Desktop_Computer_with_0513085201_texture (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: a6e70d237afad458f96b5cc2d037ae46, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -31280,7 +33003,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1828373567
 Transform:
@@ -31403,6 +33126,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: a5b50f076f07bf2428a85e7716db0d07, type: 3}
       propertyPath: m_Name
       value: Meshy_AI_Mid_Century_Red_Leath_0513200238_texture
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: a5b50f076f07bf2428a85e7716db0d07, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -31981,6 +33708,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Meshy_AI_Spiral_Bound_Notebook_0513012527_texture (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 9425621023191824ea96f899ff178d5a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -32272,6 +34003,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Meshy_AI_Blockchain_Whiteboard_0513083604_texture (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e3999ff287e1f41dfb19f80ee36dc66d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -32464,7 +34199,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1886402264
 Transform:
@@ -32997,7 +34732,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!65 &1921768917
 BoxCollider:
@@ -33366,7 +35101,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1940939168
 Transform:
@@ -33481,7 +35216,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1946599074
 Transform:
@@ -33562,6 +35297,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 21d34695cdbb045f481e4f1bdde14dc2, type: 3}
       propertyPath: m_Name
       value: Meshy_AI_Floating_Dresser_0513084639_texture
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 21d34695cdbb045f481e4f1bdde14dc2, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -33665,6 +35404,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: fc2130c305bfe244ebcbb5d2de1611f8, type: 3}
       propertyPath: m_Name
       value: Meshy_AI_Brown_Leather_Armchai_0513012342_texture (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: fc2130c305bfe244ebcbb5d2de1611f8, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -33864,6 +35607,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Meshy_AI_Colorful_Books_in_a_R_0513200200_texture (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 0ac38a7106d3e1f41986dfb75d6246e7, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -33980,7 +35727,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1969512871
 Transform:
@@ -34255,7 +36002,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1997405358
 Transform:
@@ -34724,7 +36471,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &2017724965
 Transform:
@@ -34741,6 +36488,133 @@ Transform:
   m_Children: []
   m_Father: {fileID: 750231370}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2019500093
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2019500094}
+  - component: {fileID: 2019500096}
+  - component: {fileID: 2019500095}
+  m_Layer: 0
+  m_Name: Area Light (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 2147483647
+  m_IsActive: 1
+--- !u!4 &2019500094
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2019500093}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 0.313, y: 0.044, z: 0.043}
+  m_LocalScale: {x: 0.99116033, y: 0.99116033, z: 1.8237342}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 369532009}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!114 &2019500095
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2019500093}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.RenderPipelines.Universal.Runtime::UnityEngine.Rendering.Universal.UniversalAdditionalLightData
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_CustomShadowLayers: 0
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
+  m_SoftShadowQuality: 0
+  m_RenderingLayersMask:
+    serializedVersion: 0
+    m_Bits: 1
+  m_ShadowRenderingLayersMask:
+    serializedVersion: 0
+    m_Bits: 1
+  m_Version: 4
+  m_LightLayerMask: 1
+  m_ShadowLayerMask: 1
+  m_RenderingLayers: 1
+  m_ShadowRenderingLayers: 1
+--- !u!108 &2019500096
+Light:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2019500093}
+  m_Enabled: 1
+  serializedVersion: 13
+  m_Type: 0
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Intensity: 48.9
+  m_Range: 25.2
+  m_SpotAngle: 159.70102
+  m_InnerSpotAngle: 104.50097
+  m_CookieSize2D: {x: 0.5, y: 0.5}
+  m_Shadows:
+    m_Type: 2
+    m_Resolution: -1
+    m_CustomResolution: -1
+    m_Strength: 1
+    m_Bias: 0.05
+    m_NormalBias: 0.4
+    m_NearPlane: 0.2
+    m_CullingMatrixOverride:
+      e00: 1
+      e01: 0
+      e02: 0
+      e03: 0
+      e10: 0
+      e11: 1
+      e12: 0
+      e13: 0
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    m_UseCullingMatrixOverride: 0
+  m_Cookie: {fileID: 0}
+  m_DrawHalo: 0
+  m_Flare: {fileID: 0}
+  m_RenderMode: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RenderingLayerMask: 1
+  m_Lightmapping: 2
+  m_LightShadowCasterMode: 0
+  m_AreaSize: {x: 15.89, y: 1.84}
+  m_BounceIntensity: 1.5
+  m_ColorTemperature: 6570
+  m_UseColorTemperature: 0
+  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_UseBoundingSphereOverride: 0
+  m_UseViewFrustumForShadowCasterCull: 1
+  m_ForceVisible: 0
+  m_ShapeRadius: 0.025
+  m_ShadowAngle: 0
+  m_LightUnit: 1
+  m_LuxAtDistance: 1
+  m_EnableSpotReflector: 1
 --- !u!1 &2022800461
 GameObject:
   m_ObjectHideFlags: 0
@@ -34755,7 +36629,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &2022800462
 Transform:
@@ -34877,6 +36751,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Meshy_AI_Verdant_Pot_0513010638_texture (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d36d399bc0b05eb488c7df992541a730, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -34911,6 +36789,71 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.012084601, y: 0.012070944, z: 0.019099154}
   m_Center: {x: 0.000009909739, y: 0.000013829912, z: -0.000012124891}
+--- !u!1 &2030157300
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2030157301}
+  - component: {fileID: 2030157302}
+  m_Layer: 0
+  m_Name: Reflection Probe
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &2030157301
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2030157300}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 828243224}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!215 &2030157302
+ReflectionProbe:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2030157300}
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Type: 0
+  m_Mode: 0
+  m_RefreshMode: 0
+  m_TimeSlicingMode: 0
+  m_Resolution: 128
+  m_UpdateFrequency: 0
+  m_BoxSize: {x: 10, y: 10, z: 10}
+  m_BoxOffset: {x: 0, y: 0, z: 0}
+  m_NearClip: 0.3
+  m_FarClip: 1000
+  m_ShadowDistance: 100
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IntensityMultiplier: 1
+  m_BlendDistance: 1
+  m_HDR: 1
+  m_BoxProjection: 0
+  m_RenderDynamicObjects: 0
+  m_UseOcclusionCulling: 1
+  m_Importance: 1
+  m_CustomBakedTexture: {fileID: 0}
 --- !u!1 &2038519682
 GameObject:
   m_ObjectHideFlags: 0
@@ -34928,7 +36871,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &2038519683
 Transform:
@@ -35336,6 +37279,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Meshy_AI_coffee_mug_0513091138_texture (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 72d1251422dbb436c9a2395d9ae27ad4, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -35355,7 +37302,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &2060216255
 Transform:
@@ -35407,6 +37354,133 @@ Transform:
   - {fileID: 1965256819}
   m_Father: {fileID: 1513807329}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2061941943
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2061941944}
+  - component: {fileID: 2061941946}
+  - component: {fileID: 2061941945}
+  m_Layer: 0
+  m_Name: Area Light
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 2147483647
+  m_IsActive: 1
+--- !u!4 &2061941944
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2061941943}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0.3074, y: 0.0444, z: -0.1517}
+  m_LocalScale: {x: 1, y: 1, z: 1.84}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1394356696}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!114 &2061941945
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2061941943}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.RenderPipelines.Universal.Runtime::UnityEngine.Rendering.Universal.UniversalAdditionalLightData
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_CustomShadowLayers: 0
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
+  m_SoftShadowQuality: 0
+  m_RenderingLayersMask:
+    serializedVersion: 0
+    m_Bits: 1
+  m_ShadowRenderingLayersMask:
+    serializedVersion: 0
+    m_Bits: 1
+  m_Version: 4
+  m_LightLayerMask: 1
+  m_ShadowLayerMask: 1
+  m_RenderingLayers: 1
+  m_ShadowRenderingLayers: 1
+--- !u!108 &2061941946
+Light:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2061941943}
+  m_Enabled: 1
+  serializedVersion: 13
+  m_Type: 0
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Intensity: 48.9
+  m_Range: 35.2
+  m_SpotAngle: 154.72882
+  m_InnerSpotAngle: 124.389854
+  m_CookieSize2D: {x: 0.5, y: 0.5}
+  m_Shadows:
+    m_Type: 2
+    m_Resolution: -1
+    m_CustomResolution: -1
+    m_Strength: 1
+    m_Bias: 0.05
+    m_NormalBias: 0.4
+    m_NearPlane: 0.2
+    m_CullingMatrixOverride:
+      e00: 1
+      e01: 0
+      e02: 0
+      e03: 0
+      e10: 0
+      e11: 1
+      e12: 0
+      e13: 0
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    m_UseCullingMatrixOverride: 0
+  m_Cookie: {fileID: 0}
+  m_DrawHalo: 0
+  m_Flare: {fileID: 0}
+  m_RenderMode: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RenderingLayerMask: 1
+  m_Lightmapping: 2
+  m_LightShadowCasterMode: 0
+  m_AreaSize: {x: 15.89, y: 1.84}
+  m_BounceIntensity: 1.5
+  m_ColorTemperature: 6570
+  m_UseColorTemperature: 0
+  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_UseBoundingSphereOverride: 0
+  m_UseViewFrustumForShadowCasterCull: 1
+  m_ForceVisible: 0
+  m_ShapeRadius: 0.025
+  m_ShadowAngle: 0
+  m_LightUnit: 1
+  m_LuxAtDistance: 1
+  m_EnableSpotReflector: 1
 --- !u!1 &2063799020
 GameObject:
   m_ObjectHideFlags: 0
@@ -35455,7 +37529,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &2066312254
 Transform:
@@ -35614,6 +37688,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Meshy_AI_coffee_mug_0513091138_texture (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 72d1251422dbb436c9a2395d9ae27ad4, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -35682,6 +37760,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: e3999ff287e1f41dfb19f80ee36dc66d, type: 3}
       propertyPath: m_Name
       value: Meshy_AI_Blockchain_Whiteboard_0513083604_texture (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e3999ff287e1f41dfb19f80ee36dc66d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -36198,6 +38280,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Meshy_AI_coffee_mug_0513091138_texture
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 72d1251422dbb436c9a2395d9ae27ad4, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -36480,6 +38566,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BlueOfficeChair (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 48c405a5940589944992b004420a5c38, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -36531,7 +38621,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &2119627151
 Transform:
@@ -36690,6 +38780,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Meshy_AI_Verdant_Pot_0513010638_texture (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d36d399bc0b05eb488c7df992541a730, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -36826,7 +38920,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &2121955861
 Transform:
@@ -36906,6 +39000,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: a6e70d237afad458f96b5cc2d037ae46, type: 3}
       propertyPath: m_Name
       value: Meshy_AI_Desktop_Computer_with_0513085201_texture
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: a6e70d237afad458f96b5cc2d037ae46, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -37067,6 +39165,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Meshy_AI_Verdant_Pot_0513010638_texture (13)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d36d399bc0b05eb488c7df992541a730, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -37121,7 +39223,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &2133065323
 Transform:
@@ -37304,6 +39406,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Meshy_AI_Brown_Leather_Armchai_0513012342_texture (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: fc2130c305bfe244ebcbb5d2de1611f8, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -37401,6 +39507,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 935980cd7c20fa74f86d373661f79bea, type: 3}
       propertyPath: m_Name
       value: Meshy_AI_Morning_Paper_on_a_Wo_0513012206_texture
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 935980cd7c20fa74f86d373661f79bea, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -37638,7 +39748,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &2146774344
 Transform:
@@ -38321,7 +40431,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!136 &1044488874477267788
 CapsuleCollider:
@@ -39524,7 +41634,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!1 &2855172628724028016
 GameObject:
@@ -40639,7 +42749,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &4874267757702966110
 Transform:
@@ -41947,7 +44057,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &6747784632137420524
 Transform:
@@ -43191,7 +45301,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!1 &8699644606595780597
 GameObject:
@@ -43210,7 +45320,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!1 &8708014564976232607
 GameObject:
@@ -43740,6 +45850,7 @@ SceneRoots:
   - {fileID: 369532009}
   - {fileID: 2113673998}
   - {fileID: 1554519353}
+  - {fileID: 409963987}
   - {fileID: 1856556907}
   - {fileID: 929130434}
   - {fileID: 821850812}
