@@ -39,13 +39,14 @@ public abstract class Puzzle : MonoBehaviour
         gameObject.SetActive(true);
         GameObject canvasObj = GameObject.FindGameObjectWithTag("UI");
 
-        GameObject playerObj = GameObject.FindGameObjectWithTag("Player");
-        if (playerObj != null)
+        PlayerController pScript = FindAnyObjectByType<PlayerController>();
+        if (pScript != null)
         {
-            PlayerMovement pm = playerObj.GetComponent<PlayerMovement>();
-            if(pm != null)
+            PlayerMovement pm = pScript.gameObject.GetComponent<PlayerMovement>();
+            if (pm != null)
                 pm.disablePlayerMovement();
         }
+           
             
 
         if (canvasObj != null && prefab != null)
@@ -74,15 +75,15 @@ public abstract class Puzzle : MonoBehaviour
         // Guard against being called twice (e.g. button spam)
         if (isEnding) return;
 
-        GameObject playerObj = GameObject.FindGameObjectWithTag("Player");
-        if (playerObj != null)
+        PlayerController pScript = FindAnyObjectByType<PlayerController>();
+        if (pScript != null)
         {
-            PlayerMovement pm = playerObj.GetComponent<PlayerMovement>();
+            PlayerMovement pm = pScript.gameObject.GetComponent<PlayerMovement>();
             if (pm != null)
                 pm.enablePlayerMovement();
         }
 
-        if(QuestManager.Instance != null)
+        if (QuestManager.Instance != null)
             QuestManager.Instance.OnPuzzleSolved(puzzleName);
 
         isEnding = true;

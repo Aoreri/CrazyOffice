@@ -27,11 +27,9 @@ public class DoorScript : MonoBehaviour
     {
         if (player == null)
         {
-            GameObject playerObj = GameObject.FindGameObjectWithTag("Player");
-            if (playerObj != null)
-                player = playerObj.transform;
-            else
-                Debug.LogWarning("Player not found! Please assign the Player tag or drag the Player into the script.");
+            PlayerController pScript = FindAnyObjectByType<PlayerController>();
+            if (pScript != null)
+                player = pScript.gameObject.transform;
         }
 
         // Save the initial closed rotation
