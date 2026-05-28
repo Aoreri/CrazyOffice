@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 // --- EKLENEN YENÝ SINIFLAR ---
 [System.Serializable]
@@ -46,11 +47,23 @@ public class StageManager : MonoBehaviour
     [Tooltip("How long it takes to move from one step to the next (in seconds).")]
     public float timePerStep = 0.25f;
     [Tooltip("How fast the player rotates to face the next step.")]
-    public float turnSpeed = 10f; // New variable for rotation speed
+    public float turnSpeed = 10f;
+
+    [Header("Loading Screen")]
+    [Tooltip("The full-screen black Image that covers the screen on load.")]
+    public Image loadingPanel;
+    [Tooltip("Extra frames to render before fading out (lets shaders warm up). 30–60 is ideal.")]
+    public int warmUpFrames = 45;
+    [Tooltip("Duration of the black screen fade-out in seconds.")]
+    public float loadingFadeDuration = 0.8f;
 
     private void Awake()
     {
         if (Instance == null) Instance = this;
+
+        loadingPanel.gameObject.SetActive(true);
+        // Force loading panel fully opaque before anything renders
+        SetPanelAlpha(1f);
     }
 
     void Start()
@@ -62,8 +75,52 @@ public class StageManager : MonoBehaviour
         player.GetComponent<PlayerMovement>().disablePlayerMovement();
         currCamera.GetComponent<CameraFollow>().enabled = false;
 
+        // Run loading screen first, then cinematic
+        StartCoroutine(LoadingThenCinematic());
+    }
+
+    // ---------------------------------------------------------------
+    // LOADING SCREEN
+    // ---------------------------------------------------------------
+
+    private IEnumerator LoadingThenCinematic()
+    {
+        // Phase 1: Wait for shaders/textures to warm up
+        for (int i = 0; i < warmUpFrames; i++)
+        {
+            yield return new WaitForEndOfFrame();
+        }
+
+        // Phase 2: Fade out the black panel
+        float elapsed = 0f;
+        while (elapsed < loadingFadeDuration)
+        {
+            elapsed += Time.unscaledDeltaTime;
+            float alpha = Mathf.Clamp01(1f - (elapsed / loadingFadeDuration));
+            SetPanelAlpha(alpha);
+            yield return null;
+        }
+
+        // Phase 3: Hide/destroy the panel and start the cinematic
+        if (loadingPanel != null)
+            Destroy(loadingPanel.gameObject);
+
         StartCoroutine(startAnimation());
     }
+
+    private void SetPanelAlpha(float alpha)
+    {
+        if (loadingPanel != null)
+        {
+            Color c = loadingPanel.color;
+            c.a = alpha;
+            loadingPanel.color = c;
+        }
+    }
+
+    // ---------------------------------------------------------------
+    // CINEMATIC
+    // ---------------------------------------------------------------
 
     private IEnumerator startAnimation()
     {
@@ -82,10 +139,8 @@ public class StageManager : MonoBehaviour
             Vector3 startPos = player.transform.position;
             Vector3 endPos = step.position;
 
-            // Ensure we don't rotate up/down if the steps are at different heights
             endPos.y = startPos.y;
 
-            // Calculate direction for Animator and Rotation
             Vector3 moveDirection = (endPos - startPos).normalized;
 
             Quaternion targetRotation = player.transform.rotation;
@@ -94,39 +149,30 @@ public class StageManager : MonoBehaviour
                 targetRotation = Quaternion.LookRotation(moveDirection);
             }
 
-            // Update Animator parameters
             playerAnim.SetBool("isWalking", true);
-         
 
-            // Move and rotate smoothly over 'timePerStep'
             float elapsedTime = 0f;
             while (elapsedTime < timePerStep)
             {
                 float completionPercentage = elapsedTime / timePerStep;
 
-                // Move position
                 player.transform.position = Vector3.Lerp(startPos, endPos, completionPercentage);
-
-                // Rotate facing direction
                 player.transform.rotation = Quaternion.Slerp(player.transform.rotation, targetRotation, Time.deltaTime * turnSpeed);
 
                 elapsedTime += Time.deltaTime;
                 yield return null;
             }
 
-            // Snap to exact position and rotation at the end of the current step
             player.transform.position = endPos;
             player.transform.rotation = targetRotation;
         }
 
         // 4. Movement finished: Stop the animation
         playerAnim.SetBool("isWalking", false);
-        
 
-        // Reset rotation to default (change Quaternion.identity to Quaternion.Euler(x, y, z) if your default is different)
         player.transform.rotation = Quaternion.identity;
 
-        // 6. Enable interactivity and UI
+        // 5. Enable interactivity and UI
         player.GetComponent<CapsuleCollider>().enabled = true;
 
         yield return new WaitForSeconds(0.5f);
@@ -135,9 +181,12 @@ public class StageManager : MonoBehaviour
             markerCanvas.SetActive(true);
     }
 
+    // ---------------------------------------------------------------
+    // QUEST FLOW
+    // ---------------------------------------------------------------
+
     public void StartScenarioQuests()
     {
-        
         if (markerCanvas != null)
         {
             UIFader uf = markerCanvas.GetComponent<UIFader>();
@@ -150,17 +199,14 @@ public class StageManager : MonoBehaviour
         currentQuestIndex = 0;
 
         StartNextQuest();
-
     }
 
     public void StartNextQuest()
     {
-        // Güvenlik kontrolü
         if (selectedScenarioIndex >= allScenarios.Length) return;
 
         ScenarioData currentScenario = allScenarios[selectedScenarioIndex];
 
-        // 1. Eðer bu senaryodaki tüm Use Case'ler bittiyse OYUN BÝTER
         if (currentUseCaseIndex >= currentScenario.useCases.Length)
         {
             if (DataManager.Instance == null)
@@ -176,28 +222,25 @@ public class StageManager : MonoBehaviour
 
         UseCaseTasks currentUseCase = currentScenario.useCases[currentUseCaseIndex];
 
-        // 2. Eðer bulunduðumuz Use Case'in görevleri devam ediyorsa sýradakini ver
         if (currentQuestIndex < currentUseCase.quests.Length)
         {
             Quest nextQuest = currentUseCase.quests[currentQuestIndex];
-            currentQuestIndex++; // Sýradakine hazýrlan
+            currentQuestIndex++;
 
-            // Eðer inspector'da bir kutuyu boþ unuttuysan hata vermesin diye kontrol
             if (nextQuest != null)
             {
                 QuestManager.Instance.StartQuest(nextQuest);
             }
             else
             {
-                StartNextQuest(); // Boþsa sýradakine atla
+                StartNextQuest();
             }
         }
-        // 3. Eðer bulunduðumuz Use Case'in görevleri bittiyse DÝÐER Use Case'e geç
         else
         {
             currentUseCaseIndex++;
             currentQuestIndex = 0;
-            StartNextQuest(); // Döngüyü tekrar tetikle
+            StartNextQuest();
         }
     }
 }
