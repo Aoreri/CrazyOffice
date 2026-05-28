@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -209,6 +210,7 @@ public class StageManager : MonoBehaviour
         StartNextQuest();
     }
 
+    public TextMeshProUGUI questText;
     public void StartNextQuest()
     {
         if (allScenarios.Length == 0 || selectedScenarioIndex >= allScenarios.Length)
@@ -227,6 +229,9 @@ public class StageManager : MonoBehaviour
         }
 
         UseCaseTasks currentUseCase = currentScenario.useCases[currentUseCaseIndex];
+
+
+        questText.text = currentUseCase.useCaseName;
 
         if (currentQuestIndex < currentUseCase.quests.Length)
         {
