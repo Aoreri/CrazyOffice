@@ -57,6 +57,14 @@ public class StageManager : MonoBehaviour
     [Tooltip("Duration of the black screen fade-out in seconds.")]
     public float loadingFadeDuration = 0.8f;
 
+    [Header("End Game UI Elements")]
+    public GameObject pageBackground;
+    public RectTransform umlBackground;
+    public RectTransform timerRect;
+    public float timerAnimDuration = 0.5f;
+    public Vector3 timerTargetScale = new Vector3(1.5f, 1.5f, 1.5f);
+    public Vector3 umlTargetScale = new Vector3(1.2f, 1.2f, 1.2f);
+
     private void Awake()
     {
         if (Instance == null) Instance = this;
@@ -203,20 +211,18 @@ public class StageManager : MonoBehaviour
 
     public void StartNextQuest()
     {
-        if (selectedScenarioIndex >= allScenarios.Length) return;
+        if (allScenarios.Length == 0 || selectedScenarioIndex >= allScenarios.Length)
+        {
+            return;
+        }
+
+   
 
         ScenarioData currentScenario = allScenarios[selectedScenarioIndex];
 
         if (currentUseCaseIndex >= currentScenario.useCases.Length)
         {
-            if (DataManager.Instance == null)
-            {
-                Debug.Log("No data found!");
-                return;
-            }
-
-            DataManager.Instance.EndGame(TimeManager.Instance.timeElapsed);
-            SceneManager.LoadScene("MainMenu");
+            FinishGameSession();
             return;
         }
 
@@ -242,5 +248,93 @@ public class StageManager : MonoBehaviour
             currentQuestIndex = 0;
             StartNextQuest();
         }
+    }
+
+    // ---------------------------------------------------------------
+    // END GAME SEQUENCE
+    // ---------------------------------------------------------------
+
+    void FinishGameSession()
+    {
+        StartCoroutine(EndGameSequence());
+    }
+
+    public PauseMenu pauseManager;
+    private IEnumerator EndGameSequence()
+    {
+        
+        pauseManager.enabled = false;
+        TimeManager.Instance.StopTimer();
+        // 1. Enable marker and fade it in
+        if (markerCanvas != null)
+        {
+            markerCanvas.SetActive(true);
+            UIFader uf = markerCanvas.GetComponent<UIFader>();
+            if (uf != null) uf.FadeIn();
+
+            markerCanvas.GetComponentInChildren<RequirementHighlighter>().enabled = false;
+        }
+
+        // 2. Disable PageBackground instantly
+        if (pageBackground != null)
+        {
+            pageBackground.SetActive(false);
+        }
+
+        // 3. Move UMLBackground to the center instantly
+        if (umlBackground != null)
+        {
+            // Assuming the anchor is perfectly centered in your canvas layout
+            umlBackground.anchoredPosition = Vector2.zero;
+            umlBackground.localScale = umlTargetScale;
+        }
+
+        // 4. Move timer to center X and scale it up with an animation
+        if (timerRect != null)
+        {
+            // Get the parent of the timer to calculate the true center
+            RectTransform parentRect = timerRect.parent.GetComponent<RectTransform>();
+
+            // Find the horizontal center of the parent in world space
+            Vector3 parentCenterWorld = parentRect.TransformPoint(parentRect.rect.center);
+
+            // Animate using world position so anchors don't mess up the math
+            Vector3 startPos = timerRect.position;
+            Vector3 targetPos = new Vector3(parentCenterWorld.x, startPos.y, startPos.z); // Keep original Y and Z
+            Vector3 startScale = timerRect.localScale;
+
+            float elapsed = 0f;
+            while (elapsed < timerAnimDuration)
+            {
+                elapsed += Time.deltaTime;
+                float t = Mathf.Clamp01(elapsed / timerAnimDuration);
+
+                // Adding a smoothstep for a more polished UI animation feel
+                float smoothT = t * t * (3f - 2f * t);
+
+                timerRect.position = Vector3.Lerp(startPos, targetPos, smoothT);
+                timerRect.localScale = Vector3.Lerp(startScale, timerTargetScale, smoothT);
+
+                yield return null;
+            }
+
+            // Snap exactly to target at the end of the loop
+            timerRect.position = targetPos;
+            timerRect.localScale = timerTargetScale;
+        }
+
+        yield return new WaitForSeconds(4f);
+
+        // 6. Finish game logic
+        if (DataManager.Instance == null)
+        {
+            Debug.Log("No data found!");
+        }
+        else
+        {
+            DataManager.Instance.EndGame(TimeManager.Instance.timeElapsed);
+        }
+
+        SceneManager.LoadScene("MainMenu");
     }
 }

@@ -41,6 +41,11 @@ public class UIFader : MonoBehaviour
         StartCoroutine(FadeOutRoutine(true));
     }
 
+    public void FadeIn()
+    {
+        StartCoroutine(FadeInRoutine());
+    }
+
     public void FadeOut()
     {
         StartCoroutine(FadeOutRoutine(false));
