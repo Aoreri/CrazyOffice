@@ -272,7 +272,7 @@ public class QuestManager : MonoBehaviour
         {
             float distance = Vector3.Distance(targetItemForCurrentStep.transform.position, player.position);
 
-            if (distance <= 2f)
+            if (distance <= 4f)
             {
                 OnItemUsed(targetItemForCurrentStep);
             }
