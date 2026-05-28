@@ -546,6 +546,8 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  introSpinCount: 8
+  introSpinSpeed: 0.1
   audioSource: {fileID: 6318571356722194008}
   tickSounds:
   - {fileID: 8300000, guid: dba547f2ba2a0420ba2d77990359da4f, type: 3}
@@ -1241,6 +1243,8 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  introSpinCount: 8
+  introSpinSpeed: 0.1
   audioSource: {fileID: 9153208980129362852}
   tickSounds:
   - {fileID: 8300000, guid: dba547f2ba2a0420ba2d77990359da4f, type: 3}
@@ -1789,6 +1793,8 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  introSpinCount: 8
+  introSpinSpeed: 0.1
   audioSource: {fileID: 70046814472908245}
   tickSounds:
   - {fileID: 8300000, guid: dba547f2ba2a0420ba2d77990359da4f, type: 3}
@@ -1958,7 +1964,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 2100000, guid: f6d46f1e916b3486c90a448a441fac6a, type: 2}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.7647059}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2001,7 +2007,7 @@ MonoBehaviour:
   - {fileID: 6341370954262621462}
   - {fileID: 6443743661815172639}
   winRowIndex: 1
-  targetSymbolPrefab: {fileID: 90118454360410671, guid: 48598220c5103e848ab366bcfedaf9cd, type: 3}
+  targetSymbolPrefab: {fileID: 5321020235360684918, guid: 633f267581a37c54eb6827d6ce256362, type: 3}
   referance: {fileID: 2027294495736565904}
   audioSource: {fileID: 666662262065817593}
   successSound: {fileID: 8300000, guid: 1db441f7ea9cd4154a8739ea393ea83b, type: 3}
