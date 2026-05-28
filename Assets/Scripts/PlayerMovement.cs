@@ -65,6 +65,7 @@ public class PlayerMovement : MonoBehaviour
     {
         disableMovement = true;
         moveInput = Vector2.zero;
+        animator.SetBool(walkingHash, false);
     }
 
     public void enablePlayerMovement()
