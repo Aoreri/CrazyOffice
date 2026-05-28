@@ -327,7 +327,73 @@ MonoBehaviour:
   questName: 
   description: 
   steps:
-  - stepDescription: Talk To Officer
+  - stepDescription: Talk To IT
+    objectiveType: 3
+    shouldCount: 0
+    possibleNPCs:
+    - {fileID: 919132149593364188}
+    puzzleNames:
+    - USB
+    itemObjects:
+    - {fileID: 1867291729}
+    amountRequired: 0
+    doors:
+    - {fileID: 530434533}
+    target: {fileID: 919132149593364188}
+    dialogueArea:
+    - Okay, the server temperature has dropped, you can now retrieve the data you
+      need.
+  - stepDescription: Talk To IT
+    objectiveType: 2
+    shouldCount: 0
+    possibleNPCs:
+    - {fileID: 919132149593364188}
+    puzzleNames:
+    - USB
+    itemObjects:
+    - {fileID: 530434533}
+    amountRequired: 0
+    doors:
+    - {fileID: 530434533}
+    target: {fileID: 919132149593364188}
+    dialogueArea:
+    - Okay, the server temperature has dropped, you can now retrieve the data you
+      need.
+  - stepDescription: Talk To IT
+    objectiveType: 1
+    shouldCount: 0
+    possibleNPCs:
+    - {fileID: 919132149593364188}
+    puzzleNames:
+    - Cable
+    itemObjects:
+    - {fileID: 1867291729}
+    - {fileID: 530434533}
+    amountRequired: 0
+    doors:
+    - {fileID: 530434533}
+    target: {fileID: 919132149593364188}
+    dialogueArea:
+    - Okay, the server temperature has dropped, you can now retrieve the data you
+      need.
+  - stepDescription: Talk To IT
+    objectiveType: 3
+    shouldCount: 0
+    possibleNPCs:
+    - {fileID: 919132149593364188}
+    puzzleNames:
+    - Cable
+    itemObjects:
+    - {fileID: 1867291729}
+    - {fileID: 530434533}
+    amountRequired: 0
+    doors:
+    - {fileID: 530434533}
+    target: {fileID: 919132149593364188}
+    dialogueArea:
+    - Okay, the server temperature has dropped, you can now retrieve the data you
+      need.
+  - stepDescription: Talk To IT
     objectiveType: 0
     shouldCount: 1
     possibleNPCs:
@@ -338,7 +404,7 @@ MonoBehaviour:
     doors: []
     target: {fileID: 0}
     dialogueArea: []
-  - stepDescription: Talk To Officer
+  - stepDescription: Talk To IT
     objectiveType: 4
     shouldCount: 0
     possibleNPCs:
@@ -351,7 +417,7 @@ MonoBehaviour:
     dialogueArea:
     - I believe you need some data. Okay, I can give it to you, but first you need
       to lower the server temperature.
-  - stepDescription: Talk To Officer
+  - stepDescription: Go To Server
     objectiveType: 2
     shouldCount: 1
     possibleNPCs:
@@ -364,7 +430,7 @@ MonoBehaviour:
     target: {fileID: 0}
     dialogueArea:
     - deneme
-  - stepDescription: Talk To Officer
+  - stepDescription: Solve the Tempature Problem
     objectiveType: 1
     shouldCount: 0
     possibleNPCs:
@@ -377,7 +443,7 @@ MonoBehaviour:
     target: {fileID: 0}
     dialogueArea:
     - deneme
-  - stepDescription: Talk To Officer
+  - stepDescription: Talk To IT
     objectiveType: 0
     shouldCount: 0
     possibleNPCs:
@@ -390,7 +456,7 @@ MonoBehaviour:
     target: {fileID: 0}
     dialogueArea:
     - deneme
-  - stepDescription: Talk To Officer
+  - stepDescription: Talk To IT
     objectiveType: 4
     shouldCount: 0
     possibleNPCs:
@@ -404,7 +470,7 @@ MonoBehaviour:
     dialogueArea:
     - Okay, the server temperature has dropped, you can now retrieve the data you
       need.
-  - stepDescription: Talk To Officer
+  - stepDescription: Go To Computer
     objectiveType: 2
     shouldCount: 0
     possibleNPCs:
@@ -419,7 +485,7 @@ MonoBehaviour:
     dialogueArea:
     - Okay, the server temperature has dropped, you can now retrieve the data you
       need.
-  - stepDescription: Talk To Officer
+  - stepDescription: Take Data
     objectiveType: 1
     shouldCount: 0
     possibleNPCs:
@@ -583,6 +649,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4a2ba3f51fda2467aaa82aef63675f8d, type: 3}
+--- !u!1 &25087587 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 641d54c2e9ed140a6a5ff4258035909a, type: 3}
+  m_PrefabInstance: {fileID: 480602960}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &26600431
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2710,11 +2781,70 @@ MonoBehaviour:
   questName: 
   description: 
   steps:
+  - stepDescription: Talk To Manager
+    objectiveType: 3
+    shouldCount: 0
+    possibleNPCs:
+    - {fileID: 669366391}
+    puzzleNames:
+    - Printer
+    itemObjects: []
+    amountRequired: 0
+    doors:
+    - {fileID: 1091700549}
+    target: {fileID: 0}
+    dialogueArea:
+    - deneme
+  - stepDescription: Talk To Officer
+    objectiveType: 2
+    shouldCount: 0
+    possibleNPCs:
+    - {fileID: 669366391}
+    puzzleNames:
+    - Printer
+    itemObjects:
+    - {fileID: 1091700549}
+    amountRequired: 0
+    doors:
+    - {fileID: 1091700549}
+    target: {fileID: 0}
+    dialogueArea:
+    - deneme
+  - stepDescription: Talk To Manager
+    objectiveType: 1
+    shouldCount: 0
+    possibleNPCs:
+    - {fileID: 669366391}
+    puzzleNames:
+    - Card
+    itemObjects:
+    - {fileID: 1091700549}
+    amountRequired: 0
+    doors:
+    - {fileID: 1091700549}
+    target: {fileID: 0}
+    dialogueArea:
+    - deneme
+  - stepDescription: Talk To Manager
+    objectiveType: 3
+    shouldCount: 0
+    possibleNPCs:
+    - {fileID: 669366391}
+    puzzleNames:
+    - Maze
+    itemObjects:
+    - {fileID: 1091700549}
+    amountRequired: 0
+    doors:
+    - {fileID: 1091700549}
+    target: {fileID: 0}
+    dialogueArea:
+    - deneme
   - stepDescription: Talk To Officer
     objectiveType: 0
     shouldCount: 1
     possibleNPCs:
-    - {fileID: 669366391}
+    - {fileID: 2855172628724028016}
     puzzleNames: []
     itemObjects: []
     amountRequired: 0
@@ -2732,7 +2862,8 @@ MonoBehaviour:
     doors: []
     target: {fileID: 2855172628724028016}
     dialogueArea:
-    - deneme
+    - Okay, I'll approve whatever you want, but first you have to do something for
+      me.
   - stepDescription: Talk To Officer
     objectiveType: 2
     shouldCount: 1
@@ -3823,7 +3954,7 @@ MonoBehaviour:
     - {fileID: 530434533}
     target: {fileID: 0}
     dialogueArea: []
-  - stepDescription: Go to Server Room
+  - stepDescription: Talk To IT
     objectiveType: 0
     shouldCount: 1
     possibleNPCs:
@@ -3836,7 +3967,7 @@ MonoBehaviour:
     - {fileID: 530434533}
     target: {fileID: 0}
     dialogueArea: []
-  - stepDescription: Go to Server Room
+  - stepDescription: Talk To IT
     objectiveType: 4
     shouldCount: 1
     possibleNPCs:
@@ -3895,7 +4026,7 @@ MonoBehaviour:
     target: {fileID: 919132149593364188}
     dialogueArea:
     - You need to go storage room and print some documents.
-  - stepDescription: Go to Storage Room
+  - stepDescription: Go To Router
     objectiveType: 2
     shouldCount: 1
     possibleNPCs:
@@ -3910,7 +4041,7 @@ MonoBehaviour:
     target: {fileID: 919132149593364188}
     dialogueArea:
     - You need to go storage room and print some documents.
-  - stepDescription: Go to Storage Room
+  - stepDescription: Solve the Problem
     objectiveType: 1
     shouldCount: 0
     possibleNPCs:
@@ -6391,10 +6522,69 @@ MonoBehaviour:
   description: 
   steps:
   - stepDescription: Talk To Officer
+    objectiveType: 3
+    shouldCount: 0
+    possibleNPCs:
+    - {fileID: 669366391}
+    puzzleNames:
+    - Printer
+    itemObjects: []
+    amountRequired: 0
+    doors:
+    - {fileID: 1091700549}
+    target: {fileID: 0}
+    dialogueArea:
+    - deneme
+  - stepDescription: Talk To Manager
+    objectiveType: 2
+    shouldCount: 0
+    possibleNPCs:
+    - {fileID: 669366391}
+    puzzleNames:
+    - Printer
+    itemObjects:
+    - {fileID: 1091700549}
+    amountRequired: 0
+    doors:
+    - {fileID: 1091700549}
+    target: {fileID: 0}
+    dialogueArea:
+    - deneme
+  - stepDescription: Talk To Manager
+    objectiveType: 1
+    shouldCount: 0
+    possibleNPCs:
+    - {fileID: 669366391}
+    puzzleNames:
+    - Card
+    itemObjects:
+    - {fileID: 1091700549}
+    amountRequired: 0
+    doors:
+    - {fileID: 1091700549}
+    target: {fileID: 0}
+    dialogueArea:
+    - deneme
+  - stepDescription: Talk To Officer
+    objectiveType: 3
+    shouldCount: 0
+    possibleNPCs:
+    - {fileID: 669366391}
+    puzzleNames:
+    - Card
+    itemObjects:
+    - {fileID: 1091700549}
+    amountRequired: 0
+    doors:
+    - {fileID: 1091700549}
+    target: {fileID: 0}
+    dialogueArea:
+    - deneme
+  - stepDescription: Talk To Officer
     objectiveType: 0
     shouldCount: 1
     possibleNPCs:
-    - {fileID: 669366391}
+    - {fileID: 2855172628724028016}
     puzzleNames: []
     itemObjects: []
     amountRequired: 0
@@ -6412,8 +6602,9 @@ MonoBehaviour:
     doors: []
     target: {fileID: 2855172628724028016}
     dialogueArea:
-    - deneme
-  - stepDescription: Talk To Officer
+    - Okay, I'll approve whatever you want, but first you have to do something for
+      me.
+  - stepDescription: Go To Printer
     objectiveType: 2
     shouldCount: 1
     possibleNPCs:
@@ -6426,7 +6617,7 @@ MonoBehaviour:
     target: {fileID: 0}
     dialogueArea:
     - deneme
-  - stepDescription: Talk To Officer
+  - stepDescription: Solve the Problem
     objectiveType: 1
     shouldCount: 0
     possibleNPCs:
@@ -7138,15 +7329,53 @@ MonoBehaviour:
   door: {fileID: 804933753}
   spawnPosition: {fileID: 2108868155}
   allScenarios:
-  - scenarioName: 
+  - scenarioName: Smart Warehouse Management System
     useCases:
-    - useCaseName: 
+    - useCaseName: Scan barcode labels
       quests:
-      - {fileID: 0}
-    - useCaseName: 
-      quests: []
-    - useCaseName: 
-      quests: []
+      - {fileID: 367508864}
+      - {fileID: 992318304}
+    - useCaseName: ' Track item locations'
+      quests:
+      - {fileID: 2146054350}
+      - {fileID: 12073414}
+    - useCaseName: ' Generate shipping manifests'
+      quests:
+      - {fileID: 490205802}
+      - {fileID: 2087972177}
+  - scenarioName: Cloud Storage System
+    useCases:
+    - useCaseName: Upload heavy files
+      quests:
+      - {fileID: 1237841996}
+      - {fileID: 585735546}
+    - useCaseName: Allocate disk space
+      quests:
+      - {fileID: 12073414}
+      - {fileID: 490205802}
+      - {fileID: 2146054350}
+    - useCaseName: Audit access logs depo
+      quests:
+      - {fileID: 1840384632}
+      - {fileID: 800567210}
+      - {fileID: 992318304}
+  - scenarioName: Food Delivery App
+    useCases:
+    - useCaseName: place orders through the system
+      quests:
+      - {fileID: 143247838}
+      - {fileID: 490205802}
+      - {fileID: 2146054350}
+    - useCaseName: update the menu based on stock levels
+      quests:
+      - {fileID: 12073414}
+      - {fileID: 800567210}
+      - {fileID: 585735546}
+    - useCaseName: change the delivery status from their own screens
+      quests:
+      - {fileID: 992318304}
+      - {fileID: 585735546}
+      - {fileID: 2087972177}
   markerCanvas: {fileID: 880956077}
   selectedScenarioIndex: 0
   cinematicSteps:
@@ -10987,8 +11216,8 @@ MonoBehaviour:
     doors: []
     target: {fileID: 669366391}
     dialogueArea:
-    - deneme
-  - stepDescription: Talk To Officer
+    - You can retrieve the data you need from the computer.
+  - stepDescription: Go to Computer
     objectiveType: 2
     shouldCount: 1
     possibleNPCs:
@@ -11001,7 +11230,7 @@ MonoBehaviour:
     target: {fileID: 0}
     dialogueArea:
     - deneme
-  - stepDescription: Talk To Officer
+  - stepDescription: Take to Data
     objectiveType: 1
     shouldCount: 0
     possibleNPCs:
@@ -17550,8 +17779,8 @@ MonoBehaviour:
     doors: []
     target: {fileID: 669366391}
     dialogueArea:
-    - deneme
-  - stepDescription: Talk To Officer
+    - First, you need to fix our internet connection before you can do what you want.
+  - stepDescription: Go To Router
     objectiveType: 2
     shouldCount: 1
     possibleNPCs:
@@ -17564,7 +17793,7 @@ MonoBehaviour:
     target: {fileID: 0}
     dialogueArea:
     - deneme
-  - stepDescription: Talk To Officer
+  - stepDescription: Solve To Problem
     objectiveType: 1
     shouldCount: 0
     possibleNPCs:
@@ -21207,7 +21436,7 @@ MonoBehaviour:
     doors: []
     target: {fileID: 669366391}
     dialogueArea:
-    - deneme
+    - First, you need to load ink into our printer to do what you want.
   - stepDescription: Talk To Officer
     objectiveType: 2
     shouldCount: 1
@@ -22105,6 +22334,65 @@ MonoBehaviour:
   description: 
   steps:
   - stepDescription: Talk To Manager
+    objectiveType: 3
+    shouldCount: 0
+    possibleNPCs:
+    - {fileID: 669366391}
+    puzzleNames:
+    - Jackpot
+    itemObjects: []
+    amountRequired: 0
+    doors:
+    - {fileID: 1091700549}
+    target: {fileID: 0}
+    dialogueArea:
+    - deneme
+  - stepDescription: Talk To Officer
+    objectiveType: 2
+    shouldCount: 0
+    possibleNPCs:
+    - {fileID: 669366391}
+    puzzleNames:
+    - Jackpot
+    itemObjects:
+    - {fileID: 1091700549}
+    amountRequired: 0
+    doors:
+    - {fileID: 1091700549}
+    target: {fileID: 0}
+    dialogueArea:
+    - deneme
+  - stepDescription: Talk To Manager
+    objectiveType: 1
+    shouldCount: 0
+    possibleNPCs:
+    - {fileID: 669366391}
+    puzzleNames:
+    - Card
+    itemObjects:
+    - {fileID: 1091700549}
+    amountRequired: 0
+    doors:
+    - {fileID: 1091700549}
+    target: {fileID: 0}
+    dialogueArea:
+    - deneme
+  - stepDescription: Talk To Manager
+    objectiveType: 3
+    shouldCount: 0
+    possibleNPCs:
+    - {fileID: 669366391}
+    puzzleNames:
+    - Card
+    itemObjects:
+    - {fileID: 1091700549}
+    amountRequired: 0
+    doors:
+    - {fileID: 1091700549}
+    target: {fileID: 0}
+    dialogueArea:
+    - deneme
+  - stepDescription: Talk To Manager
     objectiveType: 0
     shouldCount: 0
     possibleNPCs:
@@ -22115,7 +22403,7 @@ MonoBehaviour:
     doors: []
     target: {fileID: 0}
     dialogueArea: []
-  - stepDescription: Talk To Officer
+  - stepDescription: Talk To Manager
     objectiveType: 4
     shouldCount: 0
     possibleNPCs:
@@ -22126,8 +22414,9 @@ MonoBehaviour:
     doors: []
     target: {fileID: 2855172628724028016}
     dialogueArea:
-    - deneme
-  - stepDescription: Talk To Officer
+    - Okay, I'll approve whatever you want, but first you have to do something for
+      me.
+  - stepDescription: Talk To Manager
     objectiveType: 2
     shouldCount: 0
     possibleNPCs:
@@ -22140,7 +22429,7 @@ MonoBehaviour:
     target: {fileID: 0}
     dialogueArea:
     - deneme
-  - stepDescription: Talk To Officer
+  - stepDescription: Solve the Problem
     objectiveType: 1
     shouldCount: 0
     possibleNPCs:
@@ -36202,11 +36491,70 @@ MonoBehaviour:
   questName: 
   description: 
   steps:
-  - stepDescription: Talk To Officer
+  - stepDescription: Talk To Stakeholders
+    objectiveType: 3
+    shouldCount: 0
+    possibleNPCs:
+    - {fileID: 669366391}
+    puzzleNames:
+    - Printer
+    itemObjects: []
+    amountRequired: 0
+    doors:
+    - {fileID: 647997542}
+    target: {fileID: 0}
+    dialogueArea:
+    - deneme
+  - stepDescription: Talk To Stakeholders
+    objectiveType: 2
+    shouldCount: 0
+    possibleNPCs:
+    - {fileID: 669366391}
+    puzzleNames:
+    - Printer
+    itemObjects:
+    - {fileID: 647997542}
+    amountRequired: 0
+    doors:
+    - {fileID: 647997542}
+    target: {fileID: 0}
+    dialogueArea:
+    - deneme
+  - stepDescription: Talk To Stakeholders
+    objectiveType: 1
+    shouldCount: 0
+    possibleNPCs:
+    - {fileID: 669366391}
+    puzzleNames:
+    - Card
+    itemObjects:
+    - {fileID: 647997542}
+    amountRequired: 0
+    doors:
+    - {fileID: 647997542}
+    target: {fileID: 0}
+    dialogueArea:
+    - deneme
+  - stepDescription: Talk To Stakeholders
+    objectiveType: 3
+    shouldCount: 0
+    possibleNPCs:
+    - {fileID: 669366391}
+    puzzleNames:
+    - Printer
+    itemObjects:
+    - {fileID: 647997542}
+    amountRequired: 0
+    doors:
+    - {fileID: 647997542}
+    target: {fileID: 0}
+    dialogueArea:
+    - deneme
+  - stepDescription: Talk To Stakeholders
     objectiveType: 0
     shouldCount: 1
     possibleNPCs:
-    - {fileID: 669366391}
+    - {fileID: 5216946371888684778}
     puzzleNames: []
     itemObjects: []
     amountRequired: 0
@@ -36224,21 +36572,21 @@ MonoBehaviour:
     doors: []
     target: {fileID: 5216946371888684778}
     dialogueArea:
-    - deneme
-  - stepDescription: Talk To Officer
+    - First, you need to load ink into our printer to do what you want.
+  - stepDescription: Go To Printer
     objectiveType: 2
     shouldCount: 1
     possibleNPCs:
     - {fileID: 669366391}
     puzzleNames: []
     itemObjects:
-    - {fileID: 0}
+    - {fileID: 25087587}
     amountRequired: 0
     doors: []
     target: {fileID: 0}
     dialogueArea:
     - deneme
-  - stepDescription: Talk To Officer
+  - stepDescription: Solve the Problem
     objectiveType: 1
     shouldCount: 0
     possibleNPCs:
@@ -41559,7 +41907,7 @@ MonoBehaviour:
     doors: []
     target: {fileID: 0}
     dialogueArea: []
-  - stepDescription: Talk To Officer
+  - stepDescription: Talk To Stakeholder
     objectiveType: 4
     shouldCount: 0
     possibleNPCs:
@@ -41570,27 +41918,28 @@ MonoBehaviour:
     doors: []
     target: {fileID: 5216946371888684778}
     dialogueArea:
-    - deneme
-  - stepDescription: Talk To Officer
+    - Okay, I'll approve whatever you want, but first you have to do something for
+      me.
+  - stepDescription: Talk To Stakeholder
     objectiveType: 2
     shouldCount: 0
     possibleNPCs:
     - {fileID: 669366391}
     puzzleNames: []
     itemObjects:
-    - {fileID: 1867291729}
+    - {fileID: 5216946371888684778}
     amountRequired: 0
     doors: []
     target: {fileID: 0}
     dialogueArea:
     - deneme
-  - stepDescription: Talk To Officer
+  - stepDescription: Solve the Problem
     objectiveType: 1
     shouldCount: 0
     possibleNPCs:
     - {fileID: 669366391}
     puzzleNames:
-    - USB
+    - Jackpot
     itemObjects: []
     amountRequired: 0
     doors: []
@@ -43245,7 +43594,7 @@ MonoBehaviour:
     - {fileID: 530434533}
     target: {fileID: 0}
     dialogueArea: []
-  - stepDescription: Go to Server Room
+  - stepDescription: Talk To IT
     objectiveType: 4
     shouldCount: 1
     possibleNPCs:
@@ -43304,7 +43653,7 @@ MonoBehaviour:
     target: {fileID: 919132149593364188}
     dialogueArea:
     - You need to go storage room and print some documents.
-  - stepDescription: Go to Storage Room
+  - stepDescription: Go To Printer
     objectiveType: 2
     shouldCount: 1
     possibleNPCs:
@@ -43319,7 +43668,7 @@ MonoBehaviour:
     target: {fileID: 919132149593364188}
     dialogueArea:
     - You need to go storage room and print some documents.
-  - stepDescription: Go to Storage Room
+  - stepDescription: Solve the Problem
     objectiveType: 1
     shouldCount: 0
     possibleNPCs:
