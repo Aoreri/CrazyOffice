@@ -345,7 +345,7 @@ MonoBehaviour:
       need.
   - stepDescription: Talk To IT
     objectiveType: 2
-    shouldCount: 0
+    shouldCount: 1
     possibleNPCs:
     - {fileID: 919132149593364188}
     puzzleNames:
@@ -445,7 +445,7 @@ MonoBehaviour:
     - deneme
   - stepDescription: Talk To IT
     objectiveType: 0
-    shouldCount: 0
+    shouldCount: 1
     possibleNPCs:
     - {fileID: 919132149593364188}
     puzzleNames:
@@ -472,7 +472,7 @@ MonoBehaviour:
       need.
   - stepDescription: Go To Computer
     objectiveType: 2
-    shouldCount: 0
+    shouldCount: 1
     possibleNPCs:
     - {fileID: 919132149593364188}
     puzzleNames:
@@ -2797,7 +2797,7 @@ MonoBehaviour:
     - deneme
   - stepDescription: Talk To Officer
     objectiveType: 2
-    shouldCount: 0
+    shouldCount: 1
     possibleNPCs:
     - {fileID: 669366391}
     puzzleNames:
@@ -2883,7 +2883,7 @@ MonoBehaviour:
     possibleNPCs:
     - {fileID: 669366391}
     puzzleNames:
-    - Printer
+    - Modem
     itemObjects: []
     amountRequired: 0
     doors: []
@@ -3918,7 +3918,7 @@ MonoBehaviour:
   steps:
   - stepDescription: Go to Server Room
     objectiveType: 3
-    shouldCount: 1
+    shouldCount: 0
     possibleNPCs:
     - {fileID: 669366391}
     puzzleNames: []
@@ -3930,7 +3930,7 @@ MonoBehaviour:
     dialogueArea: []
   - stepDescription: Solve Puzzle
     objectiveType: 1
-    shouldCount: 1
+    shouldCount: 0
     possibleNPCs:
     - {fileID: 669366391}
     puzzleNames:
@@ -3943,7 +3943,7 @@ MonoBehaviour:
     dialogueArea: []
   - stepDescription: Go to Server Room
     objectiveType: 3
-    shouldCount: 1
+    shouldCount: 0
     possibleNPCs:
     - {fileID: 669366391}
     puzzleNames:
@@ -3969,7 +3969,7 @@ MonoBehaviour:
     dialogueArea: []
   - stepDescription: Talk To IT
     objectiveType: 4
-    shouldCount: 1
+    shouldCount: 0
     possibleNPCs:
     - {fileID: 669366391}
     puzzleNames:
@@ -3983,7 +3983,7 @@ MonoBehaviour:
     - You need to go storage room and fix modem.
   - stepDescription: Go to Storage Room
     objectiveType: 3
-    shouldCount: 1
+    shouldCount: 0
     possibleNPCs:
     - {fileID: 669366391}
     puzzleNames:
@@ -4013,7 +4013,7 @@ MonoBehaviour:
     - You need to go storage room and print some documents.
   - stepDescription: Go to Storage Room
     objectiveType: 3
-    shouldCount: 1
+    shouldCount: 0
     possibleNPCs:
     - {fileID: 669366391}
     puzzleNames:
@@ -6537,7 +6537,7 @@ MonoBehaviour:
     - deneme
   - stepDescription: Talk To Manager
     objectiveType: 2
-    shouldCount: 0
+    shouldCount: 1
     possibleNPCs:
     - {fileID: 669366391}
     puzzleNames:
@@ -7338,10 +7338,11 @@ MonoBehaviour:
     - useCaseName: ' Track item locations'
       quests:
       - {fileID: 2146054350}
+      - {fileID: 490205802}
       - {fileID: 12073414}
     - useCaseName: ' Generate shipping manifests'
       quests:
-      - {fileID: 490205802}
+      - {fileID: 1178193912}
       - {fileID: 2087972177}
   - scenarioName: Cloud Storage System
     useCases:
@@ -7352,7 +7353,6 @@ MonoBehaviour:
     - useCaseName: Allocate disk space
       quests:
       - {fileID: 12073414}
-      - {fileID: 490205802}
       - {fileID: 2146054350}
     - useCaseName: Audit access logs depo
       quests:
@@ -7364,13 +7364,12 @@ MonoBehaviour:
     - useCaseName: place orders through the system
       quests:
       - {fileID: 143247838}
-      - {fileID: 490205802}
       - {fileID: 2146054350}
     - useCaseName: update the menu based on stock levels
       quests:
       - {fileID: 12073414}
       - {fileID: 800567210}
-      - {fileID: 585735546}
+      - {fileID: 490205802}
     - useCaseName: change the delivery status from their own screens
       quests:
       - {fileID: 992318304}
@@ -9164,7 +9163,7 @@ MonoBehaviour:
   steps:
   - stepDescription: 
     objectiveType: 2
-    shouldCount: 0
+    shouldCount: 1
     possibleNPCs: []
     puzzleNames: []
     itemObjects:
@@ -14189,7 +14188,7 @@ MonoBehaviour:
   steps:
   - stepDescription: 
     objectiveType: 2
-    shouldCount: 0
+    shouldCount: 1
     possibleNPCs: []
     puzzleNames: []
     itemObjects:
@@ -22349,7 +22348,7 @@ MonoBehaviour:
     - deneme
   - stepDescription: Talk To Officer
     objectiveType: 2
-    shouldCount: 0
+    shouldCount: 1
     possibleNPCs:
     - {fileID: 669366391}
     puzzleNames:
@@ -22394,7 +22393,7 @@ MonoBehaviour:
     - deneme
   - stepDescription: Talk To Manager
     objectiveType: 0
-    shouldCount: 0
+    shouldCount: 1
     possibleNPCs:
     - {fileID: 2855172628724028016}
     puzzleNames: []
@@ -22418,7 +22417,7 @@ MonoBehaviour:
       me.
   - stepDescription: Talk To Manager
     objectiveType: 2
-    shouldCount: 0
+    shouldCount: 1
     possibleNPCs:
     - {fileID: 669366391}
     puzzleNames: []
@@ -36507,7 +36506,7 @@ MonoBehaviour:
     - deneme
   - stepDescription: Talk To Stakeholders
     objectiveType: 2
-    shouldCount: 0
+    shouldCount: 1
     possibleNPCs:
     - {fileID: 669366391}
     puzzleNames:
@@ -41898,7 +41897,7 @@ MonoBehaviour:
   steps:
   - stepDescription: Talk To Stakeholder
     objectiveType: 0
-    shouldCount: 0
+    shouldCount: 1
     possibleNPCs:
     - {fileID: 5216946371888684778}
     puzzleNames: []
@@ -41922,7 +41921,7 @@ MonoBehaviour:
       me.
   - stepDescription: Talk To Stakeholder
     objectiveType: 2
-    shouldCount: 0
+    shouldCount: 1
     possibleNPCs:
     - {fileID: 669366391}
     puzzleNames: []
@@ -43545,7 +43544,7 @@ MonoBehaviour:
   steps:
   - stepDescription: Go to Server Room
     objectiveType: 3
-    shouldCount: 1
+    shouldCount: 0
     possibleNPCs:
     - {fileID: 669366391}
     puzzleNames: []
@@ -43555,9 +43554,24 @@ MonoBehaviour:
     - {fileID: 530434533}
     target: {fileID: 0}
     dialogueArea: []
+  - stepDescription: Solve the Problem
+    objectiveType: 2
+    shouldCount: 1
+    possibleNPCs:
+    - {fileID: 669366391}
+    puzzleNames:
+    - Printer
+    itemObjects:
+    - {fileID: 530434533}
+    amountRequired: 0
+    doors:
+    - {fileID: 530434533}
+    target: {fileID: 919132149593364188}
+    dialogueArea:
+    - You need to go storage room and print some documents.
   - stepDescription: Solve Puzzle
     objectiveType: 1
-    shouldCount: 1
+    shouldCount: 0
     possibleNPCs:
     - {fileID: 669366391}
     puzzleNames:
@@ -43570,7 +43584,7 @@ MonoBehaviour:
     dialogueArea: []
   - stepDescription: Go to Server Room
     objectiveType: 3
-    shouldCount: 1
+    shouldCount: 0
     possibleNPCs:
     - {fileID: 669366391}
     puzzleNames:
@@ -43596,7 +43610,7 @@ MonoBehaviour:
     dialogueArea: []
   - stepDescription: Talk To IT
     objectiveType: 4
-    shouldCount: 1
+    shouldCount: 0
     possibleNPCs:
     - {fileID: 669366391}
     puzzleNames:
@@ -43610,13 +43624,28 @@ MonoBehaviour:
     - You need to go storage room and print some documents.
   - stepDescription: Go to Storage Room
     objectiveType: 3
-    shouldCount: 1
+    shouldCount: 0
     possibleNPCs:
     - {fileID: 669366391}
     puzzleNames:
     - Maze
     itemObjects:
     - {fileID: 0}
+    amountRequired: 0
+    doors:
+    - {fileID: 561709731}
+    target: {fileID: 919132149593364188}
+    dialogueArea:
+    - You need to go storage room and print some documents.
+  - stepDescription: Solve the Problem
+    objectiveType: 2
+    shouldCount: 1
+    possibleNPCs:
+    - {fileID: 669366391}
+    puzzleNames:
+    - Printer
+    itemObjects:
+    - {fileID: 561709731}
     amountRequired: 0
     doors:
     - {fileID: 530434533}
@@ -43640,7 +43669,7 @@ MonoBehaviour:
     - You need to go storage room and print some documents.
   - stepDescription: Go to Storage Room
     objectiveType: 3
-    shouldCount: 1
+    shouldCount: 0
     possibleNPCs:
     - {fileID: 669366391}
     puzzleNames:
@@ -43649,7 +43678,7 @@ MonoBehaviour:
     - {fileID: 0}
     amountRequired: 0
     doors:
-    - {fileID: 530434533}
+    - {fileID: 561709731}
     target: {fileID: 919132149593364188}
     dialogueArea:
     - You need to go storage room and print some documents.
