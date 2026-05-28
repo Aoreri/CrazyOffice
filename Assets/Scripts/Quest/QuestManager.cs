@@ -31,10 +31,7 @@ public class QuestManager : MonoBehaviour
     {
         if (Instance == null) Instance = this;
         else Destroy(gameObject);
-    }
 
-    void Start()
-    {
         if (player == null)
         {
             GameObject playerObj = GameObject.FindGameObjectWithTag("Player");

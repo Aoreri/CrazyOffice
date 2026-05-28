@@ -17059,7 +17059,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3d5bf66d165d284aaedca4ce7a6c130, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::QuestManager
-  player: {fileID: 0}
+  player: {fileID: 1934713387}
   activeQuest: {fileID: 0}
   currentStepIndex: 0
   questUI: {fileID: 1017077502}

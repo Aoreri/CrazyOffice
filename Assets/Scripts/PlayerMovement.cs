@@ -16,7 +16,7 @@ public class PlayerMovement : MonoBehaviour
 
     int walkingHash;
 
-    void Start()
+    void Awake()
     {
         animator = GetComponentInChildren<Animator>();
         rb = GetComponent<Rigidbody>();
