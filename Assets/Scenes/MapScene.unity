@@ -1830,7 +1830,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ChatManager
   assignedNPC: {fileID: 0}
-  player: {fileID: 0}
+  player: {fileID: 1934713387}
 --- !u!114 &104005015
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1847,7 +1847,7 @@ MonoBehaviour:
   bubblePrefab: {fileID: 2117648006934011514, guid: 1afe2829be5ff1643bee3dd2eb3177c1, type: 3}
   worldOffset: {x: 0, y: 2.88, z: 0.89}
   faceCamera: 1
-  player: {fileID: 0}
+  player: {fileID: 1934713387}
 --- !u!1 &104669474
 GameObject:
   m_ObjectHideFlags: 0
@@ -7055,8 +7055,8 @@ Transform:
   m_GameObject: {fileID: 376004763}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.28206965, y: 0.06827441, z: 0.76269126}
+  m_LocalPosition: {x: -0, y: 0, z: 0.0654}
+  m_LocalScale: {x: 0.28206965, y: 0.06827441, z: 0.631966}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2011306324}
@@ -17544,6 +17544,10 @@ PrefabInstance:
       value: -160.297
       objectReference: {fileID: 0}
     - target: {fileID: 5808371780213105889, guid: 67b7958f51626f8458685c8378688092, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1934713387}
+    - target: {fileID: 5808371780213105889, guid: 67b7958f51626f8458685c8378688092, type: 3}
       propertyPath: interactionDistance
       value: 1.5
       objectReference: {fileID: 0}
@@ -18530,6 +18534,10 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5808371780213105889, guid: 67b7958f51626f8458685c8378688092, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1934713387}
     - target: {fileID: 5808371780213105889, guid: 67b7958f51626f8458685c8378688092, type: 3}
       propertyPath: interactionDistance
       value: 1.5
@@ -28249,6 +28257,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5808371780213105889, guid: 67b7958f51626f8458685c8378688092, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1934713387}
+    - target: {fileID: 5808371780213105889, guid: 67b7958f51626f8458685c8378688092, type: 3}
       propertyPath: interactionDistance
       value: 1.5
       objectReference: {fileID: 0}
@@ -28703,6 +28715,10 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5808371780213105889, guid: 67b7958f51626f8458685c8378688092, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1934713387}
     - target: {fileID: 5808371780213105889, guid: 67b7958f51626f8458685c8378688092, type: 3}
       propertyPath: interactionDistance
       value: 1.5
@@ -32954,6 +32970,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5808371780213105889, guid: 67b7958f51626f8458685c8378688092, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1934713387}
+    - target: {fileID: 5808371780213105889, guid: 67b7958f51626f8458685c8378688092, type: 3}
       propertyPath: interactionDistance
       value: 1.5
       objectReference: {fileID: 0}
@@ -35916,6 +35936,10 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5808371780213105889, guid: 67b7958f51626f8458685c8378688092, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1934713387}
     - target: {fileID: 5808371780213105889, guid: 67b7958f51626f8458685c8378688092, type: 3}
       propertyPath: interactionDistance
       value: 1.5
