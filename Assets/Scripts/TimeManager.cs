@@ -13,6 +13,12 @@ public class TimeManager : MonoBehaviour
     [Tooltip("This will be used as a template and cloned for each penalty.")]
     public TextMeshProUGUI penaltyText;
 
+    [Header("Audio Settings")]
+    // YENİ EKLENDİ: Ses bileşenleri
+    public AudioSource audioSource;
+    [Tooltip("Ceza yediğinde (süre eklendiğinde) çalacak hata sesi")]
+    public AudioClip penaltySound;
+
     public float timeElapsed;
     private bool isRunning = false;
 
@@ -76,6 +82,13 @@ public class TimeManager : MonoBehaviour
     {
         timeElapsed += penaltyAmount;
         UpdateTimerDisplay();
+
+        // --- YENİ EKLENDİ: HATA/CEZA SESİ ---
+        if (audioSource != null && penaltySound != null)
+        {
+            audioSource.PlayOneShot(penaltySound);
+        }
+        // ------------------------------------
 
         if (penaltyText != null)
         {

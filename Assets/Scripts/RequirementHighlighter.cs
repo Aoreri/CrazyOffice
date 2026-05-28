@@ -27,6 +27,11 @@ public class RequirementHighlighter : MonoBehaviour, IPointerClickHandler, IPoin
     public float underlineThickness = 3f;
     public float underlineOffset = 2f;
 
+    [Header("Audio Settings")]
+    // GÃœNCELLENDÄ°: ArtÄ±k tek bir ses deÄŸil, birden fazla sesi tutacak bir dizi (array)
+    public AudioSource audioSource;
+    public AudioClip[] markerSounds;
+
     public enum PenType { None, ActorPen, UseCasePen }
     public PenType currentPen = PenType.ActorPen;
 
@@ -134,6 +139,15 @@ public class RequirementHighlighter : MonoBehaviour, IPointerClickHandler, IPoin
     {
         if (correctAnswers.Contains(linkIndex)) return;
 
+        // --- GÃœNCELLENDÄ°: Array iÃ§inden rastgele ses seÃ§me mantÄ±ÄŸÄ± eklendi ---
+        if (audioSource != null && markerSounds != null && markerSounds.Length > 0)
+        {
+            int randomIndex = Random.Range(0, markerSounds.Length);
+            audioSource.pitch = Random.Range(0.9f, 1.1f); 
+            audioSource.PlayOneShot(markerSounds[randomIndex]);
+        }
+        // -----------------------------------------------------------------------
+
         bool isCorrect = false;
         string selectedText = linkInfo.GetLinkText();
 
@@ -157,11 +171,11 @@ public class RequirementHighlighter : MonoBehaviour, IPointerClickHandler, IPoin
         }
         else if (currentPen != PenType.None)
         {
-            // --- YANLIÞ CEVAP DURUMU ---
-            // 1. Ýþaretlemeyi kýrmýzý yap
+            // --- YANLIÅž CEVAP DURUMU ---
+            // 1. Ä°ÅŸaretlemeyi kÄ±rmÄ±zÄ± yap
             ApplyHighlight(linkInfo, linkIndex, new Color(1f, 0.2f, 0.2f, 0.9f));
 
-            // 2. Süreye 10 saniye ceza ekle
+            // 2. SÃ¼reye 10 saniye ceza ekle
             if (TimeManager.Instance != null)
             {
                 TimeManager.Instance.ApplyPenalty(10f);
@@ -170,7 +184,7 @@ public class RequirementHighlighter : MonoBehaviour, IPointerClickHandler, IPoin
 
         if (isCorrect)
         {
-            // Ýlk doðru cevap verildiðinde süreyi baþlat
+            // Ä°lk doÄŸru cevap verildiÄŸinde sÃ¼reyi baÅŸlat
             if (correctAnswers.Count == 0 && TimeManager.Instance != null)
                 TimeManager.Instance.StartTimer();
 
@@ -178,7 +192,7 @@ public class RequirementHighlighter : MonoBehaviour, IPointerClickHandler, IPoin
 
             int totalLinks = documentText.textInfo.linkCount;
 
-            // Tüm doðru cevaplar bulunduðunda
+            // TÃ¼m doÄŸru cevaplar bulunduÄŸunda
             if (correctAnswers.Count == totalLinks)
             {
                 StartCoroutine(CompleteAndStartFirstQuest());
