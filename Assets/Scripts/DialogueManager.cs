@@ -44,17 +44,11 @@ public class DialogueManager : MonoBehaviour
     {
         if (player == null)
         {
-            PlayerController playerController = PlayerController.Instance;
-            if (playerController != null)
-            {
-                GameObject playerObj = playerController.gameObject;
-                if (playerObj != null)
-                {
-                    PlayerMovement pm = playerObj.GetComponent<PlayerMovement>();
-                    if (pm != null)
-                        pm.disablePlayerMovement();
-                }
-            }
+            GameObject playerObj = GameObject.FindGameObjectWithTag("Player");
+            if (playerObj != null)
+                player = playerObj.transform;
+            else
+                Debug.LogWarning("Player not found! Please assign the Player tag or drag the Player into the script.");
         }
     }
 
