@@ -35,6 +35,9 @@ public class PauseMenu : MonoBehaviour
     void Pause()
     {
         pauseMenuUI.SetActive(true);
+
+        pauseMenuUI.transform.SetAsLastSibling();
+
         Time.timeScale = 0f;
         GameIsPaused = true;
     }
