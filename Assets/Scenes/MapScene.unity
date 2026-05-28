@@ -9162,7 +9162,7 @@ MonoBehaviour:
   questName: 
   description: 
   steps:
-  - stepDescription: 
+  - stepDescription: Solve the Terminal
     objectiveType: 2
     shouldCount: 1
     possibleNPCs: []
@@ -9176,7 +9176,7 @@ MonoBehaviour:
     doors: []
     target: {fileID: 0}
     dialogueArea: []
-  - stepDescription: 
+  - stepDescription: Solve the Terminal
     objectiveType: 1
     shouldCount: 0
     possibleNPCs: []
@@ -14324,7 +14324,7 @@ MonoBehaviour:
   questName: 
   description: 
   steps:
-  - stepDescription: 
+  - stepDescription: Solve the Terminal
     objectiveType: 2
     shouldCount: 1
     possibleNPCs: []
@@ -14338,7 +14338,7 @@ MonoBehaviour:
     doors: []
     target: {fileID: 0}
     dialogueArea: []
-  - stepDescription: 
+  - stepDescription: Solve the Terminal
     objectiveType: 1
     shouldCount: 0
     possibleNPCs: []
@@ -21590,7 +21590,7 @@ MonoBehaviour:
     - {fileID: 669366391}
     puzzleNames: []
     itemObjects:
-    - {fileID: 0}
+    - {fileID: 1986807572}
     amountRequired: 0
     doors: []
     target: {fileID: 0}
@@ -39542,6 +39542,11 @@ Transform:
   - {fileID: 1701846247}
   m_Father: {fileID: 619462284}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1986807572 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 641d54c2e9ed140a6a5ff4258035909a, type: 3}
+  m_PrefabInstance: {fileID: 1539160851}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1992311867
 GameObject:
   m_ObjectHideFlags: 0
@@ -43705,59 +43710,6 @@ MonoBehaviour:
   questName: 
   description: 
   steps:
-  - stepDescription: Go to Server Room
-    objectiveType: 3
-    shouldCount: 0
-    possibleNPCs:
-    - {fileID: 669366391}
-    puzzleNames: []
-    itemObjects: []
-    amountRequired: 0
-    doors:
-    - {fileID: 530434533}
-    target: {fileID: 0}
-    dialogueArea: []
-  - stepDescription: Solve the Problem
-    objectiveType: 2
-    shouldCount: 1
-    possibleNPCs:
-    - {fileID: 669366391}
-    puzzleNames:
-    - Printer
-    itemObjects:
-    - {fileID: 530434533}
-    amountRequired: 0
-    doors:
-    - {fileID: 530434533}
-    target: {fileID: 919132149593364188}
-    dialogueArea:
-    - You need to go storage room and print some documents.
-  - stepDescription: Solve Puzzle
-    objectiveType: 1
-    shouldCount: 0
-    possibleNPCs:
-    - {fileID: 669366391}
-    puzzleNames:
-    - Maze
-    itemObjects: []
-    amountRequired: 0
-    doors:
-    - {fileID: 530434533}
-    target: {fileID: 0}
-    dialogueArea: []
-  - stepDescription: Go to Server Room
-    objectiveType: 3
-    shouldCount: 0
-    possibleNPCs:
-    - {fileID: 669366391}
-    puzzleNames:
-    - Maze
-    itemObjects: []
-    amountRequired: 0
-    doors:
-    - {fileID: 530434533}
-    target: {fileID: 0}
-    dialogueArea: []
   - stepDescription: Go to Server Room
     objectiveType: 0
     shouldCount: 1
