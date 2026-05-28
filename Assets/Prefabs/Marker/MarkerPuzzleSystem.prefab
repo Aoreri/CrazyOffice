@@ -517,6 +517,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4228b5e06dc764614a74f493fc2fa8be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RequirementHighlighter
+  stageManager: {fileID: 0}
   umlManager: {fileID: 9119320178249018694}
   documentText: {fileID: 5291630262696257155}
   highlightContainer: {fileID: 5754328591080536653}
@@ -608,7 +609,9 @@ MonoBehaviour:
   underlineColor: {r: 0, g: 0, b: 0, a: 1}
   underlineThickness: 3
   underlineOffset: 2
-  currentPen: 1
+  audioSource: {fileID: 0}
+  markerSounds: []
+  currentPen: 0
 --- !u!1 &3415345729897825111
 GameObject:
   m_ObjectHideFlags: 0
