@@ -85,6 +85,8 @@ public class ConsentManager : MonoBehaviour
 
 
 
+    private string courseID;
+    private string userNAME;
 
     // Oyun bittiğinde DataManager tarafından OTOMATİK çağırılacak metod
     public async void AutoSubmitScore()
@@ -100,10 +102,18 @@ public class ConsentManager : MonoBehaviour
             }
         }
 
+        if(courseId != null)
+        {
+            if (courseId.text.Length == 0)
+                return;
+
+            courseID = string.IsNullOrWhiteSpace(courseId.text) ? "DEFAULT" : courseId.text.ToUpper();
+            userNAME = (string.IsNullOrWhiteSpace(name.text) ? "Anonymous_Player" : name.text).Trim().Replace(" ", "_");
+        }
+
         // UI'daki InputField'lardan verileri çek (Eğer boş bırakıldıysa varsayılan değerleri ata)
-        string currentCourseId = string.IsNullOrWhiteSpace(courseId.text) ? "DEFAULT" : courseId.text.ToUpper();
-        string rawName = string.IsNullOrWhiteSpace(name.text) ? "Anonymous_Player" : name.text;
-        string finalName = rawName.Trim().Replace(" ", "_");
+        string currentCourseId = courseID;
+        string finalName = userNAME;
 
         try
         {
