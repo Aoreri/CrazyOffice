@@ -27,7 +27,7 @@ public class ChatManager : MonoBehaviour
     void Update()
     {
         // 1. Check for Input and Distance
-        if (player != null && assignedNPC != null && Input.GetKeyDown(KeyCode.E))
+        if (player != null && assignedNPC != null && Input.GetKeyDown(KeyCode.F))
         {
             float distance = Vector3.Distance(assignedNPC.transform.position, player.position);
 

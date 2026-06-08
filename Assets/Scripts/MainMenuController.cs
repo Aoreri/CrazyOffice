@@ -13,8 +13,10 @@ public class MainMenuController : MonoBehaviour
 
     public void OnPlay()
     {
-        userDetails.SetActive(true);
-        pages[0].SetActive(false);
+        DataManager.Instance.StartGame();
+
+        //userDetails.SetActive(true);
+        //pages[0].SetActive(false);
         //SceneManager.LoadScene("MapScene");
     }
 

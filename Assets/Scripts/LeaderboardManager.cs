@@ -1,54 +1,75 @@
-using System.Linq;
 using TMPro;
 using UnityEngine;
-using System.Collections.Generic;
+using System.Threading.Tasks; // Required for Async/Await
+using Unity.Services.Core; // Unity Services
+using Unity.Services.Authentication; // Authentication
+using Unity.Services.Leaderboards; // Leaderboards
 
 public class LeaderboardManager : MonoBehaviour
 {
     [Tooltip("Drag your UI template prefab/object here")]
     public GameObject userObject;
 
-    void Start()
+    [Header("Unity Leaderboard Settings")]
+    [Tooltip("The Leaderboard ID you created on the Unity Dashboard. Must match ConsentManager!")]
+    public string leaderboardId = "leaderboard";
+
+    async void Start()
     {
         // Hide the original template object so it doesn't show up as an empty row
         userObject.SetActive(false);
 
-        PopulateLeaderboard();
+        // Populate the leaderboard asynchronously
+        await PopulateLeaderboardAsync();
     }
 
-    void PopulateLeaderboard()
+    async Task PopulateLeaderboardAsync()
     {
-        // 1. Ensure our DataManager exists in the scene
-        if (DataManager.Instance == null)
+        try
         {
-            Debug.LogError("StudentDataManager not found! Make sure you started from the Main Menu.");
-            return;
+            // 1. Ensure Unity Services are initialized
+            if (UnityServices.State != ServicesInitializationState.Initialized)
+            {
+                await UnityServices.InitializeAsync();
+            }
+
+            // 2. Ensure the player is signed in anonymously
+            if (!AuthenticationService.Instance.IsSignedIn)
+            {
+                await AuthenticationService.Instance.SignInAnonymouslyAsync();
+            }
+
+            // 3. Fetch the top 10 scores from the Unity Leaderboard
+            var options = new GetScoresOptions { Limit = 10 };
+            var scoresResponse = await LeaderboardsService.Instance.GetScoresAsync(leaderboardId, options);
+
+            // 4. Loop through the results and build the UI
+            int rank = 1;
+            foreach (var entry in scoresResponse.Results)
+            {
+                // --- NEW: Filter out scores that are 0 (or negative) ---
+                if (entry.Score <= 0)
+                {
+                    continue; // Skip this entry and move to the next one
+                }
+
+                // Get the name saved via UpdatePlayerNameAsync in ConsentManager.
+                // Fallback to "Anonymous_Player" if it's null or empty.
+                string playerName = string.IsNullOrEmpty(entry.PlayerName) ? "Anonymous_Player" : entry.PlayerName;
+
+                // entry.Score comes as a double. Cast to float for our FormatTime method.
+                string formattedTime = FormatTime((float)entry.Score);
+
+                // Add to UI
+                AddUser(playerName, formattedTime, rank);
+
+                // Only increase the rank number if a valid score was actually added to the UI
+                rank++;
+            }
         }
-
-        // 2. Get the list of all students
-        List<StudentData> allStudents = DataManager.Instance.database.students;
-
-        // 3. Use LINQ to sort the top 10 students
-        var topStudents = allStudents
-            .Where(s => s.finishTime > 0f) // Ignore students who haven't finished (time is 0)
-            .OrderBy(s => s.finishTime)    // Sort ascending (lowest time = fastest = 1st place)
-            .Take(10)                      // Take only the top 10
-            .ToList();
-
-        // 4. Loop exactly 10 times to build the leaderboard UI
-        for (int i = 0; i < 10; i++)
+        catch (System.Exception e)
         {
-            if (i < topStudents.Count)
-            {
-                // If a student exists for this rank, format their time and display them
-                string formattedTime = FormatTime(topStudents[i].finishTime);
-                AddUser(topStudents[i].fullName, formattedTime, i + 1);
-            }
-            else
-            {
-                // If we have fewer than 10 students, fill the remaining slots with dummies
-                //AddUser("none", "00:00", i + 1);
-            }
+            Debug.LogError("Failed to fetch leaderboard data: " + e.Message);
         }
     }
 

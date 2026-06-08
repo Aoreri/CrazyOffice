@@ -1,110 +1,135 @@
+ï»¿using System.Threading.Tasks;
+using TMPro;
+using Unity.Services.Authentication;
+using Unity.Services.Core;
+using Unity.Services.Leaderboards;
+using UnityEditor;
 using UnityEngine;
-using UnityEngine.EventSystems;
 using UnityEngine.UI;
-using TMPro; // Klavye inputlarý için TextMeshPro kütüphanesi eklendi
 
-[RequireComponent(typeof(Image))]
-public class ConsentManager : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
+public class ConsentManager : MonoBehaviour
 {
-    [Header("Panel Ayarlarý")]
-    [Tooltip("En dýþtaki krem rengi ana panel (Backplate)")]
+    public static ConsentManager Instance { get; private set; }
+
+    [Header("Panel Settings")]
     public GameObject consentPanel;
-    [Tooltip("Ýlk ekranda gözüken onay metni ve bu butonun bulunduðu UI grubu")]
     public GameObject agreementGroup;
-    [Tooltip("Onay verdikten sonra açýlacak isim ve ders kodu girme UI grubu")]
     public GameObject inputGroup;
 
-    [Header("Klavye Giriþ Alanlarý (Input Fields)")]
-    [Tooltip("Kullanýcýnýn ismini gireceði opsiyonel alan")]
-    public TMP_InputField nameInputField;
-    [Tooltip("Kullanýcýnýn ders kodunu gireceði ZORUNLU alan")]
-    public TMP_InputField courseCodeInputField;
+    public TextMeshProUGUI userID;
 
-    [Header("Neon Hover Ayarlarý")]
-    public Color neonGlowColor = new Color(0.5f, 1f, 0.5f, 1f);
-    public float scaleMultiplier = 1.05f;
-    public float animationSpeed = 12f;
+    [Header("Input Fields")]
+    public TMP_InputField courseId;
+    public TMP_InputField name;
 
-    // --- OYUNUN HER YERÝNDEN ERÝÞÝLEBÝLECEK VERÝLER ---
-    // Baþka bir scriptten direkt "ConsentManager.StudentName" yazarak bu verilere ulaþabilirsin.
-    public static string StudentName { get; private set; } = "";
-    public static string CourseCode { get; private set; } = "";
+    [Header("Score Data")]
+    public float totalTimePlayed;
+    public float finishTime;
 
-    private Image buttonImage;
-    private Vector3 originalScale;
-    private Color originalColor;
-    private bool isHovering = false;
+    [Header("Unity Leaderboard Settings")]
+    public string leaderboardId = "leaderboard";
 
-    void Start()
+    [System.Serializable]
+    private class LeaderboardMetadata
     {
-        // Eðer daha önce onaylanmýþsa, hem paneli kapat hem de eski verileri belleðe yükle
-        if (PlayerPrefs.GetInt("TermsApproved", 0) == 1)
-        {
-            StudentName = PlayerPrefs.GetString("SavedName", "");
-            CourseCode = PlayerPrefs.GetString("SavedCourse", "");
-
-            if (consentPanel != null) consentPanel.SetActive(false);
-        }
-        else
-        {
-            // Ýlk açýlýþta form kýsmý gizli, onay kýsmý açýk olmalý
-            if (agreementGroup != null) agreementGroup.SetActive(true);
-            if (inputGroup != null) inputGroup.SetActive(false);
-        }
-
-        // Hover animasyonu için orijinal deðerleri al
-        buttonImage = GetComponent<Image>();
-        originalScale = transform.localScale;
-        originalColor = buttonImage.color;
+        public string courseId;
+        public float finishTime;
+        public float totalTimePlayed;
     }
 
-    void Update()
+    private void Awake()
     {
-        // Yumuþak neon geçiþ animasyonu
-        Vector3 targetScale = isHovering ? originalScale * scaleMultiplier : originalScale;
-        Color targetColor = isHovering ? neonGlowColor : originalColor;
+        if (Instance != null && Instance != this)
+        {
+            consentPanel.SetActive(false);
 
-        transform.localScale = Vector3.Lerp(transform.localScale, targetScale, Time.deltaTime * animationSpeed);
-        buttonImage.color = Color.Lerp(buttonImage.color, targetColor, Time.deltaTime * animationSpeed);
+            Destroy(this.gameObject);
+            return;
+        }
+
+        Instance = this;
+        DontDestroyOnLoad(this.gameObject);
     }
 
-    public void OnPointerEnter(PointerEventData eventData) { isHovering = true; }
-    public void OnPointerExit(PointerEventData eventData) { isHovering = false; }
-
-    // --- 1. AÞAMA: "AGREE" BUTONUNA TIKLANINCA ---
-    public void OnApproveClicked()
+    // Oyuncu baÅŸta onay butonuna bastÄ±ÄŸÄ±nda Ã§alÄ±ÅŸÄ±r (Bunu UI'daki Approve butonuna baÄŸlamaya devam edebilirsin)
+    public async void OnApproveClicked()
     {
-        // Ana paneli kapatmýyoruz, sadece onay grubunu gizleyip form grubunu açýyoruz
+        await InitializeUnityServicesAsync();
+
         if (agreementGroup != null) agreementGroup.SetActive(false);
         if (inputGroup != null) inputGroup.SetActive(true);
     }
 
-    // --- 2. AÞAMA: BÝLGÝLER GÝRÝLÝP "BAÞLA" BUTONUNA TIKLANINCA ---
-    public void OnSubmitDataClicked()
+    private async Task InitializeUnityServicesAsync()
     {
-        // Ders kodu boþ mu diye kontrol et (Trim() boþluk karakterlerini siler)
-        if (courseCodeInputField == null || string.IsNullOrWhiteSpace(courseCodeInputField.text))
+        try
         {
-            Debug.LogWarning("Ders kodu zorunludur! Lütfen doldurun.");
-            return; // Kod boþsa fonksiyonu burada kes, paneli kapatma
+            if (UnityServices.State != ServicesInitializationState.Initialized)
+            {
+                await UnityServices.InitializeAsync();
+            }
+
+            if (!AuthenticationService.Instance.IsSignedIn)
+            {
+                await AuthenticationService.Instance.SignInAnonymouslyAsync();
+                userID.text = "Player ID: " + AuthenticationService.Instance.PlayerId + " (Click To Copy)";
+                EditorGUIUtility.systemCopyBuffer = AuthenticationService.Instance.PlayerId;
+                Debug.Log("Signed into Unity Services Anonymously.");
+            }
+        }
+        catch (System.Exception e)
+        {
+            Debug.LogError("Error initializing Unity Services: " + e.Message);
+        }
+    }
+
+
+
+
+    // Oyun bittiÄŸinde DataManager tarafÄ±ndan OTOMATÄ°K Ã§aÄŸÄ±rÄ±lacak metod
+    public async void AutoSubmitScore()
+    {
+        if (UnityServices.State != ServicesInitializationState.Initialized)
+        {
+            await InitializeUnityServicesAsync();
+
+            if (UnityServices.State != ServicesInitializationState.Initialized)
+            {
+                Debug.LogError("Critical Error: Could not connect to Unity Services.");
+                return;
+            }
         }
 
-        // Verileri static deðiþkenlere aktar (Ýsim boþ girilse bile sorun yok)
-        StudentName = nameInputField != null ? nameInputField.text.Trim() : "";
-        CourseCode = courseCodeInputField.text.Trim();
+        // UI'daki InputField'lardan verileri Ã§ek (EÄŸer boÅŸ bÄ±rakÄ±ldÄ±ysa varsayÄ±lan deÄŸerleri ata)
+        string currentCourseId = string.IsNullOrWhiteSpace(courseId.text) ? "DEFAULT" : courseId.text.ToUpper();
+        string rawName = string.IsNullOrWhiteSpace(name.text) ? "Anonymous_Player" : name.text;
+        string finalName = rawName.Trim().Replace(" ", "_");
 
-        // Verileri kalýcý belleðe (PlayerPrefs) kaydet
-        PlayerPrefs.SetInt("TermsApproved", 1);
-        PlayerPrefs.SetString("SavedName", StudentName);
-        PlayerPrefs.SetString("SavedCourse", CourseCode);
-        PlayerPrefs.Save();
-
-        Debug.Log($"Veriler Alýndý! Ýsim: {StudentName} | Ders Kodu: {CourseCode}");
-
-        // Tüm iþlemler bitti, artýk arka planý (Backplate) tamamen kapatabiliriz
-        if (consentPanel != null)
+        try
         {
-            consentPanel.SetActive(false);
+            // KullanÄ±cÄ± ismini Unity Cloud Ã¼zerinde gÃ¼ncelle
+            await AuthenticationService.Instance.UpdatePlayerNameAsync(finalName);
+
+            LeaderboardMetadata metadataObj = new LeaderboardMetadata
+            {
+                courseId = currentCourseId,
+                finishTime = finishTime,
+                totalTimePlayed = totalTimePlayed,
+            };
+
+            var options = new AddPlayerScoreOptions { Metadata = metadataObj };
+            double mainScore = (double)finishTime;
+
+            var response = await LeaderboardsService.Instance.AddPlayerScoreAsync(leaderboardId, mainScore, options);
+
+            Debug.Log($"Skor otomatik olarak gÃ¶nderildi! Skor: {mainScore}, Ä°sim: {finalName}, Course: {currentCourseId}");
+
+            // Ä°ÅŸlem bitince paneli gizle
+            if (consentPanel != null) consentPanel.SetActive(false);
+        }
+        catch (System.Exception e)
+        {
+            Debug.LogError("An error occurred while submitting the score: " + e.Message);
         }
     }
 }
