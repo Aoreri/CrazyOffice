@@ -27,6 +27,11 @@ public class QuestManager : MonoBehaviour
     public TextMeshProUGUI counter;
     public TextMeshProUGUI questText;
 
+    [Header("Debounce Ayarlarý")]
+    // YENÝ EKLENDÝ: F tuþu spam engelleme (Cooldown)
+    public float interactCooldown = 0.5f;
+    private float nextInteractTime = 0f;
+
     private void Awake()
     {
         if (Instance == null) Instance = this;
@@ -263,12 +268,16 @@ public class QuestManager : MonoBehaviour
 
     void Update()
     {
-        if (player != null && Input.GetKeyDown(KeyCode.F) && activeQuest != null && targetItemForCurrentStep != null)
+        // GÜNCELLENDÝ: Araya "Time.time >= nextInteractTime" kilit þartý eklendi
+        if (player != null && Input.GetKeyDown(KeyCode.F) && Time.time >= nextInteractTime && activeQuest != null && targetItemForCurrentStep != null)
         {
             float distance = Vector3.Distance(targetItemForCurrentStep.transform.position, player.position);
 
             if (distance <= 4f)
             {
+                // Etkileþim baþarýlý! Spam engellemek için kilidi yarým saniyeliðine kapatýyoruz
+                nextInteractTime = Time.time + interactCooldown;
+
                 OnItemUsed(targetItemForCurrentStep);
             }
         }
