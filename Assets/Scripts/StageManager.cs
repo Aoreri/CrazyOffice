@@ -328,7 +328,7 @@ public class StageManager : MonoBehaviour
             timerRect.localScale = timerTargetScale;
         }
 
-        yield return new WaitForSeconds(4f);
+        yield return new WaitForSeconds(10f);
 
         // 6. Finish game logic
         if (DataManager.Instance == null)
