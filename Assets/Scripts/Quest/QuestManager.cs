@@ -263,7 +263,7 @@ public class QuestManager : MonoBehaviour
 
     void Update()
     {
-        if (player != null && Input.GetKeyDown(KeyCode.F) && activeQuest != null && targetItemForCurrentStep != null)
+        if (player != null && Input.GetKeyDown(KeyCode.E) && activeQuest != null && targetItemForCurrentStep != null)
         {
             float distance = Vector3.Distance(targetItemForCurrentStep.transform.position, player.position);
 
