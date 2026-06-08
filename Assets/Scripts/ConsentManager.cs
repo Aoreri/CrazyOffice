@@ -73,7 +73,7 @@ public class ConsentManager : MonoBehaviour
             {
                 await AuthenticationService.Instance.SignInAnonymouslyAsync();
                 userID.text = "Player ID: " + AuthenticationService.Instance.PlayerId + " (Click To Copy)";
-                EditorGUIUtility.systemCopyBuffer = AuthenticationService.Instance.PlayerId;
+               
                 Debug.Log("Signed into Unity Services Anonymously.");
             }
         }
