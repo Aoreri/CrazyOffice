@@ -12273,9 +12273,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 445229642}
-        m_TargetAssemblyTypeName: ConsentManager, Assembly-CSharp
-        m_MethodName: QuitGame
+      - m_Target: {fileID: 1657645007}
+        m_TargetAssemblyTypeName: MainMenuController, Assembly-CSharp
+        m_MethodName: OnExit
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
