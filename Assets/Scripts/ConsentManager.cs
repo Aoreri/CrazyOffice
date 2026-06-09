@@ -91,6 +91,23 @@ public class ConsentManager : MonoBehaviour
     // Oyun bittiğinde DataManager tarafından OTOMATİK çağırılacak metod
     public async void AutoSubmitScore()
     {
+
+        if (courseId != null)
+        {
+            if (courseId.text.Length == 0)
+                return;
+
+            courseID = string.IsNullOrWhiteSpace(courseId.text) ? "DEFAULT" : courseId.text.ToUpper();
+            userNAME = (string.IsNullOrWhiteSpace(name.text) ? "Anonymous_Player" : name.text).Trim().Replace(" ", "_");
+        }
+
+        if (finishTime <= 0f)
+        {
+            Debug.Log("Score is 0, skipping leaderboard submission.");
+            if (consentPanel != null) consentPanel.SetActive(false);
+            return;
+        }
+
         if (UnityServices.State != ServicesInitializationState.Initialized)
         {
             await InitializeUnityServicesAsync();
@@ -102,14 +119,7 @@ public class ConsentManager : MonoBehaviour
             }
         }
 
-        if(courseId != null)
-        {
-            if (courseId.text.Length == 0)
-                return;
-
-            courseID = string.IsNullOrWhiteSpace(courseId.text) ? "DEFAULT" : courseId.text.ToUpper();
-            userNAME = (string.IsNullOrWhiteSpace(name.text) ? "Anonymous_Player" : name.text).Trim().Replace(" ", "_");
-        }
+        
 
         // UI'daki InputField'lardan verileri çek (Eğer boş bırakıldıysa varsayılan değerleri ata)
         string currentCourseId = courseID;

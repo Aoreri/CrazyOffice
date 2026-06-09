@@ -138,8 +138,8 @@ public abstract class Puzzle : MonoBehaviour
         animRunner = null;
         animationCoroutine = null;
         isEnding = false;
-        Destroy(gameObject);
-        //gameObject.SetActive(false);
+       // Destroy(gameObject);
+        gameObject.SetActive(false);
     }
 
     protected abstract void OnStartPuzzle();
