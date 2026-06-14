@@ -188,6 +188,8 @@ public class StageManager : MonoBehaviour
 
         if (markerCanvas != null)
             markerCanvas.SetActive(true);
+
+        player.transform.position = cinematicSteps[cinematicSteps.Length - 1].position;
     }
 
     // ---------------------------------------------------------------
@@ -328,7 +330,7 @@ public class StageManager : MonoBehaviour
             timerRect.localScale = timerTargetScale;
         }
 
-        yield return new WaitForSeconds(10f);
+        yield return new WaitForSeconds(6f);
 
         // 6. Finish game logic
         if (DataManager.Instance == null)
